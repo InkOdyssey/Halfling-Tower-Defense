@@ -12,8 +12,15 @@ config_version=5
 
 config/name="Halfling-Tower-Defence"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://Assets/icon.svg"
 
 [dotnet]
 
 project/assembly_name="Halfling-Tower-Defence"
+
+[file_customization]
+
+folder_colors={
+"res://Assets/": "red",
+"res://Scenes/": "yellow"
+}
