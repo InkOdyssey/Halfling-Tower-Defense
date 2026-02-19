@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqsq7i5300qyk"]
+
+[ext_resource type="Texture2D" uid="uid://cmiymnk3kmjb3" path="res://Assets/Tea Cup.png" id="1_nudgl"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_508rj"]
+radius = 91.629
+height = 183.258
+
+[node name="Tea" type="Sprite2D"]
+position = Vector2(0.999996, 0)
+scale = Vector2(0.491111, 0.5)
+texture = ExtResource("1_nudgl")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-2.03619, 0)
+shape = SubResource("CapsuleShape2D_508rj")

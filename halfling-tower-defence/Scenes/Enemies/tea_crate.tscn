@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cc2uf51slrlbm"]
+
+[ext_resource type="Texture2D" uid="uid://cdrjjqoam6v6v" path="res://Assets/British Tea Crate.png" id="1_hifqr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k8po4"]
+radius = 111.059
+
+[node name="Tea Crate" type="Sprite2D"]
+position = Vector2(-1.19209e-07, 4.03897e-28)
+scale = Vector2(0.243151, 0.261561)
+texture = ExtResource("1_hifqr")
+metadata/_edit_group_ = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(24.676, -5.7348)
+scale = Vector2(1, 1)
+shape = SubResource("CircleShape2D_k8po4")
