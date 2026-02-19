@@ -1,8 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://tjyhq6cs4xu7"]
+[gd_scene load_steps=7 format=3 uid="uid://dl7uj1tskwnmn"]
 
 [ext_resource type="Texture2D" uid="uid://bjestqjcsf1ja" path="res://Assets/waterB_spritesheet.png" id="1_j2wod"]
-[ext_resource type="PackedScene" uid="uid://dwugkhwa7fhp2" path="res://Scenes/test_enemy.tscn" id="2_26yhd"]
-[ext_resource type="Script" uid="uid://3livamp0jxv1" path="res://Enemyprogression.cs" id="2_p3ir5"]
+[ext_resource type="PackedScene" path="res://Scenes/test_enemy.tscn" id="2_26yhd"]
+[ext_resource type="Script" path="res://Enemyprogression.cs" id="2_p3ir5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v1qfn"]
 texture = ExtResource("1_j2wod")
