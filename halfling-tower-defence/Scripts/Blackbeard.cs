@@ -13,10 +13,12 @@ public partial class Blackbeard : Node2D
 		public void in_range(Node2D body)
 	{
 		GD.Print("in zone");
-		//if (Node2D body is Enemy);
-			{
-				QueueFree();
-			}
+		
+		if(body is Enemy)
+		{
+			QueueFree();
+		}
+			
 		
 	}
 

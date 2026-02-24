@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://mc2c56yytf1k"]
+[gd_scene load_steps=4 format=3 uid="uid://mc2c56yytf1k"]
 
 [ext_resource type="Texture2D" uid="uid://bjmhixlxh21rq" path="res://Assets/12292021_George-III_181632-removebg-preview.png" id="1_xkhqd"]
+[ext_resource type="Script" uid="uid://3o2i2ermf8j0" path="res://Scripts/KingGeorgeIii.cs" id="2_wswyx"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wswyx"]
 radius = 120.889
@@ -9,6 +10,7 @@ height = 508.675
 [node name="King George III" type="Sprite2D"]
 scale = Vector2(0.132353, 0.125817)
 texture = ExtResource("1_xkhqd")
+script = ExtResource("2_wswyx")
 
 [node name="Area2D" type="Area2D" parent="."]
 

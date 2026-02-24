@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cc2uf51slrlbm"]
+[gd_scene load_steps=4 format=3 uid="uid://cc2uf51slrlbm"]
 
 [ext_resource type="Texture2D" uid="uid://cdrjjqoam6v6v" path="res://Assets/British Tea Crate.png" id="1_hifqr"]
+[ext_resource type="Script" uid="uid://cf5mp2jp0p5b6" path="res://Scripts/TeaCrate.cs" id="2_4llvx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_k8po4"]
 radius = 111.059
@@ -9,6 +10,7 @@ radius = 111.059
 position = Vector2(-1.19209e-07, 4.03897e-28)
 scale = Vector2(0.243151, 0.261561)
 texture = ExtResource("1_hifqr")
+script = ExtResource("2_4llvx")
 metadata/_edit_group_ = true
 
 [node name="Area2D" type="Area2D" parent="."]
