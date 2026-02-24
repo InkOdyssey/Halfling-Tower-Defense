@@ -28,7 +28,7 @@ public partial class Enemyprogression : PathFollow2D
 			{
 				GD.Print("finished");
 				EmitSignal(SignalName.Kill);
-				Killed = !Killed;
+				Killed = !Killed;	
 			}
 	}
 }
