@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://dl7uj1tskwnmn"]
+[gd_scene load_steps=8 format=3 uid="uid://dl7uj1tskwnmn"]
 
 [ext_resource type="Texture2D" uid="uid://bjestqjcsf1ja" path="res://Assets/waterB_spritesheet.png" id="1_j2wod"]
+[ext_resource type="PackedScene" uid="uid://37qg37vaydpj" path="res://Scenes/life.tscn" id="1_qumfl"]
 [ext_resource type="PackedScene" uid="uid://dwugkhwa7fhp2" path="res://Scenes/test_enemy.tscn" id="2_26yhd"]
 [ext_resource type="Script" uid="uid://3livamp0jxv1" path="res://Enemyprogression.cs" id="2_p3ir5"]
 
@@ -1004,6 +1005,11 @@ _data = {
 point_count = 4
 
 [node name="map" type="Node2D"]
+
+[node name="Life" parent="." instance=ExtResource("1_qumfl")]
+offset = Vector2(0, -100)
+scale = Vector2(0.7, 0.7)
+transform = Transform2D(0.7, 0, 0, 0.7, 0, -100)
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_hh5uf")
