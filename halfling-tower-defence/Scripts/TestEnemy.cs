@@ -17,10 +17,10 @@ public partial class TestEnemy : Node2D
 		
 	}
 	
-	private void OnKill()
+	public void OnKill()
 	{
 		GD.Print("killed");
 		QueueFree();
-		
+
 	}
 }

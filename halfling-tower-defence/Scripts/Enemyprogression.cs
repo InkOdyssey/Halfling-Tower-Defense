@@ -4,7 +4,7 @@ using System;
 public partial class Enemyprogression : PathFollow2D
 {
 	
-	public float Speed = 300f;
+	public float Speed = 500f;
 	private bool Killed = false;
 	
 	[Signal]
