@@ -5,11 +5,5 @@
 [node name="Spawner" type="Node2D"]
 script = ExtResource("1_2bop2")
 
-
-
-
-[node name="Spawner" type="Node2D"]
-script = SubResource("CSharpScript_0dymf")
-
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.5
