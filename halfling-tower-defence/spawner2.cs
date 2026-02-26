@@ -1,19 +1,19 @@
 using Godot;
 using System;
 
-public partial class Spawner : Node2D
+public partial class spawner2 : Node2D
 {
-	private Timer timer;
+	private Timer timer2;
 	
 	
-	private PackedScene test_enemy = GD.Load<PackedScene>("res://Scenes/test_enemy.tscn");
+	private PackedScene test_enemy_2 = GD.Load<PackedScene>("res://Scenes/test_enemy_2.tscn");
 	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		timer = GetNode<Timer>("Timer");
-		timer.Start();
-		timer.Timeout += _on_timer_timeout;
+		timer2 = GetNode<Timer>("Timer2");
+		timer2.Start();
+		timer2.Timeout += _on_timer_timeout;
 		
 	}
 
@@ -28,7 +28,7 @@ public partial class Spawner : Node2D
 		GD.Print("timeout");
 		
 		var enemypath = GetNode<Path2D>("/root/map/Path2D");
-		var test_enemy_spawn = test_enemy.Instantiate<CharacterBody2D>();
+		var test_enemy_spawn = test_enemy_2.Instantiate<CharacterBody2D>();
 		
 		var new_enemypath = new PathFollow2D();
 		new_enemypath.ProgressRatio = 0f;

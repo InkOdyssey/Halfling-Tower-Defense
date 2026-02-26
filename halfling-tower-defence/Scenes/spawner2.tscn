@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cogb78eqsddyt"]
+
+[ext_resource type="Script" uid="uid://c7ainabwmg6cu" path="res://spawner2.cs" id="1_wsloq"]
+
+[node name="spawner2" type="Node2D"]
+script = ExtResource("1_wsloq")
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 3.0

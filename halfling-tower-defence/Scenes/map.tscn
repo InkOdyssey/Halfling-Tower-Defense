@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dl7uj1tskwnmn"]
+[gd_scene load_steps=7 format=3 uid="uid://dl7uj1tskwnmn"]
 
 [ext_resource type="Texture2D" uid="uid://bjestqjcsf1ja" path="res://Assets/waterB_spritesheet.png" id="1_j2wod"]
-[ext_resource type="PackedScene" uid="uid://eqi1kpxcfasl" path="res://Scenes/spawner.tscn" id="4_myvm1"]
+[ext_resource type="PackedScene" uid="uid://cogb78eqsddyt" path="res://Scenes/spawner2.tscn" id="3_p3ir5"]
+[ext_resource type="PackedScene" uid="uid://cgxhpw1od3cv0" path="res://Scenes/spawner1.tscn" id="4_myvm1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v1qfn"]
 texture = ExtResource("1_j2wod")
@@ -1016,4 +1017,6 @@ zoom = Vector2(1.4, 1.15)
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_26yhd")
 
-[node name="Spawner" parent="." instance=ExtResource("4_myvm1")]
+[node name="Spawner1" parent="." instance=ExtResource("4_myvm1")]
+
+[node name="spawner2" parent="." instance=ExtResource("3_p3ir5")]
