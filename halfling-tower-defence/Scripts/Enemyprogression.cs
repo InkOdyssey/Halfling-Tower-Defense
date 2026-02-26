@@ -4,7 +4,7 @@ using System;
 public partial class Enemyprogression : PathFollow2D
 {
 	
-	public float Speed = 500f;
+	public float Speed = 300f;
 	private bool Killed = false;
 	
 	[Signal]
@@ -22,7 +22,7 @@ public partial class Enemyprogression : PathFollow2D
 		
 		if (ProgressRatio < 1.0f)
 			{
-				ProgressRatio += .001f;
+				ProgressRatio += .002f;
 			}
 		else if (ProgressRatio == 1.0f && Killed == false)
 			{
