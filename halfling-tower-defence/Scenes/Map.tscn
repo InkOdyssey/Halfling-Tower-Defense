@@ -1,7 +1,11 @@
 [gd_scene load_steps=6 format=3 uid="uid://dl7uj1tskwnmn"]
 
 [ext_resource type="Texture2D" uid="uid://bjestqjcsf1ja" path="res://Assets/waterB_spritesheet.png" id="1_j2wod"]
+<<<<<<< Updated upstream
 [ext_resource type="PackedScene" path="res://Scenes/spawner.tscn" id="4_myvm1"]
+=======
+[ext_resource type="PackedScene" uid="uid://bmm1aftdjmvif" path="res://Scenes/spawner.tscn" id="4_myvm1"]
+>>>>>>> Stashed changes
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v1qfn"]
 texture = ExtResource("1_j2wod")
