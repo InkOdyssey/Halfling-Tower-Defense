@@ -1,7 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dl7uj1tskwnmn"]
+[gd_scene load_steps=10 format=3 uid="uid://dm8xd3k6w8inc"]
 
 [ext_resource type="Texture2D" uid="uid://bjestqjcsf1ja" path="res://Assets/waterB_spritesheet.png" id="1_j2wod"]
+[ext_resource type="PackedScene" uid="uid://dwugkhwa7fhp2" path="res://Scenes/test_enemy.tscn" id="2_26yhd"]
+[ext_resource type="Script" uid="uid://3livamp0jxv1" path="res://Scripts/Enemyprogression.cs" id="2_etk83"]
 [ext_resource type="PackedScene" uid="uid://eqi1kpxcfasl" path="res://Scenes/spawner.tscn" id="4_myvm1"]
+[ext_resource type="PackedScene" uid="uid://cew5q1uqcdjgs" path="res://Scenes/Towers/Blackbeard.tscn" id="4_qumfl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v1qfn"]
 texture = ExtResource("1_j2wod")
@@ -1002,6 +1005,9 @@ _data = {
 }
 point_count = 4
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_00287"]
+size = Vector2(1085, 20)
+
 [node name="map" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -1015,5 +1021,23 @@ zoom = Vector2(1.4, 1.15)
 
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_26yhd")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(-384, -8)
+rotates = false
+loop = false
+script = ExtResource("2_etk83")
+
+[node name="test_enemy" parent="Path2D/PathFollow2D" instance=ExtResource("2_26yhd")]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, 39)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(26.5, 0)
+shape = SubResource("RectangleShape2D_00287")
+
+[node name="Blackbeard" parent="." instance=ExtResource("4_qumfl")]
+position = Vector2(138, -42)
 
 [node name="Spawner" parent="." instance=ExtResource("4_myvm1")]
