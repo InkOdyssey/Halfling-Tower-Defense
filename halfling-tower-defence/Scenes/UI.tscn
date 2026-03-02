@@ -1,6 +1,5 @@
-[gd_scene load_steps=5 format=3 uid="uid://37qg37vaydpj"]
+[gd_scene load_steps=4 format=3 uid="uid://bw3uhx1aiosyc"]
 
-[ext_resource type="Script" uid="uid://wwaif65ln6id" path="res://Life.cs" id="1_64xyt"]
 [ext_resource type="Texture2D" uid="uid://dtuln6dxuq2gq" path="res://Assets/Heart.png" id="1_wvhb1"]
 [ext_resource type="Texture2D" uid="uid://b03rq30dn00n1" path="res://Assets/Coin.png" id="2_64xyt"]
 
@@ -70,7 +69,6 @@ cache/0/30/0/underline_thickness = 0.0
 cache/0/30/0/scale = 1.0
 
 [node name="Life" type="CanvasLayer"]
-script = ExtResource("1_64xyt")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15

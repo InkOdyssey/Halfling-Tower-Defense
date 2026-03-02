@@ -1,0 +1,154 @@
+[gd_scene load_steps=10 format=3 uid="uid://ewnrp8pgcem3"]
+
+[ext_resource type="Texture2D" uid="uid://ngud43p3by4t" path="res://Assets/Menu png.jpg" id="1_cr40v"]
+[ext_resource type="Script" uid="uid://6kdgfwvupswv" path="res://MainMenu.cs" id="1_rl8pc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rl8pc"]
+bg_color = Color(0, 0, 0, 0.741176)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="FontFile" id="FontFile_52ajb"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gip8j"]
+bg_color = Color(0, 0.34, 0.4, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="FontFile" id="FontFile_exq0c"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hda41"]
+bg_color = Color(0, 0.3485, 0.41, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bjmgk"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0.0317176, 0.0252664, 0.00878193, 0.6)
+shadow_size = 1
+shadow_offset = Vector2(0, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nl1j7"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0.1, 0.1, 0.1, 0.6)
+shadow_size = 1
+shadow_offset = Vector2(0, 2)
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_right = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rl8pc")
+
+[node name="BG_Menu" type="Sprite2D" parent="."]
+position = Vector2(576, 327.5)
+scale = Vector2(3.84, 3.8869)
+texture = ExtResource("1_cr40v")
+
+[node name="Collapse" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Collapse"]
+layout_mode = 0
+offset_left = 860.0
+offset_top = 70.0
+offset_right = 1118.0
+offset_bottom = 441.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_rl8pc")
+text = "Leader Board:
+1.
+2.
+3.
+4.
+5.
+6.
+7.
+8.
+9.
+10.
+11.
+12.
+13.
+14.
+15."
+
+[node name="Title" type="RichTextLabel" parent="Collapse"]
+layout_mode = 0
+offset_left = 341.0
+offset_top = 151.0
+offset_right = 769.0
+offset_bottom = 219.0
+theme_override_fonts/bold_italics_font = SubResource("FontFile_52ajb")
+theme_override_styles/normal = SubResource("StyleBoxFlat_gip8j")
+text = "Captain Kidd's Treasure Defense"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Description" type="RichTextLabel" parent="Collapse"]
+layout_mode = 0
+offset_left = 285.0
+offset_top = 512.0
+offset_right = 808.0
+offset_bottom = 598.0
+theme_override_fonts/bold_italics_font = SubResource("FontFile_exq0c")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hda41")
+text = "The game where the british attacked the pirates so Captain Kidd Rallies the pirates to fight them brits."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Start_Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 419.0
+offset_top = 275.0
+offset_right = 677.0
+offset_bottom = 318.0
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_bjmgk")
+text = "Start"
+
+[node name="End_Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.029
+anchor_bottom = 0.056
+offset_left = 419.0
+offset_top = 367.0
+offset_right = 643.592
+offset_bottom = 373.712
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_nl1j7")
+text = "End"
+
+[connection signal="pressed" from="Start_Button" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="End_Button" to="." method="_on_end_button_pressed"]
