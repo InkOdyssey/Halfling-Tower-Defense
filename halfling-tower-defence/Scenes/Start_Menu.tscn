@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ewnrp8pgcem3"]
+[gd_scene load_steps=10 format=3 uid="uid://bloljlg60s2u6"]
 
 [ext_resource type="Texture2D" uid="uid://ngud43p3by4t" path="res://Assets/Menu png.jpg" id="1_cr40v"]
 [ext_resource type="Script" uid="uid://6kdgfwvupswv" path="res://MainMenu.cs" id="1_rl8pc"]
@@ -69,15 +69,15 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_rl8pc")
 
-[node name="BG_Menu" type="Sprite2D" parent="."]
-position = Vector2(576, 327.5)
-scale = Vector2(3.84, 3.8869)
-texture = ExtResource("1_cr40v")
-
 [node name="Collapse" type="Control" parent="."]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="BG_Menu" type="Sprite2D" parent="Collapse"]
+position = Vector2(576, 327.5)
+scale = Vector2(3.84, 3.8869)
+texture = ExtResource("1_cr40v")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Collapse"]
 layout_mode = 0

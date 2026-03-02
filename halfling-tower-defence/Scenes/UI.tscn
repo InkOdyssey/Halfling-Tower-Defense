@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bw3uhx1aiosyc"]
+[gd_scene load_steps=4 format=3 uid="uid://bd6wopk7qxmo"]
 
 [ext_resource type="Texture2D" uid="uid://dtuln6dxuq2gq" path="res://Assets/Heart.png" id="1_wvhb1"]
 [ext_resource type="Texture2D" uid="uid://b03rq30dn00n1" path="res://Assets/Coin.png" id="2_64xyt"]
