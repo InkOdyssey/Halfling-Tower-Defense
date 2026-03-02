@@ -1,10 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://dl7uj1tskwnmn"]
+[gd_scene load_steps=10 format=3 uid="uid://dm8xd3k6w8inc"]
 
 [ext_resource type="Texture2D" uid="uid://bjestqjcsf1ja" path="res://Assets/waterB_spritesheet.png" id="1_j2wod"]
 [ext_resource type="PackedScene" uid="uid://dwugkhwa7fhp2" path="res://Scenes/test_enemy.tscn" id="2_26yhd"]
 [ext_resource type="Script" uid="uid://3livamp0jxv1" path="res://Scripts/Enemyprogression.cs" id="2_etk83"]
-[ext_resource type="PackedScene" uid="uid://cew5q1uqcdjgs" path="res://Scenes/Towers/Blackbeard.tscn" id="4_qumfl"]
 [ext_resource type="PackedScene" uid="uid://eqi1kpxcfasl" path="res://Scenes/spawner.tscn" id="4_myvm1"]
+[ext_resource type="PackedScene" uid="uid://cew5q1uqcdjgs" path="res://Scenes/Towers/Blackbeard.tscn" id="4_qumfl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v1qfn"]
 texture = ExtResource("1_j2wod")
@@ -1039,4 +1039,5 @@ shape = SubResource("RectangleShape2D_00287")
 
 [node name="Blackbeard" parent="." instance=ExtResource("4_qumfl")]
 position = Vector2(138, -42)
+
 [node name="Spawner" parent="." instance=ExtResource("4_myvm1")]

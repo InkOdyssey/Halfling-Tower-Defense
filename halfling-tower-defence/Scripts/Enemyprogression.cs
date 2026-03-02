@@ -24,7 +24,7 @@ public partial class Enemyprogression : PathFollow2D
 		
 		if (ProgressRatio < 1.0f)
 			{
-				ProgressRatio += .002f;
+				ProgressRatio += .001f;
 			}
 		else if (ProgressRatio == 1.0f && Killed == false)
 			{

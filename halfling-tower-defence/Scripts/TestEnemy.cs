@@ -6,21 +6,23 @@ public partial class TestEnemy : CharacterBody2D
 	
 	private int health = 3;
 	private bool damage = false;
+	private Area2D hitArea;
 	
 
 	//assigns pathprogress as a variable, but no value
 	private PathFollow2D pathprogress;
-	
-	
-	
+
+
+
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		
-		
-		
+
+
+
 		//gives pathprogress a value
 		pathprogress = GetParent<PathFollow2D>();
+		hitArea = GetNode<Area2D>("hit_area");
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -44,12 +46,31 @@ public partial class TestEnemy : CharacterBody2D
 			
 	}
 	
-	public void hit_area(Area2D area)
+
+
+	
+
+	public void ApplyDamage() {
+		var bodies = hitArea.GetOverlappingAreas();
+		foreach (var body in bodies)
+		{
+			if (body is Node2D)
+			{
+			 	health -=1;
+			GD.Print(health);
+			if (health < 1)
+				{
+					damage = false;
+					QueueFree();
+				}
+
+			}
+		}
+	}
+
+	public void hit_area_leave(Area2D area)
 	{
-		damage = true;
-	while (damage)
-		GD.Print("enemy zone");
-		health-=1;
+		GD.Print("enemy zone active");
 	}
 	
 	public void OnKill()
