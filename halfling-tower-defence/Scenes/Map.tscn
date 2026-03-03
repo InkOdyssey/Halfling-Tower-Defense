@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dl7uj1tskwnmn"]
+[gd_scene load_steps=7 format=3 uid="uid://dl7uj1tskwnmn"]
 
 [ext_resource type="Texture2D" uid="uid://bjestqjcsf1ja" path="res://Assets/waterB_spritesheet.png" id="1_j2wod"]
+[ext_resource type="PackedScene" uid="uid://37qg37vaydpj" path="res://Scenes/life.tscn" id="3_p3ir5"]
 [ext_resource type="PackedScene" uid="uid://uwtbjsmk4vc8" path="res://Scenes/wave_button.tscn" id="4_q0mm3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v1qfn"]
@@ -1003,6 +1004,8 @@ _data = {
 point_count = 4
 
 [node name="map" type="Node2D"]
+
+[node name="Life" parent="." instance=ExtResource("3_p3ir5")]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_hh5uf")
