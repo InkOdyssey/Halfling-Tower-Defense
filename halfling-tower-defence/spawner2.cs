@@ -3,7 +3,8 @@ using System;
 
 public partial class spawner2 : Node2D
 {
-	private Timer timer2;
+	private Timer timer1;
+	private int enemy1_count = 0;
 	
 	
 	private PackedScene test_enemy_2 = GD.Load<PackedScene>("res://Scenes/test_enemy_2.tscn");
@@ -11,9 +12,9 @@ public partial class spawner2 : Node2D
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		timer2 = GetNode<Timer>("Timer2");
-		timer2.Start();
-		timer2.Timeout += _on_timer_timeout;
+		timer1 = GetNode<Timer>("Timer1");
+		timer1.Start();
+		timer1.Timeout += _on_timer1_timeout;
 		
 	}
 
@@ -23,7 +24,7 @@ public partial class spawner2 : Node2D
 		
 	}
 	
-	private void _on_timer_timeout()
+	private void _on_timer1_timeout()
 	{
 		GD.Print("timeout");
 		
@@ -31,11 +32,15 @@ public partial class spawner2 : Node2D
 		var test_enemy_spawn = test_enemy_2.Instantiate<CharacterBody2D>();
 		
 		var new_enemypath = new PathFollow2D();
-		new_enemypath.ProgressRatio = 0f;
 		new_enemypath.Loop = false;
 		new_enemypath.Rotates = false;
-		enemypath.AddChild(new_enemypath);
-		new_enemypath.AddChild(test_enemy_spawn);
+		
+		if (enemy1_count <= 6)
+		{
+			enemypath.AddChild(new_enemypath);
+			new_enemypath.AddChild(test_enemy_spawn);
+			enemy1_count += 1;
+		}
 	}
 	
 }
