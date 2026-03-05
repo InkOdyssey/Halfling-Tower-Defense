@@ -4,9 +4,11 @@ using System;
 public partial class TestEnemy : CharacterBody2D
 {
 	
-	private int health = 3;
+	private int health = 300;
 	private bool damage = false;
 	private Area2D hitArea;
+
+
 	
 
 	//assigns pathprogress as a variable, but no value
@@ -56,21 +58,36 @@ public partial class TestEnemy : CharacterBody2D
 		{
 			if (body is Node2D)
 			{
-			 	health -=1;
-			GD.Print(health);
-			if (health < 1)
+				health -= 1;
+				GD.Print(health);
+				if (health < 1)
+				{
+					damage = false;
+					QueueFree();
+				}
+			}
+				
+			if (body is Tower)
+			{
+				health -= 2;
+				GD.Print(health);
+				GD.Print("blackbeard damage");
+				if (health < 1)
 				{
 					damage = false;
 					QueueFree();
 				}
 
-			}
+			}	
+#pragma warning restore CS0184 // 'is' expression's given expression is never of the provided type
+
+			
 		}
 	}
 
 	public void hit_area_leave(Area2D area)
 	{
-		GD.Print("enemy zone active");
+		GD.Print("enemy zone inactive");
 	}
 	
 	public void OnKill()
