@@ -1,8 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://c47l6h6rkny7g"]
+[gd_scene load_steps=5 format=3 uid="uid://nqb662bi2mwb"]
 
 [ext_resource type="Texture2D" uid="uid://dtuln6dxuq2gq" path="res://Assets/Heart.png" id="1_wvhb1"]
 [ext_resource type="Texture2D" uid="uid://b03rq30dn00n1" path="res://Assets/Coin.png" id="2_64xyt"]
-[ext_resource type="PackedScene" uid="uid://uwtbjsmk4vc8" path="res://Scenes/wave_button.tscn" id="3_64xyt"]
+[ext_resource type="PackedScene" uid="uid://6tf2flmkebqb" path="res://Scenes/wave_button.tscn" id="3_64xyt"]
 
 [sub_resource type="FontFile" id="FontFile_8es6c"]
 subpixel_positioning = 0

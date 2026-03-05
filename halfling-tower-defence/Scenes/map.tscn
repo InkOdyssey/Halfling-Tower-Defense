@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dl7uj1tskwnmn"]
 
 [ext_resource type="Texture2D" uid="uid://bjestqjcsf1ja" path="res://Assets/waterB_spritesheet.png" id="1_j2wod"]
-[ext_resource type="PackedScene" uid="uid://c47l6h6rkny7g" path="res://Scenes/life.tscn" id="3_p3ir5"]
+[ext_resource type="PackedScene" uid="uid://nqb662bi2mwb" path="res://Scenes/life.tscn" id="3_p3ir5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v1qfn"]
 texture = ExtResource("1_j2wod")
