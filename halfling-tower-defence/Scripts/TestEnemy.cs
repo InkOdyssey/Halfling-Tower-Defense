@@ -65,11 +65,10 @@ public partial class TestEnemy : CharacterBody2D
 					damage = false;
 					QueueFree();
 				}
-			}
-				
-			if (body is Tower)
-			{
-				health -= 2;
+
+			else if (body is Tower)
+			
+				health -= 10000;
 				GD.Print(health);
 				GD.Print("blackbeard damage");
 				if (health < 1)
@@ -79,7 +78,7 @@ public partial class TestEnemy : CharacterBody2D
 				}
 
 			}	
-#pragma warning restore CS0184 // 'is' expression's given expression is never of the provided type
+
 
 			
 		}

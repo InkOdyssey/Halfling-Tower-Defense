@@ -1,15 +1,14 @@
 using Godot;
 using System;
 
-public class Tower
+public partial class Tower : Node2D
 {
 
 
 	// Called when the node enters the scene tree for the first time.
-	public void _Ready()
+	public override void _Ready()
 	{
 		GD.Print("test");
-		
 	}
 
 
@@ -29,7 +28,7 @@ public class Tower
 	
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public  void _Process(double delta)
+	public override void _Process(double delta)
 	{
 	}
 }
