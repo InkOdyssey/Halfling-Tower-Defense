@@ -7,7 +7,7 @@
 
 [sub_resource type="Curve2D" id="Curve2D_ldlql"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -668, 0, 0, 0, 0, 0, 0, 0)
+"points": PackedVector2Array(0, 0, 0, 0, -1047, 0, 0, 0, 0, 0, 872, 0)
 }
 point_count = 2
 
@@ -17,17 +17,17 @@ point_count = 2
 curve = SubResource("Curve2D_ldlql")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2(-668, 0)
+position = Vector2(-1047, 0)
 script = ExtResource("1_76vct")
 
 [node name="test_enemy" parent="Path2D/PathFollow2D" instance=ExtResource("1_liwdr")]
 
 [node name="Scalleywag" parent="." instance=ExtResource("2_76vct")]
-position = Vector2(-263, -161)
+position = Vector2(-324, -355)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-280, 0)
 zoom = Vector2(0.5, 0.5)
 
 [node name="Blackbeard" parent="." instance=ExtResource("4_ldlql")]
-position = Vector2(-177, 204)
+position = Vector2(24, 192)
