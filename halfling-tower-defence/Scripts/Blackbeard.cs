@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class Tower : CharacterBody2d
+public class Tower
 {
 
 

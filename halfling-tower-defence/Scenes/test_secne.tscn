@@ -30,4 +30,4 @@ position = Vector2(-280, 0)
 zoom = Vector2(0.5, 0.5)
 
 [node name="Blackbeard" parent="." instance=ExtResource("4_ldlql")]
-position = Vector2(70, 200)
+position = Vector2(-177, 204)
