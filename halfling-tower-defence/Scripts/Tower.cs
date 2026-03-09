@@ -14,7 +14,6 @@ public partial class Tower : Node2D
 
 	public void in_range(Area2D area)
 	{
-		GD.Print("in zone");
 		var damage = true;
 		if (damage == true)
 		{

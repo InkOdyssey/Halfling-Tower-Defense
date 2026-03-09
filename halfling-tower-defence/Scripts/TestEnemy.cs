@@ -52,11 +52,12 @@ public partial class TestEnemy : CharacterBody2D
 
 	
 
-	public void ApplyDamage() {
+	public void ApplyDamage() 
+	{
 		var bodies = hitArea.GetOverlappingAreas();
 		foreach (var body in bodies)
 		{
-			if (body is Node2D)
+			if (body is DetectorS)
 			{
 				health -= 1;
 				GD.Print(health);
@@ -65,9 +66,10 @@ public partial class TestEnemy : CharacterBody2D
 					damage = false;
 					QueueFree();
 				}
+			}
 
-			else if (body is Tower)
-			
+			else if (body is Detector)
+			{
 				health -= 10000;
 				GD.Print(health);
 				GD.Print("blackbeard damage");

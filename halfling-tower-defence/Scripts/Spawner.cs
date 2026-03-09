@@ -31,11 +31,11 @@ public partial class Spawner : Node2D
 		var test_enemy_spawn = test_enemy.Instantiate<CharacterBody2D>();
 		
 		var new_enemypath = new PathFollow2D();
+		enemypath.AddChild(new_enemypath);
+		new_enemypath.AddChild(test_enemy_spawn);
 		new_enemypath.ProgressRatio = 0f;
 		new_enemypath.Loop = false;
 		new_enemypath.Rotates = false;
-		enemypath.AddChild(new_enemypath);
-		new_enemypath.AddChild(test_enemy_spawn);
 	}
 	
 }
