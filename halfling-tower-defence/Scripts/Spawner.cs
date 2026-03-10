@@ -6,7 +6,7 @@ public partial class Spawner : Node2D
 	private Timer timer;
 	
 	
-	private PackedScene test_enemy = GD.Load<PackedScene>("res://Scenes/test_enemy.tscn");
+	private PackedScene test_enemy = GD.Load<PackedScene>("res://Scenes/Enemies/test_enemy.tscn");
 	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
