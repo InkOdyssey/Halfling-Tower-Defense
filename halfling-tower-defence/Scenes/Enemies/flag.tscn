@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://b1p5tbi6bltaa"]
+[gd_scene load_steps=4 format=3 uid="uid://b1p5tbi6bltaa"]
 
 [ext_resource type="Texture2D" uid="uid://bow61xgxf7tva" path="res://Assets/Flag.png" id="1_l4f6g"]
+[ext_resource type="Script" uid="uid://dhp0r5vdcfadk" path="res://Scripts/Flag.cs" id="2_oxoaj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oxoaj"]
 size = Vector2(290, 174)
@@ -9,6 +10,7 @@ size = Vector2(290, 174)
 position = Vector2(-1, 0)
 scale = Vector2(0.534483, 0.551724)
 texture = ExtResource("1_l4f6g")
+script = ExtResource("2_oxoaj")
 
 [node name="Area2D" type="Area2D" parent="."]
 

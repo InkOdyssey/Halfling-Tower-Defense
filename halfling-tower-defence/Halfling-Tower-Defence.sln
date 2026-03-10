@@ -1,7 +1,6 @@
 ﻿Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Halfling-Tower-Defence", "Halfling-Tower-Defence.csproj", "{94DF1499-BA79-4CBD-ACFC-A9CA189D3269}"
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Halfling-Tower-Defence", "Halfling-Tower-Defence.csproj", "{52C413FF-E823-4C11-B192-B10BA2B9FC90}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Halfling-Tower-Defence", "Halfling-Tower-Defence.csproj", "{00C44818-5F1C-48AD-A863-A519B1272E60}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -10,6 +9,12 @@ Global
 	ExportRelease|Any CPU = ExportRelease|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{00C44818-5F1C-48AD-A863-A519B1272E60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00C44818-5F1C-48AD-A863-A519B1272E60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00C44818-5F1C-48AD-A863-A519B1272E60}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
+		{00C44818-5F1C-48AD-A863-A519B1272E60}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
+		{00C44818-5F1C-48AD-A863-A519B1272E60}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
+		{00C44818-5F1C-48AD-A863-A519B1272E60}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
 		{94DF1499-BA79-4CBD-ACFC-A9CA189D3269}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{94DF1499-BA79-4CBD-ACFC-A9CA189D3269}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{94DF1499-BA79-4CBD-ACFC-A9CA189D3269}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
