@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bdl05bhtwq5yw"]
+
+[node name="Spawner" type="Node2D"]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.5
