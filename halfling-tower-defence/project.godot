@@ -11,11 +11,18 @@ config_version=5
 [application]
 
 config/name="Halfling-Tower-Defence"
-run/main_scene="uid://dyjgxhfbixn0"
+run/main_scene="uid://cgnawdfujnpp6"
 config/features=PackedStringArray("4.4", "C#", "Forward Plus")
 config/icon="res://icon.svg"
-<<<<<<<Updatedupstreamrun/main_scene="uid://qcjn4c4ugfb4"
+
 
 [dotnet]
 
 project/assembly_name="Halfling-Tower-Defence"
+
+[file_customization]
+
+folder_colors={
+"res://Assets/": "red",
+"res://Scenes/": "yellow"
+}
