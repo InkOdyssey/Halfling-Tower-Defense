@@ -12,7 +12,7 @@ public partial class MyTileMap : TileMap
 
 	public override void _Ready()
 	{
-		// FIX: reference this TileMap instead of searching for a child
+		
 		_mapNode = this;
 
 		foreach (Node node in GetTree().GetNodesInGroup("build_buttons"))
