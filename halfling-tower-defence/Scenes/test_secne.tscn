@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://c8v36wtxlwm2g"]
 
 [ext_resource type="Script" uid="uid://3livamp0jxv1" path="res://Scripts/Enemyprogression.cs" id="1_76vct"]
-[ext_resource type="PackedScene" uid="uid://dwugkhwa7fhp2" path="res://Scenes/test_enemy.tscn" id="1_liwdr"]
+[ext_resource type="PackedScene" uid="uid://dwugkhwa7fhp2" path="res://Scenes/Enemies/test_enemy.tscn" id="1_liwdr"]
 [ext_resource type="Texture2D" uid="uid://b2sxupf78u8a3" path="res://Assets/fresh-water-tiles-music/8bit-water-currenty.svg" id="1_rfgcj"]
 [ext_resource type="PackedScene" uid="uid://dgwxc32ayqykf" path="res://Scenes/Towers/scalleywag.tscn" id="2_76vct"]
 [ext_resource type="PackedScene" uid="uid://cew5q1uqcdjgs" path="res://Scenes/Towers/Blackbeard.tscn" id="4_ldlql"]
