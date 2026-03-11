@@ -1,9 +1,9 @@
 using Godot;
 using System;
 
-public partial class Spawner : Node2D
+public partial class Spawner1 : Node2D
 {
-	private Timer timer;
+	private Timer timer1;
 	
 	
 	private PackedScene test_enemy = GD.Load<PackedScene>("res://Scenes/Enemies/test_enemy.tscn");
@@ -11,9 +11,9 @@ public partial class Spawner : Node2D
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		timer = GetNode<Timer>("Timer");
-		timer.Start();
-		timer.Timeout += _on_timer_timeout;
+		timer1 = GetNode<Timer>("Timer");
+		timer1.Start();
+		timer1.Timeout += _on_timer_timeout;
 		
 	}
 

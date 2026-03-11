@@ -78,10 +78,7 @@ public partial class TestEnemy : CharacterBody2D
 					damage = false;
 					QueueFree();
 				}
-
-			}	
-
-
+			}
 			
 		}
 	}
