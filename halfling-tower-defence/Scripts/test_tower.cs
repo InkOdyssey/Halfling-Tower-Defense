@@ -1,6 +1,5 @@
 using Godot;
 using System;
-
 public partial class test_tower : CharacterBody2D
 {
 	private bool placed = false;
@@ -19,14 +18,20 @@ public partial class test_tower : CharacterBody2D
 		placement_area = GetNode<Node2D>("/root/map/placement_area");
 		
 	}
+	
+	
+	
+public override void _PhysicsProcess(double delta)
+	{
+		if (!placed && moveable)
+		{
+			GlobalPosition = GetGlobalMousePosition();
+		}
+	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		if (placed == false & moveable == true)
-		{
-			GlobalPosition = GetGlobalMousePosition();
-		}
 		
 		
 		
@@ -35,11 +40,18 @@ public partial class test_tower : CharacterBody2D
 		
 		if (Input.IsActionJustPressed("place_tower"))
 			{
-				if (clicks == 0)
+				var overlapping = tower_hitbox.GetOverlappingAreas();
+				
+				
+				if (clicks == 0 && overlapping.Count == 0)
 				{
 					GD.Print("placed");
 					placed = !placed;
 					clicks += 1;
+				}
+				else
+				{
+					GD.Print("overlapping");
 				}
 			}
 	}

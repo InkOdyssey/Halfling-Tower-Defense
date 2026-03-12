@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://brlddyv34eicy"]
 
-[ext_resource type="Script" uid="uid://ci18rpls84ly5" path="res://Scenes/node_2d.gd" id="1_hh5uf"]
+[ext_resource type="Script" path="res://Scenes/node_2d.gd" id="1_hh5uf"]
 [ext_resource type="Texture2D" uid="uid://bjestqjcsf1ja" path="res://Assets/waterB_spritesheet.png" id="1_j2wod"]
-[ext_resource type="Script" uid="uid://decy0bkjl25eh" path="res://Scenes/MyTileMap.cs" id="2_v1qfn"]
-[ext_resource type="PackedScene" uid="uid://2tx1tn374eud" path="res://ui.tscn" id="3_6whob"]
+[ext_resource type="Script" uid="uid://decy0bkjl25eh" path="res://Scripts/MyTileMap.cs" id="2_v1qfn"]
+[ext_resource type="PackedScene" uid="uid://cgnawdfujnpp6" path="res://ui.tscn" id="3_6whob"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v1qfn"]
 texture = ExtResource("1_j2wod")
