@@ -1,19 +1,33 @@
 [gd_scene load_steps=2 format=3 uid="uid://cgnawdfujnpp6"]
 
-[ext_resource type="PackedScene" uid="uid://dyjgxhfbixn0" path="res://shop_button_1.tscn" id="1_fyqef"]
+[ext_resource type="Script" uid="uid://bv4iaobwvwrod" path="res://Panel.cs" id="1_fyqef"]
 
-[node name="Shop UI" type="CanvasLayer"]
+[node name="CanvasLayer" type="CanvasLayer"]
 
 [node name="Panel" type="Panel" parent="."]
-offset_right = 124.0
-offset_bottom = 356.0
+offset_right = 178.0
+offset_bottom = 372.0
+script = ExtResource("1_fyqef")
 
-[node name="FlowContainer" type="FlowContainer" parent="Panel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
 layout_mode = 0
-offset_left = 5.0
-offset_top = 5.0
-offset_right = 120.0
-offset_bottom = 345.0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 153.0
+offset_bottom = 359.0
 
-[node name="Shop Button 1" parent="Panel/FlowContainer" instance=ExtResource("1_fyqef")]
+[node name="Shop_Label" type="Label" parent="Panel/VBoxContainer"]
 layout_mode = 2
+text = "Pirate Recruitment"
+
+[node name="Pirate_Button1" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Scalleywag - 45 Coins"
+
+[node name="Pirate_Button2" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Blackbeard - 75 Coins"
+
+[node name="Cannon_Button" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Cannon - 85 Coins"
