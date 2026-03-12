@@ -11,7 +11,7 @@ public partial class Spawner : Node2D
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		timer = GetNode<Timer>("Timer1");
+		timer = GetNode<Timer>("Timer");
 		timer.Start();
 		timer.Timeout += _on_timer_timeout;
 		

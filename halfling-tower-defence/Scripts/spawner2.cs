@@ -29,7 +29,7 @@ public partial class spawner2 : Node2D
 		GD.Print("timeout");
 		
 		var enemypath = GetNode<Path2D>("/root/map/Path2D");
-		var test_enemy_spawn = test_enemy_2.Instantiate<CharacterBody2D>();
+		var test_enemy_2_spawn = test_enemy_2.Instantiate<CharacterBody2D>();
 		
 		var new_enemypath = new PathFollow2D();
 		new_enemypath.Loop = false;
@@ -38,7 +38,7 @@ public partial class spawner2 : Node2D
 		if (enemy1_count <= 6)
 		{
 			enemypath.AddChild(new_enemypath);
-			new_enemypath.AddChild(test_enemy_spawn);
+			new_enemypath.AddChild(test_enemy_2_spawn);
 			enemy1_count += 1;
 		}
 	}
