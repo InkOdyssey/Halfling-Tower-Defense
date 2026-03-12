@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class placement_area : Node2D
+public partial class PlacementArea : Node2D
 {
 	private Area2D placement;
 	public bool tower_in_area = false;
