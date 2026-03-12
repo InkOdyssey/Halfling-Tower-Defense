@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c5m1j0kfm7f54"]
 
-[ext_resource type="Script" path="res://placement_area.cs" id="1_fcrjc"]
+[ext_resource type="Script" uid="uid://tlbx421n24c8" path="res://Scripts/PlacementArea.cs" id="1_fcrjc"]
 
 [node name="placement_area" type="Node2D"]
 script = ExtResource("1_fcrjc")
