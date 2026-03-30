@@ -29,8 +29,12 @@ public partial class PlacementArea : Node2D
 		tower_in_area = false;
 	}
 	
-	private void _on_placement_mouse_entered(Area2D area)
+	private void _on_placement_mouse_entered()
 	{
 		GD.Print("mouse entered");
+	}
+	private void _on_placement_mouse_exited()
+	{
+		GD.Print("mouse exited");
 	}
 }

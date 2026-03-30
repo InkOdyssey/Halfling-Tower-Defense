@@ -13,7 +13,6 @@ public partial class TestTowerButton : Control
 	public override void _Ready()
 	{
 		map = GetNode<Node2D>("/root/map");
-		create_test_tower = test_tower.Instantiate<Node2D>();
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -25,6 +24,7 @@ public partial class TestTowerButton : Control
 	
 	private void _on_button_pressed()
 		{
+			var create_test_tower = test_tower.Instantiate<Node2D>();
 			map.AddChild(create_test_tower);
 		}
 }

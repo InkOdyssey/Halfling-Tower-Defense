@@ -18,3 +18,4 @@ polygon = PackedVector2Array(-384, 48, -384, 240, 432, 240, 432, -136, 40, -136,
 [connection signal="area_entered" from="placement" to="." method="_on_placement_area_entered"]
 [connection signal="area_exited" from="placement" to="." method="_on_placement_area_exited"]
 [connection signal="mouse_entered" from="placement" to="." method="_on_placement_mouse_entered"]
+[connection signal="mouse_exited" from="placement" to="." method="_on_placement_mouse_exited"]
