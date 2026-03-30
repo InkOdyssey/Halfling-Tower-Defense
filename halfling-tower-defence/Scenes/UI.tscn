@@ -1,18 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://d0u5w2rwurjw0"]
+[gd_scene load_steps=5 format=3 uid="uid://bd6wopk7qxmo"]
 
 [ext_resource type="Texture2D" uid="uid://dtuln6dxuq2gq" path="res://Assets/Heart.png" id="1_wvhb1"]
 [ext_resource type="Texture2D" uid="uid://b03rq30dn00n1" path="res://Assets/Coin.png" id="2_64xyt"]
-[ext_resource type="PackedScene" path="res://Scenes/wave_button.tscn" id="3_64xyt"]
+[ext_resource type="Script" uid="uid://c0qfd8ss6wspp" path="res://Scripts/GameManager.cs" id="2_dewlx"]
 
 [sub_resource type="FontFile" id="FontFile_8es6c"]
 subpixel_positioning = 0
 msdf_pixel_range = 14
 msdf_size = 128
-cache/0/25/0/ascent = 0.0
-cache/0/25/0/descent = 0.0
-cache/0/25/0/underline_position = 0.0
-cache/0/25/0/underline_thickness = 0.0
-cache/0/25/0/scale = 1.0
 cache/0/16/0/ascent = 0.0
 cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0
@@ -58,6 +53,11 @@ cache/0/24/0/descent = 0.0
 cache/0/24/0/underline_position = 0.0
 cache/0/24/0/underline_thickness = 0.0
 cache/0/24/0/scale = 1.0
+cache/0/25/0/ascent = 0.0
+cache/0/25/0/descent = 0.0
+cache/0/25/0/underline_position = 0.0
+cache/0/25/0/underline_thickness = 0.0
+cache/0/25/0/scale = 1.0
 cache/0/26/0/ascent = 0.0
 cache/0/26/0/descent = 0.0
 cache/0/26/0/underline_position = 0.0
@@ -70,15 +70,16 @@ cache/0/30/0/underline_thickness = 0.0
 cache/0/30/0/scale = 1.0
 
 [node name="Life" type="CanvasLayer"]
+script = ExtResource("2_dewlx")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -544.0
-offset_top = -306.0
-offset_right = -544.0
-offset_bottom = -306.0
+offset_left = 214.0
+offset_top = 55.0
+offset_right = -123.0
+offset_bottom = -97.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 8
@@ -120,9 +121,3 @@ text = "0"
 layout_mode = 2
 texture = ExtResource("2_64xyt")
 expand_mode = 3
-
-[node name="wave_button" parent="." instance=ExtResource("3_64xyt")]
-offset_left = 1048.0
-offset_top = 608.0
-offset_right = 1048.0
-offset_bottom = 608.0
