@@ -19,9 +19,6 @@ public partial class TestEnemy : CharacterBody2D
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-
-
-
 		//gives pathprogress a value
 		pathprogress = GetParent<PathFollow2D>();
 		hitArea = GetNode<Area2D>("hit_area");

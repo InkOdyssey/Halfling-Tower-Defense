@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cew5q1uqcdjgs"]
+[gd_scene load_steps=6 format=3 uid="uid://cew5q1uqcdjgs"]
 
 [ext_resource type="Script" uid="uid://dhe4feg7q8fyn" path="res://Scripts/Tower.cs" id="1_4bfos"]
 [ext_resource type="Texture2D" uid="uid://dp3txbgrkl8x8" path="res://Assets/blackbeard-removebg-preview.png" id="1_xguve"]
 [ext_resource type="Script" uid="uid://d2gq28mf0nqj8" path="res://Scripts/Detector.cs" id="2_1lsvg"]
+[ext_resource type="Texture2D" uid="uid://b03rq30dn00n1" path="res://Assets/Coin.png" id="4_1qrma"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4bfos"]
 radius = 355.269
@@ -18,5 +19,10 @@ shape = SubResource("CircleShape2D_4bfos")
 
 [node name="Blackbeard-removebg-preview" type="Sprite2D" parent="."]
 texture = ExtResource("1_xguve")
+
+[node name="Coin" type="Sprite2D" parent="."]
+position = Vector2(-1.00003, 4.99996)
+scale = Vector2(2.496, 2.524)
+texture = ExtResource("4_1qrma")
 
 [connection signal="area_entered" from="Area2D" to="." method="in_range"]
