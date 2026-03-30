@@ -27,10 +27,15 @@ public partial class TestEnemy2 : CharacterBody2D
 			{
 				pathprogress.ProgressRatio += .0006f;
 			}
-		else if (pathprogress.ProgressRatio == 1.0f)
+		else if (pathprogress.ProgressRatio >= 1.0f)
 			{
 				GD.Print("freed");
 				QueueFree();
+				if (GameManager.Instance != null)
+					GameManager.Instance.LoseHearts(20);
+				else
+					GD.PrintErr("GameManager.Instance is NULL!");
+				
 			}
 			
 	}
