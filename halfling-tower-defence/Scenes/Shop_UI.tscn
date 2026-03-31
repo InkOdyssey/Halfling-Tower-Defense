@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://bl16pdu5cio7i" path="res://pirate_guy_bomb-removebg-preview.png" id="5_ok7cu"]
 [ext_resource type="Texture2D" uid="uid://dl2deuchru1p3" path="res://pirate_ship-removebg-preview.png" id="6_irxef"]
 
+
+[ext_resource type="PackedScene" uid="uid://cpfbfut4pxykj" path="res://shop_button_1.tscn" id="1_tukmo"]
+
 [node name="CanvasLayer" type="CanvasLayer"]
 
 [node name="Panel" type="Panel" parent="."]
@@ -19,6 +22,7 @@ offset_right = 173.0
 offset_bottom = 403.0
 
 [node name="Shop_Label" type="Label" parent="Panel/VBoxContainer"]
+[node name="Shop Button 1" parent="Panel/FlowContainer" instance=ExtResource("1_tukmo")]
 layout_mode = 2
 text = "Pirate Recruitment"
 
