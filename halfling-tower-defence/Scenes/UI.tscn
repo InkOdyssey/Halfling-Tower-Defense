@@ -111,13 +111,13 @@ size_flags_horizontal = 8
 size_flags_vertical = 0
 theme_override_constants/separation = -5
 
+[node name="Coin" type="TextureRect" parent="MarginContainer/Score"]
+layout_mode = 2
+texture = ExtResource("2_64xyt")
+expand_mode = 3
+
 [node name="Num" type="Label" parent="MarginContainer/Score"]
 layout_mode = 2
 theme_override_fonts/font = SubResource("FontFile_8es6c")
 theme_override_font_sizes/font_size = 25
 text = "0"
-
-[node name="Heart" type="TextureRect" parent="MarginContainer/Score"]
-layout_mode = 2
-texture = ExtResource("2_64xyt")
-expand_mode = 3
