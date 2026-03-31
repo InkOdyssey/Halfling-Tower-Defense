@@ -7,6 +7,7 @@ public partial class TestEnemy : CharacterBody2D
 	private int health = 300;
 	private bool damage = false;
 	private Area2D hitArea;
+	private bool _isDead = false;
 
 
 	
@@ -32,15 +33,16 @@ public partial class TestEnemy : CharacterBody2D
 	{
 		if (health < 1)
 		{
-			QueueFree();
-		}
+			OnKill();
+			return;
+}
 		
 		
 		if (pathprogress.ProgressRatio < 1.0f)
 			{
 				pathprogress.ProgressRatio += .001f;
 			}
-		else if (pathprogress.ProgressRatio == 1.0f)
+		else if (pathprogress.ProgressRatio >= 1.0f)
 			{
 				GD.Print("freed");
 				QueueFree();
@@ -68,7 +70,7 @@ public partial class TestEnemy : CharacterBody2D
 				if (health < 1)
 				{
 					damage = false;
-					QueueFree();
+					OnKill();
 				}
 			}
 
@@ -80,7 +82,7 @@ public partial class TestEnemy : CharacterBody2D
 				if (health < 1)
 				{
 					damage = false;
-					QueueFree();
+					OnKill();
 				}
 
 			}	
@@ -95,10 +97,18 @@ public partial class TestEnemy : CharacterBody2D
 		GD.Print("enemy zone inactive");
 	}
 	
-	public void OnKill()
-	{
-		GD.Print("killed");
-		QueueFree();
+	private void OnKill()
+{
+		if (_isDead) return;
+			_isDead = true;
 
-	}
+		GD.Print("Enemy killed");
+
+		if (GameManager.Instance != null)
+			GameManager.Instance.AddCoins(5);
+		else
+			GD.PrintErr("GameManager is NULL on kill!");
+
+		QueueFree();
 }
+	}
