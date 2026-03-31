@@ -1,8 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://b0i2x54ydaj4g"]
+[gd_scene load_steps=5 format=3 uid="uid://d0u5w2rwurjw0"]
 
 [ext_resource type="Texture2D" uid="uid://dtuln6dxuq2gq" path="res://Assets/Heart.png" id="1_wvhb1"]
 [ext_resource type="Texture2D" uid="uid://b03rq30dn00n1" path="res://Assets/Coin.png" id="2_64xyt"]
-[ext_resource type="PackedScene" uid="uid://dptfnral7nnl6" path="res://Scenes/wave_button.tscn" id="3_64xyt"]
+[ext_resource type="PackedScene" uid="uid://dptfnral7nnl6" path="res://Scenes/Map and Other/wave_button.tscn" id="3_64xyt"]
 
 [sub_resource type="FontFile" id="FontFile_8es6c"]
 subpixel_positioning = 0
@@ -75,6 +75,10 @@ cache/0/30/0/scale = 1.0
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -544.0
+offset_top = -306.0
+offset_right = -544.0
+offset_bottom = -306.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 8
