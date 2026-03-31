@@ -1,5 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://0sc831e2ub4y"]
+[gd_scene load_steps=10 format=3 uid="uid://0ssha84i35h8"]
 
+[ext_resource type="PackedScene" uid="uid://ogsaxbjlvnmw" path="res://Scenes/life.tscn" id="1_7yn8b"]
 [ext_resource type="Texture2D" uid="uid://bjestqjcsf1ja" path="res://Assets/waterB_spritesheet.png" id="1_j2wod"]
 [ext_resource type="PackedScene" uid="uid://dwugkhwa7fhp2" path="res://Scenes/Enemies/test_enemy.tscn" id="2_26yhd"]
 [ext_resource type="Script" uid="uid://3livamp0jxv1" path="res://Scripts/Enemyprogression.cs" id="2_etk83"]
