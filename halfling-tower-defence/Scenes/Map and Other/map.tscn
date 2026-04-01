@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bjestqjcsf1ja" path="res://Assets/waterB_spritesheet.png" id="2_4pexx"]
 [ext_resource type="PackedScene" uid="uid://cew5q1uqcdjgs" path="res://Scenes/Towers/Blackbeard.tscn" id="3_lysdl"]
 [ext_resource type="PackedScene" uid="uid://dgwxc32ayqykf" path="res://Scenes/Towers/scalleywag.tscn" id="5_7icjg"]
-[ext_resource type="PackedScene" uid="uid://b0wn8sgfve6oy" path="res://Scenes/Map and Other/spawner2.tscn" id="5_7wrwd"]
+[ext_resource type="PackedScene" uid="uid://eqi1kpxcfasl" path="res://Scenes/Map and Other/spawner.tscn" id="5_7wrwd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v1qfn"]
 texture = ExtResource("2_4pexx")
@@ -1027,4 +1027,4 @@ position = Vector2(138, -42)
 [node name="Scalleywag" parent="." instance=ExtResource("5_7icjg")]
 position = Vector2(-513, 105)
 
-[node name="spawner2" parent="." instance=ExtResource("5_7wrwd")]
+[node name="Spawner" parent="." instance=ExtResource("5_7wrwd")]
