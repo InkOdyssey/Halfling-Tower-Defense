@@ -4,7 +4,7 @@ using System;
 public partial class TestEnemy : CharacterBody2D
 {
 	
-	protected int health = 300;
+	protected int health = 30000;
 	protected bool damage = false;
 	protected Area2D hitArea;
 
@@ -63,9 +63,8 @@ public partial class TestEnemy : CharacterBody2D
 
 			else if (body is Detector)
 			{
-				health -= 10000;
-				GD.Print(health);
-				GD.Print("blackbeard damage");
+				health -= 1;
+
 				if (health < 1)
 				{
 					damage = false;
