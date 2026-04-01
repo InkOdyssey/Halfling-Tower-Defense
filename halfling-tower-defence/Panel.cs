@@ -5,18 +5,21 @@ public partial class Shop : Panel
 {
 	[Export] public PackedScene PirateTowerScene;
 	[Export] public PackedScene BlackbeardTowerScene;
+	[Export] public PackedScene CannonTowerScene;
 	[Export] public PackedScene BombTowerScene;
 	[Export] public PackedScene PirateShipTowerScene;
 
-	private const int PirateCost = 45;
-	private const int BlackbeardCost = 75;
+	private const int PirateCost = 20;
+	private const int BlackbeardCost = 40;
+	private const int CannonCost = 50;
 	private const int BombCost = 60;
-	private const int PirateShipCost = 100;
+	private const int PirateShipCost = 90;
 
-	private int playerMoney = 200;
+	private int playerMoney = 100;
 
 	private Button pirateButton;
 	private Button blackbeardButton;
+	private Button cannonButton;
 	private Button bombButton;
 	private Button pirateShipButton;
 	private Button toggleButton;
@@ -36,6 +39,7 @@ public partial class Shop : Panel
 		// Cache UI nodes
 		pirateButton = GetNode<Button>("VBoxContainer/Pirate_Button1");
 		blackbeardButton = GetNode<Button>("VBoxContainer/Pirate_Button2");
+		cannonButton = GetNode<Button>("VBoxContainer/Cannon_Button");
 		bombButton = GetNode<Button>("VBoxContainer/Bomb_Button");
 		pirateShipButton = GetNode<Button>("VBoxContainer/PirateShip_Button");
 		moneyLabel = GetNode<Label>("VBoxContainer/MoneyLabel");
@@ -44,6 +48,7 @@ public partial class Shop : Panel
 		// Connect signals
 		pirateButton.Pressed += OnPirateTowerPressed;
 		blackbeardButton.Pressed += OnBlackbeardTowerPressed;
+		cannonButton.Pressed += OnCannonTowerPressed;
 		bombButton.Pressed += OnBombTowerPressed;
 		pirateShipButton.Pressed += OnPirateShipTowerPressed;
 		toggleButton.Pressed += ToggleShop;
@@ -76,6 +81,11 @@ public partial class Shop : Panel
 	private void OnBlackbeardTowerPressed()
 	{
 		TryBuyTower(BlackbeardTowerScene, BlackbeardCost);
+	}
+	
+	private void OnCannonTowerPressed()
+	{
+		TryBuyTower(CannonTowerScene, CannonCost);
 	}
 
 	private void OnBombTowerPressed()
@@ -133,7 +143,7 @@ public partial class Shop : Panel
 	{
 		if (@event is InputEventMouseButton mouseEvent && mouseEvent.Pressed)
 		{
-			// 🚫 Prevent placing when clicking UI
+			//  Prevent placing when clicking UI
 			if (GetViewport().GuiGetHoveredControl() != null)
 				return;
 
@@ -178,7 +188,7 @@ public partial class Shop : Panel
 		}
 	}
 
-	// ✅ CENTERED GRID SNAP
+	//  CENTERED GRID SNAP
 	private Vector2 SnapToGrid(Vector2 position)
 	{
 		return new Vector2(
@@ -192,7 +202,7 @@ public partial class Shop : Panel
 		return true; // expand later
 	}
 
-	// ✅ GREEN / RED PREVIEW
+	//  GREEN / RED PREVIEW
 	private void SetPreviewColor(Node node, bool canPlace)
 	{
 		Color color = canPlace
