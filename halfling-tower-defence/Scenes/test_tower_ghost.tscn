@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://c3bn8n7c337x6"]
+[gd_scene load_steps=3 format=3 uid="uid://coemlkkhu35ow"]
 
-[ext_resource type="Texture2D" uid="uid://g867khvcbgut" path="res://Assets/pirate_ship.jpg" id="1_rdlkp"]
+[ext_resource type="Texture2D" uid="uid://g867khvcbgut" path="res://Assets/pirate_ship.jpg" id="2_1fu0r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gl1n5"]
 size = Vector2(144, 128)
@@ -8,9 +8,10 @@ size = Vector2(144, 128)
 [node name="test_tower" type="CharacterBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.321569)
 position = Vector2(-3.8147e-06, -3.8147e-06)
 scale = Vector2(0.563745, 0.619403)
-texture = ExtResource("1_rdlkp")
+texture = ExtResource("2_1fu0r")
 
 [node name="hitbox" type="Area2D" parent="."]
 

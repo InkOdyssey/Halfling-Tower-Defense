@@ -3,7 +3,7 @@ using System;
 
 public partial class TestTowerButton : Control
 {
-	private Node2D map;
+	private Map map;
 	private Node2D create_test_tower;
 	private PackedScene test_tower = GD.Load<PackedScene>("res://Scenes/test_tower.tscn");
 	
@@ -12,7 +12,7 @@ public partial class TestTowerButton : Control
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		map = GetNode<Node2D>("/root/map");
+		map = GetNode<Map>("/root/map");
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -25,6 +25,6 @@ public partial class TestTowerButton : Control
 	private void _on_button_pressed()
 		{
 			var create_test_tower = test_tower.Instantiate<Node2D>();
-			map.AddChild(create_test_tower);
+			map.StartPlacingTower();
 		}
 }
