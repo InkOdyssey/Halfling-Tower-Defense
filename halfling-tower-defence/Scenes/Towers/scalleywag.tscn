@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dgwxc32ayqykf"]
+[gd_scene load_steps=5 format=3 uid="uid://dgwxc32ayqykf"]
 
 [ext_resource type="Script" uid="uid://ctrdjxqlrkq8p" path="res://Scripts/Towers/TowerS.cs" id="1_fwk60"]
 [ext_resource type="Texture2D" uid="uid://dp1tbe3vn8uhm" path="res://Assets/pirate_guy_dos-removebg-preview.png" id="1_kul4u"]
 [ext_resource type="Script" uid="uid://d076w357qgr6y" path="res://Scripts/Towers/DetectorS.cs" id="3_4vw4w"]
-[ext_resource type="Texture2D" uid="uid://b03rq30dn00n1" path="res://Assets/Coin.png" id="4_ppsfl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fwk60"]
 radius = 208.022
@@ -19,11 +18,5 @@ script = ExtResource("3_4vw4w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_fwk60")
-
-[node name="Coin" type="Sprite2D" parent="."]
-z_index = -3
-position = Vector2(-0.500028, 4.76837e-06)
-scale = Vector2(1.478, 1.496)
-texture = ExtResource("4_ppsfl")
 
 [connection signal="body_entered" from="Area2D" to="." method="in_range"]
