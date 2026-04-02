@@ -4,7 +4,6 @@ using System;
 public partial class TestTowerButton : Control
 {
 	private Map map;
-	private Node2D create_test_tower;
 	private PackedScene test_tower = GD.Load<PackedScene>("res://Scenes/test_tower.tscn");
 	
 	
@@ -24,6 +23,6 @@ public partial class TestTowerButton : Control
 	
 	private void _on_button_pressed()
 		{
-			map.StartPlacingTower();
+			map.StartPlacingTest_Tower();
 		}
 }
