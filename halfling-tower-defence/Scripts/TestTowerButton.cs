@@ -24,7 +24,6 @@ public partial class TestTowerButton : Control
 	
 	private void _on_button_pressed()
 		{
-			var create_test_tower = test_tower.Instantiate<Node2D>();
 			map.StartPlacingTower();
 		}
 }
