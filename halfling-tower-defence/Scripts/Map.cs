@@ -64,6 +64,7 @@ public partial class Map : Node2D
 			
 			// Change ghost color based on validity
 			if (sprite != null)
+				// the "valid ? ... : ..." is shorthand for "if valid(), else()"
 				sprite.Modulate = valid ? new Color(0, 1, 0, 0.5f) : new Color(1, 0, 0, 0.5f);
 		}
 
