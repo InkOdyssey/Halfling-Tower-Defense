@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cmdrbkpditun1"]
+[gd_scene load_steps=4 format=3 uid="uid://cwdkc4x3v3dut"]
 
 [ext_resource type="Script" uid="uid://ixo7rqiydi7" path="res://Scripts/TestEnemy2.cs" id="1_02jig"]
 [ext_resource type="Texture2D" uid="uid://bjmhixlxh21rq" path="res://Assets/12292021_George-III_181632-removebg-preview.png" id="2_02jig"]
