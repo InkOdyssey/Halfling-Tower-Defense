@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://0sc831e2ub4y"]
 
-[ext_resource type="PackedScene" uid="uid://ogsaxbjlvnmw" path="res://Scenes/Map and Other/life.tscn" id="1_7wrwd"]
+[ext_resource type="PackedScene" uid="uid://b0i2x54ydaj4g" path="res://Scenes/Map and Other/life.tscn" id="1_7wrwd"]
 [ext_resource type="Texture2D" uid="uid://bjestqjcsf1ja" path="res://Assets/waterB_spritesheet.png" id="2_4pexx"]
 [ext_resource type="PackedScene" uid="uid://cew5q1uqcdjgs" path="res://Scenes/Towers/Blackbeard.tscn" id="3_lysdl"]
 [ext_resource type="PackedScene" uid="uid://dgwxc32ayqykf" path="res://Scenes/Towers/scalleywag.tscn" id="5_7icjg"]

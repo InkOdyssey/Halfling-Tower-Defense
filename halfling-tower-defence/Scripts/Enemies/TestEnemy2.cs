@@ -12,10 +12,10 @@ public partial class TestEnemy2 : TestEnemy
 		base._Ready();
 	}
 
-	public override void ApplyDamage()
+	public void ApplyDamage()
 	{
 		GD.Print(hitArea.GetOverlappingAreas().Count);
-		base.ApplyDamage();
+		base.ApplyDamage(1);
 	}
 
 

@@ -27,7 +27,7 @@ public partial class Spawner : Node2D
 	{
 		
 		var enemypath = GetNode<Path2D>("/root/map/Path2D");
-		var test_enemy_spawn = test_enemy.Instantiate<CharacterBody2D>();
+		var test_enemy_spawn = test_enemy.Instantiate<TestEnemy>();
 		
 		var new_enemypath = new PathFollow2D();
 		enemypath.AddChild(new_enemypath);

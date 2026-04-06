@@ -4,7 +4,7 @@ using System;
 public partial class TestEnemy : CharacterBody2D
 {
 	
-	protected int health = 30000;
+	protected int health = 300;
 	protected bool damage = false;
 	protected Area2D hitArea;
 
@@ -41,38 +41,16 @@ public partial class TestEnemy : CharacterBody2D
 			}
 			
 	}
-	
 
 
-	
 
-	public virtual void ApplyDamage() 
+
+
+	public void ApplyDamage(int damage)
 	{
-		var bodies = hitArea.GetOverlappingAreas();
-		foreach (var body in bodies)
-		{
-			if (body is DetectorS)
-			{
-				health -= 1;
-				if (health < 1)
-				{
-					damage = false;
-					QueueFree();
-				}
-			}
-
-			else if (body is Detector)
-			{
-				health -= 1;
-
-				if (health < 1)
-				{
-					damage = false;
-					QueueFree();
-				}
-			}	
-			
-		}
+		health -= damage;
+		if (health <= 0)
+			OnKill();
 	}
 
 	public virtual void hit_area_leave(Area2D area)

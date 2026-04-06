@@ -16,7 +16,7 @@ protected Area2D hitArea;
 
 	public void in_range(Area2D area)
 	{
-		GD.Print("BlackBeard zone");
+		GD.Print("zone base tower");
 	}
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
@@ -26,8 +26,15 @@ protected Area2D hitArea;
 
 	public virtual void ApplyDamage()
 	{
-		var bodies = hitArea.GetOverlappingAreas();
-		foreach (var body in bodies);
+		var bodies = hitArea.GetOverlappingBodies();
+		foreach (var body in bodies)
+		{
+			if (body is TestEnemy enemy)
+			{
+				enemy.ApplyDamage(100);
+			}
+		}
 	}
+
 	}
 	
