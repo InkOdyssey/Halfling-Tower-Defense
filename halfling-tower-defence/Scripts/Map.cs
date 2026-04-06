@@ -3,13 +3,17 @@ using System.Collections.Generic;
 
 public partial class Map : Node2D
 {
-	private PackedScene towerScene = GD.Load<PackedScene>("res://Scenes/test_tower.tscn");
-	private PackedScene ghostScene = GD.Load<PackedScene>("res://Scenes/test_tower_ghost.tscn");
+	private PackedScene towerScene1 = GD.Load<PackedScene>("res://Scenes/test_tower.tscn");
+	private PackedScene ghostScene1 = GD.Load<PackedScene>("res://Scenes/test_tower_ghost.tscn");
+	private PackedScene towerScene2 = GD.Load<PackedScene>("res://Scenes/test_tower_2.tscn");
+	private PackedScene ghostScene2 = GD.Load<PackedScene>("res://Scenes/test_tower_2_ghost.tscn");
 	private PackedScene placement = GD.Load<PackedScene>("res://Scenes/placement_area.tscn");
 	
 	private Node2D placementArea;
 	private CharacterBody2D towerPreview;
+	private CharacterBody2D towerPreview2;
 	private bool placingTower = false;
+	private int towernum;
 
 	// creates list of Area2Ds of placed towers; empty for now
 	private List<Area2D> placedTowerHitboxes = new List<Area2D>();
@@ -66,7 +70,16 @@ public partial class Map : Node2D
 		// Places tower on click if valid
 		if (Input.IsActionJustPressed("place_tower") && valid == true)
 		{
-			var tower = towerScene.Instantiate<CharacterBody2D>();
+			var tower = towerScene1.Instantiate<CharacterBody2D>();
+			switch (towernum)
+			{
+				case 1:
+					tower = towerScene1.Instantiate<CharacterBody2D>();
+					break;
+				case 2:
+					tower = towerScene2.Instantiate<CharacterBody2D>();
+					break;
+			}
 			tower.GlobalPosition = mousePos;
 			AddChild(tower);
 
@@ -89,7 +102,20 @@ public partial class Map : Node2D
 		if (placingTower) return;
 
 		placingTower = true;
-		towerPreview = ghostScene.Instantiate<CharacterBody2D>();
+		towernum = 1;
+		towerPreview = ghostScene1.Instantiate<CharacterBody2D>();
+		AddChild(towerPreview);
+	}
+	
+	
+	
+	public void StartPlacingTest_Tower_2()
+	{
+		if (placingTower) return;
+
+		placingTower = true;
+		towernum = 2;
+		towerPreview = ghostScene2.Instantiate<CharacterBody2D>();
 		AddChild(towerPreview);
 	}
 }

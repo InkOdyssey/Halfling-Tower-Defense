@@ -1,9 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://c5m1j0kfm7f54"]
-
-[ext_resource type="Script" uid="uid://tlbx421n24c8" path="res://Scripts/PlacementArea.cs" id="1_fcrjc"]
+[gd_scene format=3 uid="uid://c5m1j0kfm7f54"]
 
 [node name="placement_area" type="Node2D"]
-script = ExtResource("1_fcrjc")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 color = Color(0.85098, 0.435294, 0.462745, 0.572549)
