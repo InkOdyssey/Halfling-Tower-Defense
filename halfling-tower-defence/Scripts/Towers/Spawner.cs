@@ -31,8 +31,7 @@ public partial class Spawner : Node2D
 		var test_enemy_spawn = test_enemy.Instantiate<TestEnemy>();
 		var TeaCup_spawn = TeaCup.Instantiate<TeaCup>();
 		
-		var new_enemypath = new PathFollow2D();
-		enemypath.AddChild(new_enemypath);
+		var new_enemypath = GetNode<PathFollow2D>("/root/map/Path2D/PathFollow2D");
 		new_enemypath.AddChild(TeaCup_spawn);
 		new_enemypath.ProgressRatio = 0f;
 		new_enemypath.Loop = false;
