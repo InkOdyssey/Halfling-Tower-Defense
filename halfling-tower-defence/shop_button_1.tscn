@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://dyjgxhfbixn0"]
+[gd_scene load_steps=2 format=3 uid="uid://cpfbfut4pxykj"]
 
-[ext_resource type="Texture2D" uid="uid://cy1oceklm3opq" path="res://cannon-removebg-preview.png" id="1_lbv10"]
+[ext_resource type="Texture2D" uid="uid://kd5bmhkljjqn" path="res://Assets/cannon-removebg-preview.png" id="1_lbv10"]
 
 [node name="Shop Button 1" type="Panel"]
 offset_right = 40.0
