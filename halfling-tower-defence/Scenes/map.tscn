@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dl7uj1tskwnmn"]
+[gd_scene load_steps=10 format=3 uid="uid://0ssha84i35h8"]
 
 [ext_resource type="Texture2D" uid="uid://bjestqjcsf1ja" path="res://Assets/waterB_spritesheet.png" id="1_j2wod"]
 [ext_resource type="Script" uid="uid://bot4053xp488t" path="res://Scripts/Map.cs" id="1_np2xp"]
