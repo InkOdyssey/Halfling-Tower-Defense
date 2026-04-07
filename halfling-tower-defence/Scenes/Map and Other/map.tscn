@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://0sc831e2ub4y"]
+[gd_scene load_steps=10 format=3 uid="uid://0sc831e2ub4y"]
 
 [ext_resource type="PackedScene" uid="uid://b0i2x54ydaj4g" path="res://Scenes/Map and Other/life.tscn" id="1_7wrwd"]
 [ext_resource type="Texture2D" uid="uid://bjestqjcsf1ja" path="res://Assets/waterB_spritesheet.png" id="2_4pexx"]
 [ext_resource type="PackedScene" uid="uid://cew5q1uqcdjgs" path="res://Scenes/Towers/Blackbeard.tscn" id="3_lysdl"]
+[ext_resource type="Script" uid="uid://3livamp0jxv1" path="res://Scripts/Enemies/Enemyprogression.cs" id="3_u2j8j"]
 [ext_resource type="PackedScene" uid="uid://dgwxc32ayqykf" path="res://Scenes/Towers/scalleywag.tscn" id="5_7icjg"]
 [ext_resource type="PackedScene" uid="uid://eqi1kpxcfasl" path="res://Scenes/Map and Other/spawner.tscn" id="5_7wrwd"]
 
@@ -1018,9 +1019,6 @@ layer_0/tile_data = PackedInt32Array(9306735, 2359296, 1610612748, 9241199, 2424
 position = Vector2(25, -36)
 zoom = Vector2(0.609, 0.5)
 
-[node name="Path2D" type="Path2D" parent="."]
-curve = SubResource("Curve2D_26yhd")
-
 [node name="Blackbeard" parent="." instance=ExtResource("3_lysdl")]
 position = Vector2(138, -42)
 
@@ -1028,3 +1026,11 @@ position = Vector2(138, -42)
 position = Vector2(-513, 105)
 
 [node name="Spawner" parent="." instance=ExtResource("5_7wrwd")]
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_26yhd")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(-920, 1)
+rotation = -0.0098681
+script = ExtResource("3_u2j8j")
