@@ -8,6 +8,7 @@ public partial class Shop : Panel
 	private const int CannonCost = 50;
 	private const int BombCost = 60;
 	private const int PirateShipCost = 90;
+	private int towernum;
 
 	private Button pirateButton;
 	private Button blackbeardButton;
@@ -68,7 +69,24 @@ public partial class Shop : Panel
 			return;
 
 		selectedTower = tower;
-		CreatePreview();
+		switch (towernum)
+		{
+			case 1:
+				
+				break;
+			case 2:
+				
+				break;
+			case 3:
+				
+				break;
+			case 4: 
+				
+				break;
+			case 5:
+				
+				break;
+		}
 	}
 
 	private void CreatePreview()
@@ -98,5 +116,29 @@ public partial class Shop : Panel
 		isOpen = !isOpen;
 		var tween = CreateTween();
 		tween.TweenProperty(this, "position", isOpen ? openPosition : closedPosition, 0.25f);
+	}
+	private void _on_pirate_button_1_pressed()
+	{
+		towernum = 1;
+	}
+	
+	
+	private void _on_pirate_button_2_pressed()
+	{
+		towernum = 2;
+	}
+
+	private void _on_cannon_button_pressed()
+	{
+		towernum = 3;
+	}
+	
+	private void _on_bomb_button_pressed()
+	{
+		towernum = 4;
+	}
+	private void _on_pirate_ship_button_pressed()
+	{
+		towernum = 5;
 	}
 }
