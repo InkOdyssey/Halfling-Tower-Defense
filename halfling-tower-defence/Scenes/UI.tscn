@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dtuln6dxuq2gq" path="res://Assets/Heart.png" id="1_wvhb1"]
 [ext_resource type="Texture2D" uid="uid://b03rq30dn00n1" path="res://Assets/Coin.png" id="2_64xyt"]
-[ext_resource type="PackedScene" path="res://Scenes/wave_button.tscn" id="3_64xyt"]
+[ext_resource type="PackedScene" uid="uid://dptfnral7nnl6" path="res://Scenes/wave_button.tscn" id="3_64xyt"]
 
 [sub_resource type="FontFile" id="FontFile_8es6c"]
 subpixel_positioning = 0
@@ -69,7 +69,7 @@ cache/0/30/0/underline_position = 0.0
 cache/0/30/0/underline_thickness = 0.0
 cache/0/30/0/scale = 1.0
 
-[node name="Life" type="CanvasLayer"]
+[node name="Life2" type="CanvasLayer"]
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15
