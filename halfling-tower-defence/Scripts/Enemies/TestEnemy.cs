@@ -9,7 +9,7 @@ public partial class TestEnemy : CharacterBody2D
 	protected Area2D hitArea;
 
 	//assigns pathprogress as a variable, but no value
-	protected PathFollow2D pathprogress;
+	public PathFollow2D pathprogress;
 
 
 
@@ -17,7 +17,8 @@ public partial class TestEnemy : CharacterBody2D
 	public override void _Ready()
 	{
 		//gives pathprogress a value
-		pathprogress = GetParent<PathFollow2D>();
+		if (pathprogress is null)
+			pathprogress = GetParent<PathFollow2D>();
 		hitArea = GetNode<Area2D>("hit_area");
 	}
 

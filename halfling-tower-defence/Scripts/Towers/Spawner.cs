@@ -26,16 +26,16 @@ public partial class Spawner : Node2D
 	
 	private void _on_timer_timeout()
 	{
-		
-		var enemypath = GetNode<Path2D>("/root/map/Path2D");
+		GD.Print("enemy_spawn");
+		var enemypath = GetNode<Path2D>("%Path2D");
 		var test_enemy_spawn = test_enemy.Instantiate<TestEnemy>();
-		var TeaCup = TeaCup.Instantiate<TeaCup>();
+		var TeaCup_spawn = TeaCup.Instantiate<TeaCup>();
 		
 		var new_enemypath = new PathFollow2D();
-		//new_enemypath.setParnet(enemypath);
+		TeaCup_spawn.pathprogress = new_enemypath;
+		
 		enemypath.AddChild(new_enemypath);
-		TeaCup.setParnet(new_enemypath);
-		new_enemypath.AddChild(TeaCup);
+		new_enemypath.AddChild(TeaCup_spawn);
 		new_enemypath.ProgressRatio = 0f;
 		new_enemypath.Loop = false;
 		new_enemypath.Rotates = false;
