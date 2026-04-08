@@ -46,6 +46,7 @@ public partial class TestEnemy : CharacterBody2D
 	public void ApplyDamage(int damage)
 	{
 		health -= damage;
+		GD.Print(health);
 		if (health <= 0)
 			OnKill();
 	}
@@ -56,8 +57,6 @@ public partial class TestEnemy : CharacterBody2D
 	
 	public virtual void OnKill()
 	{
-		GD.Print("killed");
 		QueueFree();
-
 	}
 }

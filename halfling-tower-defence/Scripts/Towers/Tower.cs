@@ -31,11 +31,13 @@ protected Area2D hitArea;
 		{
 			if (body is TestEnemy enemy)
 			{
-				enemy.ApplyDamage(100);
+				enemy.ApplyDamage(5);
+				return;
 			}
 			if (body is TeaCup Tea)
 			{
 				Tea.ApplyDamage(1);
+				return;
 			}
 			
 		}

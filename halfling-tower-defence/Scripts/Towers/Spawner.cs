@@ -26,7 +26,6 @@ public partial class Spawner : Node2D
 	
 	private void _on_timer_timeout()
 	{
-		GD.Print("enemy_spawn");
 		var enemypath = GetNode<Path2D>("%Path2D");
 		var test_enemy_spawn = test_enemy.Instantiate<TestEnemy>();
 		var TeaCup_spawn = TeaCup.Instantiate<TeaCup>();
