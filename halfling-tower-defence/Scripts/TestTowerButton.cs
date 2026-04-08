@@ -4,7 +4,6 @@ using System;
 public partial class TestTowerButton : Control
 {
 	private Map map;
-	private PackedScene test_tower = GD.Load<PackedScene>("res://Scenes/test_tower.tscn");
 	
 	
 	

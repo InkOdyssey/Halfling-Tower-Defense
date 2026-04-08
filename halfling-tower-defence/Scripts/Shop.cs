@@ -8,7 +8,8 @@ public partial class Shop : Panel
 	private const int CannonCost = 50;
 	private const int BombCost = 60;
 	private const int PirateShipCost = 90;
-	private int towernum;
+	
+	private Map map;
 
 	private Button pirateButton;
 	private Button blackbeardButton;
@@ -33,16 +34,19 @@ public partial class Shop : Panel
 		pirateShipButton = GetNode<Button>("VBoxContainer/PirateShip_Button");
 		toggleButton = GetNode<Button>("VBoxContainer/ToggleButton");
 
-		pirateButton.Pressed += () => TryBuy(GetPirateTower(), PirateCost);
-		blackbeardButton.Pressed += () => TryBuy(GetBlackbeardTower(), BlackbeardCost);
-		cannonButton.Pressed += () => TryBuy(GetCannonTower(), CannonCost);
-		bombButton.Pressed += () => TryBuy(GetBombTower(), BombCost);
-		pirateShipButton.Pressed += () => TryBuy(GetPirateShipTower(), PirateShipCost);
+		pirateButton.Pressed += () => TryBuy(GetPirateTower(), PirateCost, 1);
+		blackbeardButton.Pressed += () => TryBuy(GetBlackbeardTower(), BlackbeardCost, 2);
+		cannonButton.Pressed += () => TryBuy(GetCannonTower(), CannonCost, 3);
+		bombButton.Pressed += () => TryBuy(GetBombTower(), BombCost, 4);
+		pirateShipButton.Pressed += () => TryBuy(GetPirateShipTower(), PirateShipCost, 5);
 
 		toggleButton.Pressed += ToggleShop;
 
 		openPosition = Position;
 		closedPosition = openPosition + new Vector2(-200, 0);
+		
+		
+		map = GetNode<Map>("/root/map");
 	}
 
 	private PackedScene GetPirateTower() => GD.Load<PackedScene>("res://Scenes/Towers/scalleywag.tscn");
@@ -51,8 +55,13 @@ public partial class Shop : Panel
 	private PackedScene GetBombTower() => GD.Load<PackedScene>("res://Scenes/Towers/bomber.tscn");
 	private PackedScene GetPirateShipTower() => GD.Load<PackedScene>("res://Scenes/Towers/pirate_ship.tscn");
 
-	private void TryBuy(PackedScene tower, int cost)
+
+
+
+	private void TryBuy(PackedScene tower, int cost, int towernum)
 	{
+		GD.Print("trying buying");
+		
 		if (GameManager.Instance == null)
 		{
 			GD.PrintErr("GameManager is NULL");
@@ -69,13 +78,15 @@ public partial class Shop : Panel
 			return;
 
 		selectedTower = tower;
+		
 		switch (towernum)
 		{
 			case 1:
-				
+				map.StartPlacingTest_Tower();
+				GD.Print("placing test tower");
 				break;
 			case 2:
-				
+				map.StartPlacingTest_Tower_2();
 				break;
 			case 3:
 				
@@ -89,56 +100,11 @@ public partial class Shop : Panel
 		}
 	}
 
-	private void CreatePreview()
-	{
-		if (selectedTower == null) return;
-
-		if (previewTower != null)
-			previewTower.QueueFree();
-
-		previewTower = selectedTower.Instantiate<Node2D>();
-		previewTower.ZIndex = 10;
-		GetTree().CurrentScene.AddChild(previewTower);
-	}
-
-	private void Clear()
-	{
-		selectedTower = null;
-		if (previewTower != null)
-		{
-			previewTower.QueueFree();
-			previewTower = null;
-		}
-	}
-
 	private void ToggleShop()
 	{
 		isOpen = !isOpen;
 		var tween = CreateTween();
 		tween.TweenProperty(this, "position", isOpen ? openPosition : closedPosition, 0.25f);
 	}
-	private void _on_pirate_button_1_pressed()
-	{
-		towernum = 1;
-	}
-	
-	
-	private void _on_pirate_button_2_pressed()
-	{
-		towernum = 2;
-	}
 
-	private void _on_cannon_button_pressed()
-	{
-		towernum = 3;
-	}
-	
-	private void _on_bomb_button_pressed()
-	{
-		towernum = 4;
-	}
-	private void _on_pirate_ship_button_pressed()
-	{
-		towernum = 5;
-	}
 }
