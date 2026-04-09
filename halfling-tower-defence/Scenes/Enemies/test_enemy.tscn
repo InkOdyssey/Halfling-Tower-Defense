@@ -26,5 +26,10 @@ shape = SubResource("RectangleShape2D_bs22l")
 position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_r1vdb")
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.25
+autostart = true
+
 [connection signal="area_entered" from="hit_area" to="." method="hit_area"]
 [connection signal="area_exited" from="hit_area" to="." method="hit_area_leave"]
+[connection signal="timeout" from="Timer" to="." method="ApplyDamage"]
