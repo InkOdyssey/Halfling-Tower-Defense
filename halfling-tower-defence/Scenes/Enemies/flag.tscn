@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b1p5tbi6bltaa"]
 
 [ext_resource type="Texture2D" uid="uid://bow61xgxf7tva" path="res://Assets/Flag.png" id="1_l4f6g"]
-[ext_resource type="Script" uid="uid://dhp0r5vdcfadk" path="res://Scripts/Flag.cs" id="2_oxoaj"]
+[ext_resource type="Script" uid="uid://dhp0r5vdcfadk" path="res://Scripts/Enemies/Flag.cs" id="2_oxoaj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oxoaj"]
 size = Vector2(290, 174)

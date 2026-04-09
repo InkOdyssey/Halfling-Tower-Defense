@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://xiskmnofhp1i" path="res://ui.tscn" id="8_6q3n4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v1qfn"]
-texture = ExtResource("1_j2wod")
+texture = ExtResource("2_4pexx")
 22:0/0 = 0
 23:0/0 = 0
 24:0/0 = 0
@@ -1011,11 +1011,7 @@ point_count = 4
 [node name="map" type="Node2D"]
 script = ExtResource("1_np2xp")
 
-[node name="placement_area" parent="." instance=ExtResource("3_myvm1")]
-z_index = 4000
-
-[node name="Life" parent="." instance=ExtResource("1_7yn8b")]
-script = ExtResource("2_np2xp")
+[node name="Life" parent="." instance=ExtResource("1_7wrwd")]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_hh5uf")
@@ -1026,9 +1022,21 @@ layer_0/tile_data = PackedInt32Array(9306735, 2359296, 1610612748, 9241199, 2424
 position = Vector2(25, -36)
 zoom = Vector2(0.609, 0.5)
 
+[node name="Blackbeard" parent="." instance=ExtResource("3_lysdl")]
+position = Vector2(138, -42)
+
+[node name="Scalleywag" parent="." instance=ExtResource("5_7icjg")]
+position = Vector2(-513, 105)
+
+[node name="Spawner" parent="." instance=ExtResource("5_7wrwd")]
+
 [node name="Path2D" type="Path2D" parent="."]
+unique_name_in_owner = true
 curve = SubResource("Curve2D_26yhd")
 
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(-920, 1)
+rotation = -0.0098681
 [node name="Scalleywag" parent="." instance=ExtResource("6_np2xp")]
 position = Vector2(-376, 184)
 

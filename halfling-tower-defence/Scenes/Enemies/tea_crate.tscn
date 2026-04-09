@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cc2uf51slrlbm"]
 
 [ext_resource type="Texture2D" uid="uid://cdrjjqoam6v6v" path="res://Assets/British Tea Crate.png" id="1_hifqr"]
-[ext_resource type="Script" uid="uid://cf5mp2jp0p5b6" path="res://Scripts/TeaCrate.cs" id="2_4llvx"]
+[ext_resource type="Script" uid="uid://cf5mp2jp0p5b6" path="res://Scripts/Enemies/TeaCrate.cs" id="2_4llvx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_k8po4"]
 radius = 111.059
