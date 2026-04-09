@@ -1,8 +1,15 @@
 using Godot;
 using System;
 
-public partial class Enemy:Sprite2D
+public partial class Tea_Cup : CharacterBody2D
 {
-	//override public void _Ready()
-
+	public override void _Ready()
+	{
+		GD.Print("test");
+	}
+	
+	public override void _Process(double delta)
+	{
+		
+	}
 }
