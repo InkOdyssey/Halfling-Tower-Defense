@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5tcfne1k8alt"
-path="res://.godot/imported/icon.svg-8193eb3d66a1b5143b8bb4c28c1dc139.ctex"
+uid="uid://d3vrnwgi4oypg"
+path="res://.godot/imported/pirate_guy_bomb-removebg-preview.png-390b1eda0bae6fb6490e5eb8073d4bd4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/icon.svg"
-dest_files=["res://.godot/imported/icon.svg-8193eb3d66a1b5143b8bb4c28c1dc139.ctex"]
+source_file="res://pirate_guy_bomb-removebg-preview.png"
+dest_files=["res://.godot/imported/pirate_guy_bomb-removebg-preview.png-390b1eda0bae6fb6490e5eb8073d4bd4.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

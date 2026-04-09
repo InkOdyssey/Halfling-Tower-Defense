@@ -24,18 +24,30 @@ public partial class WaveButton : Control
 	private void wave_1()
 		{
 
+			var create_spawner1a = spawner1.Instantiate<Node2D>();
+			
+			map.AddChild(create_spawner1a);
 			wave += 1;
 			GD.Print("wave 1 started");
 		}
 	private void wave_2()
 		{
 
+			var create_spawner2a = spawner2.Instantiate<Node2D>();
+			
+			map.AddChild(create_spawner2a);
 			wave += 1;
 			GD.Print("wave 2 started");
 		}
 	private void wave_3()
 		{
+			var create_spawner1b = spawner1.Instantiate<Node2D>();
+			var create_spawner2b = spawner2.Instantiate<Node2D>();
+			
+			map.AddChild(create_spawner1b);
+			map.AddChild(create_spawner2b);
 			wave += 1;
+			GD.Print("wave 3 started");
 		}
 	
 	

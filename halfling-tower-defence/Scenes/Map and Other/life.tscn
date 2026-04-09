@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://b0i2x54ydaj4g"]
+[gd_scene load_steps=7 format=3 uid="uid://b0x5d2g67bvf4"]
 
 [ext_resource type="Texture2D" uid="uid://dtuln6dxuq2gq" path="res://Assets/Heart.png" id="1_wvhb1"]
 [ext_resource type="Texture2D" uid="uid://b03rq30dn00n1" path="res://Assets/Coin.png" id="2_64xyt"]
@@ -75,6 +75,8 @@ cache/0/30/0/scale = 1.0
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -1.0
+offset_right = -1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 8
@@ -122,3 +124,15 @@ offset_left = 1048.0
 offset_top = 608.0
 offset_right = 1048.0
 offset_bottom = 608.0
+
+[node name="Test_tower_button" parent="." instance=ExtResource("4_8es6c")]
+offset_left = 912.0
+offset_top = 584.0
+offset_right = -120.0
+offset_bottom = -24.0
+
+[node name="test_tower_2_button" parent="." instance=ExtResource("5_ohwyk")]
+offset_left = 784.0
+offset_top = 592.0
+offset_right = 824.0
+offset_bottom = 632.0
