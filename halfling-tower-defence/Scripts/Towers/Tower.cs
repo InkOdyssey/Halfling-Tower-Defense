@@ -29,14 +29,9 @@ protected Area2D hitArea;
 		var bodies = hitArea.GetOverlappingBodies();
 		foreach (var body in bodies)
 		{
-			if (body is TestEnemy enemy)
-			{
-				enemy.ApplyDamage(5);
-				return;
-			}
 			if (body is TeaCup Tea)
 			{
-				Tea.ApplyDamage(1);
+				Tea.ApplyDamage(5);
 				return;
 			}
 			
