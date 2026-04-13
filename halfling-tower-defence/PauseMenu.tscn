@@ -12,10 +12,10 @@ script = ExtResource("1_nov15")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
-offset_left = 958.0
-offset_top = 232.0
-offset_right = 1168.0
-offset_bottom = 374.0
+offset_left = 364.0
+offset_top = 137.0
+offset_right = 574.0
+offset_bottom = 279.0
 
 [node name="Label" type="Label" parent="Panel"]
 layout_mode = 0

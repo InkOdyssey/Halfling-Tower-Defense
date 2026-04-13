@@ -57,7 +57,7 @@ public partial class GameManager : Node
 		if (_coinLabel == null)
 			GD.PrintErr("Coin label not found!");
 
-		PauseMenu = GetNode<PauseMenu>("CanvasLayer/PauseMenu");
+		PauseMenu = GetNode<PauseMenu>("PauseMenu");
 		UpdateUI();
 	}
 

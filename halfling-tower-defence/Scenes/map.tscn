@@ -1013,6 +1013,8 @@ point_count = 4
 [node name="Life" parent="." instance=ExtResource("1_7yn8b")]
 script = ExtResource("2_np2xp")
 
+[node name="PauseMenu" parent="Life" instance=ExtResource("8_4c2oa")]
+
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_hh5uf")
 format = 2
@@ -1034,5 +1036,3 @@ position = Vector2(138, -42)
 position = Vector2(-513, 105)
 
 [node name="CanvasLayer2" parent="." instance=ExtResource("8_6q3n4")]
-
-[node name="Control" parent="." instance=ExtResource("8_4c2oa")]
