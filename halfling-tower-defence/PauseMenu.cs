@@ -1,29 +1,34 @@
 using Godot;
 
-public partial class MainGame : Node
+public partial class PauseMenu : Control
 {
-	[Export] public NodePath PauseMenuPath;
-
-	private Control _pauseMenu;
+	[Export] public string MainMenuScenePath = "res://Scenes/MainMenu.tscn";
 
 	public override void _Ready()
 	{
-		_pauseMenu = GetNode<Control>(PauseMenuPath);
-		_pauseMenu.Hide();
+		ProcessMode = Node.ProcessModeEnum.WhenPaused;
+		Hide();
 	}
 
-	public override void _UnhandledInput(InputEvent @event)
+	public void ShowMenu()
 	{
-		if (@event.IsActionPressed("pause_game"))
-		{
-			TogglePause();
-		}
+		Show();
 	}
 
-	private void TogglePause()
+	public void HideMenu()
 	{
-		bool paused = GetTree().Paused;
-		GetTree().Paused = !paused;
-		_pauseMenu.Visible = !paused;
+		Hide();
+	}
+
+	public void _on_resume_button_pressed()
+	{
+		GetTree().Paused = false;
+		Hide();
+	}
+
+	public void _on_exit_button_pressed()
+	{
+		GetTree().Paused = false;
+		GetTree().ChangeSceneToFile(MainMenuScenePath);
 	}
 }

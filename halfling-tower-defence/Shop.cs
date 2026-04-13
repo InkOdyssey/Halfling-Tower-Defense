@@ -137,6 +137,11 @@ public partial class Shop : Panel
 			bool canPlace = CanPlace(snapped);
 			SetPreviewColor(previewTower, canPlace);
 		}
+		if (Input.IsActionJustPressed("Pause"))
+		{
+			GD.Print("paused");
+			GetTree().Paused = !GetTree().Paused;
+		}
 	}
 
 	public override void _Input(InputEvent @event)

@@ -7,7 +7,8 @@ public partial class GameManager : Node
 
 	[Export] public int StartingHearts = 200;
 	[Export] public int StartingCoins = 100;
-
+	[Export] public PauseMenu PauseMenu;
+	
 	private Label _numLife;
 	private Label _coinLabel;
 
@@ -24,7 +25,24 @@ public partial class GameManager : Node
 
 		Instance = this;
 	}
-
+	
+		public override void _UnhandledInput(InputEvent @event)
+	{
+		if (@event.IsActionPressed("Pause"))
+		{
+			if (PauseMenu == null)
+			{
+				GD.PrintErr("PauseMenu is null.");
+				return;
+			}
+			{
+			PauseMenu.ShowMenu();
+			GetTree().Paused = true;
+			GetViewport().SetInputAsHandled();
+			}
+		}
+	}
+	
 	public override void _Ready()
 	{
 		_currentHearts = StartingHearts;
@@ -39,6 +57,7 @@ public partial class GameManager : Node
 		if (_coinLabel == null)
 			GD.PrintErr("Coin label not found!");
 
+		PauseMenu = GetNode<PauseMenu>("CanvasLayer/PauseMenu");
 		UpdateUI();
 	}
 
