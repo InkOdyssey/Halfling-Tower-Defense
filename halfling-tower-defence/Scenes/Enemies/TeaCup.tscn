@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cgjjk6yy47m6a"]
 
 [ext_resource type="Texture2D" uid="uid://cmiymnk3kmjb3" path="res://Assets/Tea Cup.png" id="2_1w007"]
-[ext_resource type="Script" path="res://Scripts/Enemies/TeaCup.cs" id="2_qnq0f"]
+[ext_resource type="Script" uid="uid://bu1lboeil3fuy" path="res://Scripts/Enemies/Tea_Cup.cs" id="2_qnq0f"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_508rj"]
 radius = 109.955
