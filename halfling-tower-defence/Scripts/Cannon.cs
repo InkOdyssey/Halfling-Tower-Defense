@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class Cannon : Node2D
+public partial class Cannon : CharacterBody2D
 {
 	
 	public override void _Ready()

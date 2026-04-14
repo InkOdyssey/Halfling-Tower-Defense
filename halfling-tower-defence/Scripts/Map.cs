@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public partial class Map : Node2D
 {
-	private PackedScene towerScene1 = GD.Load<PackedScene>("res://Scenes/test_tower.tscn");
+	private PackedScene towerScene1 = GD.Load<PackedScene>("res://Scenes/Towers/scalleywag.tscn");
 	private PackedScene ghostScene1 = GD.Load<PackedScene>("res://Scenes/test_tower_ghost.tscn");
 	private PackedScene towerScene2 = GD.Load<PackedScene>("res://Scenes/test_tower_2.tscn");
 	private PackedScene ghostScene2 = GD.Load<PackedScene>("res://Scenes/test_tower_2_ghost.tscn");
@@ -71,14 +71,14 @@ public partial class Map : Node2D
 		// Places tower on click if valid
 		if (Input.IsActionJustPressed("place_tower") && valid == true)
 		{
-			var tower = towerScene1.Instantiate<CharacterBody2D>();
+			var tower = towerScene1.Instantiate<TowerS>();
 			switch (towernum)
 			{
 				case 1:
-					tower = towerScene1.Instantiate<CharacterBody2D>();
+					tower = towerScene1.Instantiate<TowerS>();
 					break;
 				case 2:
-					tower = towerScene2.Instantiate<CharacterBody2D>();
+					tower = towerScene2.Instantiate<Tower>();
 					break;
 			}
 			tower.GlobalPosition = mousePos;
