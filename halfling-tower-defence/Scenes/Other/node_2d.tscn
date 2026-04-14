@@ -1,9 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://brlddyv34eicy"]
 
-[ext_resource type="Script" path="res://Scenes/node_2d.gd" id="1_hh5uf"]
 [ext_resource type="Texture2D" uid="uid://bjestqjcsf1ja" path="res://Assets/waterB_spritesheet.png" id="1_j2wod"]
 [ext_resource type="Script" uid="uid://decy0bkjl25eh" path="res://Scripts/MapAndOther/MyTileMap.cs" id="2_v1qfn"]
-[ext_resource type="PackedScene" path="res://ui.tscn" id="3_6whob"]
+[ext_resource type="PackedScene" uid="uid://bd6wopk7qxmo" path="res://Scenes/Other/UI.tscn" id="3_6whob"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v1qfn"]
 texture = ExtResource("1_j2wod")
@@ -999,7 +998,6 @@ texture = ExtResource("1_j2wod")
 sources/0 = SubResource("TileSetAtlasSource_v1qfn")
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_hh5uf")
 
 [node name="TileMap_2" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_hh5uf")
@@ -1014,4 +1012,3 @@ position = Vector2(2, 3)
 zoom = Vector2(1.5, 1.5)
 
 [node name="Shop UI" parent="." instance=ExtResource("3_6whob")]
-
