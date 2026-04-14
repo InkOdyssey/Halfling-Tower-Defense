@@ -18,14 +18,10 @@ collision_layer = 2
 collision_mask = 2
 script = ExtResource("2_1lsvg")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hit_area"]
+[node name="hit_area#CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_4bfos")
-
-[node name="Blackbeard-removebg-preview" type="Sprite2D" parent="."]
-texture = ExtResource("1_xguve")
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
-[connection signal="area_entered" from="hit_area" to="." method="in_range"]
 [connection signal="timeout" from="Timer" to="." method="ApplyDamage"]
