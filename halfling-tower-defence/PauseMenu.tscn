@@ -37,7 +37,7 @@ offset_left = 35.0
 offset_top = 89.0
 offset_right = 154.0
 offset_bottom = 120.0
-text = "Reutrn to Title"
+text = "Quit"
 
 [connection signal="pressed" from="Panel/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="Panel/ExitButton" to="." method="_on_exit_button_pressed"]

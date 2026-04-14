@@ -28,7 +28,6 @@ public partial class PauseMenu : Control
 
 	public void _on_exit_button_pressed()
 	{
-		GetTree().Paused = false;
-		GetTree().ChangeSceneToFile(MainMenuScenePath);
+		GetTree().Quit();
 	}
 }
