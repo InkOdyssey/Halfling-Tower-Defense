@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://cew5q1uqcdjgs"]
 
-[ext_resource type="Script" uid="uid://dhe4feg7q8fyn" path="res://Scripts/Tower.cs" id="1_4bfos"]
+[ext_resource type="Script" uid="uid://dhe4feg7q8fyn" path="res://Scripts/Towers/Tower.cs" id="1_4bfos"]
 [ext_resource type="Texture2D" uid="uid://dp3txbgrkl8x8" path="res://Assets/blackbeard-removebg-preview.png" id="1_xguve"]
-[ext_resource type="Script" uid="uid://d2gq28mf0nqj8" path="res://Scripts/Detector.cs" id="2_1lsvg"]
+[ext_resource type="Script" uid="uid://d2gq28mf0nqj8" path="res://Scripts/Towers/Detector.cs" id="2_1lsvg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4bfos"]
 radius = 355.269
@@ -18,7 +18,14 @@ collision_layer = 2
 collision_mask = 2
 script = ExtResource("2_1lsvg")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hit_area"]
 shape = SubResource("CircleShape2D_4bfos")
 
-[connection signal="area_entered" from="Area2D" to="." method="in_range"]
+[node name="Blackbeard-removebg-preview" type="Sprite2D" parent="."]
+texture = ExtResource("1_xguve")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="area_entered" from="hit_area" to="." method="in_range"]
+[connection signal="timeout" from="Timer" to="." method="ApplyDamage"]
