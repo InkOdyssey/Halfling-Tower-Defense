@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cqsq7i5300qyk"]
+[gd_scene load_steps=4 format=3 uid="uid://dhhglhlywfohx"]
 
 [ext_resource type="Texture2D" uid="uid://cmiymnk3kmjb3" path="res://Assets/Tea Cup.png" id="1_nudgl"]
 [ext_resource type="Script" uid="uid://bu1lboeil3fuy" path="res://Scripts/Tea_Cup.cs" id="2_qnq0f"]

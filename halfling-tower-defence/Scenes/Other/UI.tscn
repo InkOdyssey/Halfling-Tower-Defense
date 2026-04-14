@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bd6wopk7qxmo"]
 
-[ext_resource type="Script" uid="uid://c0qfd8ss6wspp" path="res://Scripts/Map and Other/GameManager.cs" id="1_l3jnh"]
+[ext_resource type="Script" uid="uid://c0qfd8ss6wspp" path="res://Scripts/MapAndOther/GameManager.cs" id="1_l3jnh"]
 [ext_resource type="Texture2D" uid="uid://dtuln6dxuq2gq" path="res://Assets/Heart.png" id="2_6vbdo"]
 [ext_resource type="Texture2D" uid="uid://b03rq30dn00n1" path="res://Assets/Coin.png" id="3_dcq2h"]
 

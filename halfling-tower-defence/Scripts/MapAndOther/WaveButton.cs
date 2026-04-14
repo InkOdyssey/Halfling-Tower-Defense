@@ -59,20 +59,6 @@ public partial class WaveButton : Control
 	
 	private void _on_button_pressed()
 		{
-			GD.Print("Button Pressed");
-			
-			if (wave == 1)
-				{
-					wave_1();
-				}
-			else if (wave == 2)
-				{
-					wave_2();
-				}
-			else if (wave == 3)
-				{
-					wave_3();
-				}
 			
 		}
 }
