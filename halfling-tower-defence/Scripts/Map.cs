@@ -4,14 +4,19 @@ using System.Collections.Generic;
 public partial class Map : Node2D
 {
 	private PackedScene towerScene1 = GD.Load<PackedScene>("res://Scenes/Towers/scalleywag.tscn");
-	private PackedScene ghostScene1 = GD.Load<PackedScene>("res://Scenes/test_tower_ghost.tscn");
-	private PackedScene towerScene2 = GD.Load<PackedScene>("res://Scenes/test_tower_2.tscn");
+	private PackedScene ghostScene1 = GD.Load<PackedScene>("res://Scenes/Towers/scalleywag_ghost.tscn");
+	private PackedScene towerScene2 = GD.Load<PackedScene>("res://Scenes/Towers/Blackbeard.tscn");
 	private PackedScene ghostScene2 = GD.Load<PackedScene>("res://Scenes/test_tower_2_ghost.tscn");
+	private PackedScene towerScene3 = GD.Load<PackedScene>("");
+	private PackedScene ghostScene3 = GD.Load<PackedScene>("");
 	private PackedScene placement = GD.Load<PackedScene>("res://Scenes/placement_area.tscn");
 	
 	private Node2D placementArea;
 	private CharacterBody2D towerPreview;
 	private CharacterBody2D towerPreview2;
+	private CharacterBody2D towerPreview3;
+	private CharacterBody2D towerPreview4;
+	private CharacterBody2D towerPreview5;
 	private bool placingTower = false;
 	private int towernum;
 
@@ -57,7 +62,7 @@ public partial class Map : Node2D
 		}
 		
 		
-		// checks if tower ghost is a Node2D and assigns it variable "t"
+		// checks if tower ghost is a Node2D and assigns it to variable "t"
 		if (towerPreview is CharacterBody2D t)
 		{
 			var sprite = t.GetNodeOrNull<Sprite2D>("Sprite2D");
@@ -71,11 +76,11 @@ public partial class Map : Node2D
 		// Places tower on click if valid
 		if (Input.IsActionJustPressed("place_tower") && valid == true)
 		{
-			var tower = towerScene1.Instantiate<TowerS>();
+			var tower = towerScene1.Instantiate<Tower>();
 			switch (towernum)
 			{
 				case 1:
-					tower = towerScene1.Instantiate<TowerS>();
+					tower = towerScene1.Instantiate<Tower>();
 					break;
 				case 2:
 					tower = towerScene2.Instantiate<Tower>();
