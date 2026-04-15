@@ -10,7 +10,7 @@ radius = 208.022
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4vw4w"]
 size = Vector2(144, 216)
 
-[node name="Scalleywag" type="CharacterBody2D"]
+[node name="Scalleywag2" type="CharacterBody2D"]
 script = ExtResource("1_fwk60")
 
 [node name="PirateGuyDos-removebg-preview" type="Sprite2D" parent="."]
