@@ -1,20 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://b0x5d2g67bvf4"]
+[gd_scene load_steps=5 format=3 uid="uid://bd6wopk7qxmo"]
 
 [ext_resource type="Texture2D" uid="uid://dtuln6dxuq2gq" path="res://Assets/Heart.png" id="1_wvhb1"]
 [ext_resource type="Texture2D" uid="uid://b03rq30dn00n1" path="res://Assets/Coin.png" id="2_64xyt"]
-[ext_resource type="PackedScene" path="res://Scenes/wave_button.tscn" id="3_64xyt"]
-[ext_resource type="PackedScene" uid="uid://cu06xyqh0cj7g" path="res://Scenes/test_tower_button.tscn" id="4_8es6c"]
-[ext_resource type="PackedScene" uid="uid://dke47oyfi3wat" path="res://Scenes/test_tower_2_button.tscn" id="5_ohwyk"]
+[ext_resource type="Script" uid="uid://c0qfd8ss6wspp" path="res://Scripts/Other/GameManager.cs" id="2_dewlx"]
 
 [sub_resource type="FontFile" id="FontFile_8es6c"]
 subpixel_positioning = 0
 msdf_pixel_range = 14
 msdf_size = 128
-cache/0/25/0/ascent = 0.0
-cache/0/25/0/descent = 0.0
-cache/0/25/0/underline_position = 0.0
-cache/0/25/0/underline_thickness = 0.0
-cache/0/25/0/scale = 1.0
 cache/0/16/0/ascent = 0.0
 cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0
@@ -60,6 +53,11 @@ cache/0/24/0/descent = 0.0
 cache/0/24/0/underline_position = 0.0
 cache/0/24/0/underline_thickness = 0.0
 cache/0/24/0/scale = 1.0
+cache/0/25/0/ascent = 0.0
+cache/0/25/0/descent = 0.0
+cache/0/25/0/underline_position = 0.0
+cache/0/25/0/underline_thickness = 0.0
+cache/0/25/0/scale = 1.0
 cache/0/26/0/ascent = 0.0
 cache/0/26/0/descent = 0.0
 cache/0/26/0/underline_position = 0.0
@@ -72,13 +70,16 @@ cache/0/30/0/underline_thickness = 0.0
 cache/0/30/0/scale = 1.0
 
 [node name="Life" type="CanvasLayer"]
+script = ExtResource("2_dewlx")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -1.0
-offset_right = -1.0
+offset_left = 214.0
+offset_top = 55.0
+offset_right = -123.0
+offset_bottom = -97.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 8
@@ -110,31 +111,13 @@ size_flags_horizontal = 8
 size_flags_vertical = 0
 theme_override_constants/separation = -5
 
+[node name="Coin" type="TextureRect" parent="MarginContainer/Score"]
+layout_mode = 2
+texture = ExtResource("2_64xyt")
+expand_mode = 3
+
 [node name="Num" type="Label" parent="MarginContainer/Score"]
 layout_mode = 2
 theme_override_fonts/font = SubResource("FontFile_8es6c")
 theme_override_font_sizes/font_size = 25
 text = "0"
-
-[node name="Heart" type="TextureRect" parent="MarginContainer/Score"]
-layout_mode = 2
-texture = ExtResource("2_64xyt")
-expand_mode = 3
-
-[node name="wave_button" parent="." instance=ExtResource("3_64xyt")]
-offset_left = 1048.0
-offset_top = 608.0
-offset_right = 1048.0
-offset_bottom = 608.0
-
-[node name="Test_tower_button" parent="." instance=ExtResource("4_8es6c")]
-offset_left = 912.0
-offset_top = 584.0
-offset_right = -120.0
-offset_bottom = -24.0
-
-[node name="test_tower_2_button" parent="." instance=ExtResource("5_ohwyk")]
-offset_left = 784.0
-offset_top = 592.0
-offset_right = 824.0
-offset_bottom = 632.0

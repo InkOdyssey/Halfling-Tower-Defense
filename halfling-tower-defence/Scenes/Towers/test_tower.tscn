@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dryv50d5j4t1l"]
 
-[ext_resource type="Texture2D" uid="uid://g867khvcbgut" path="res://Assets/pirate_ship.jpg" id="1_rdlkp"]
+[ext_resource type="Texture2D" uid="uid://g867khvcbgut" path="res://Assets/pirate_ship.jpg" id="1_s5kil"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gl1n5"]
 size = Vector2(144, 128)
@@ -10,9 +10,12 @@ size = Vector2(144, 128)
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-3.8147e-06, -3.8147e-06)
 scale = Vector2(0.563745, 0.619403)
-texture = ExtResource("1_rdlkp")
+texture = ExtResource("1_s5kil")
 
 [node name="hitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+shape = SubResource("RectangleShape2D_gl1n5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_gl1n5")

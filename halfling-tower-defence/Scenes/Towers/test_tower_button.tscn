@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cu06xyqh0cj7g"]
 
-[ext_resource type="Script" uid="uid://bpec86sdmh2jg" path="res://Scripts/TestTowerButton.cs" id="1_rtd0l"]
+[ext_resource type="Script" uid="uid://bpec86sdmh2jg" path="res://Scripts/Towers/TestTowerButton.cs" id="1_rtd0l"]
 
 [node name="Test_tower_button" type="Control"]
 layout_mode = 3

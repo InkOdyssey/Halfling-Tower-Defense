@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://xiskmnofhp1i"]
 
-[ext_resource type="Script" uid="uid://bv4iaobwvwrod" path="res://Scripts/Shop.cs" id="1_n5ude"]
-[ext_resource type="Texture2D" uid="uid://cubhg6a8f5res" path="res://pirate_guy_dos-removebg-preview.png" id="2_n5ude"]
-[ext_resource type="Texture2D" uid="uid://iq6ync05a2u4" path="res://blackbeard-removebg-preview.png" id="3_y4yjw"]
-[ext_resource type="Texture2D" uid="uid://cr2mfx6cbjoop" path="res://cannon-removebg-preview.png" id="4_waa4j"]
-[ext_resource type="Texture2D" uid="uid://d3vrnwgi4oypg" path="res://pirate_guy_bomb-removebg-preview.png" id="5_ok7cu"]
-[ext_resource type="Texture2D" uid="uid://clf72wpdmd0a6" path="res://pirate_ship-removebg-preview.png" id="6_irxef"]
+[ext_resource type="Script" uid="uid://bv4iaobwvwrod" path="res://Scripts/Other/Shop.cs" id="1_n5ude"]
+[ext_resource type="Texture2D" uid="uid://dp1tbe3vn8uhm" path="res://Assets/pirate_guy_dos-removebg-preview.png" id="2_n5ude"]
+[ext_resource type="Texture2D" uid="uid://dp3txbgrkl8x8" path="res://Assets/blackbeard-removebg-preview.png" id="3_y4yjw"]
+[ext_resource type="Texture2D" uid="uid://kd5bmhkljjqn" path="res://Assets/cannon-removebg-preview.png" id="4_waa4j"]
+[ext_resource type="Texture2D" uid="uid://dmljcso73gmnl" path="res://Assets/pirate_guy_bomb-removebg-preview.png" id="5_ok7cu"]
+[ext_resource type="Texture2D" uid="uid://b1vikpndql2ow" path="res://Assets/pirate_ship-removebg-preview.png" id="6_irxef"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 
