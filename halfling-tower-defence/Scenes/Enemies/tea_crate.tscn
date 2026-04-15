@@ -3,18 +3,20 @@
 [ext_resource type="Texture2D" uid="uid://cdrjjqoam6v6v" path="res://Assets/British Tea Crate.png" id="1_hifqr"]
 [ext_resource type="Script" uid="uid://cf5mp2jp0p5b6" path="res://Scripts/TeaCrate.cs" id="2_4llvx"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_k8po4"]
-radius = 111.059
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4llvx"]
+radius = 122.342
+height = 329.014
 
-[node name="Tea Crate" type="Sprite2D"]
-position = Vector2(-1.19209e-07, 4.03897e-28)
+[node name="Tea Crate" type="CharacterBody2D"]
 scale = Vector2(0.243151, 0.261561)
-texture = ExtResource("1_hifqr")
 script = ExtResource("2_4llvx")
-metadata/_edit_group_ = true
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.17606, 1.20718)
+texture = ExtResource("1_hifqr")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(24.676, -5.7348)
-shape = SubResource("CircleShape2D_k8po4")
+[node name="hit_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hit_area"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_4llvx")

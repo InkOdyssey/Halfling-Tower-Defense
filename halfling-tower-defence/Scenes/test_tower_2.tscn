@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4kiywox5xjck"]
+
+[ext_resource type="Texture2D" uid="uid://7p4netdalv0a" path="res://Assets/pirate_guy_uno-removebg-preview.png" id="1_1a83m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gl1n5"]
+size = Vector2(144, 128)
+
+[node name="test_tower_2" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-4.76837e-07, -2.59515)
+scale = Vector2(0.493513, 0.500715)
+texture = ExtResource("1_1a83m")
+
+[node name="hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+shape = SubResource("RectangleShape2D_gl1n5")

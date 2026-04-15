@@ -1,20 +1,24 @@
-[gd_scene load_steps=2 format=3 uid="uid://c5m1j0kfm7f54"]
-
-[ext_resource type="Script" path="res://placement_area.cs" id="1_fcrjc"]
+[gd_scene format=3 uid="uid://bibu2x370mq0h"]
 
 [node name="placement_area" type="Node2D"]
-script = ExtResource("1_fcrjc")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(0.85098, 0.435294, 0.462745, 0.572549)
+polygon = PackedVector2Array(-920, -48, -56, -48, -56, -224, 968, -224, 968, -136, 40, -136, 40, 48, -920, 48)
 
 [node name="placement" type="Area2D" parent="."]
+collision_layer = 255
+collision_mask = 255
 
 [node name="top_area" type="CollisionPolygon2D" parent="placement"]
 build_mode = 1
-polygon = PackedVector2Array(-384, -48, -56, -56, -56, -224, 432, -232, 432, -320, -384, -320)
+polygon = PackedVector2Array(-920, -48, -56, -48, -56, -224, 968, -224, 968, -690, -920, -690)
 
 [node name="bottom_area" type="CollisionPolygon2D" parent="placement"]
 build_mode = 1
-polygon = PackedVector2Array(-384, 48, -384, 240, 432, 240, 432, -136, 40, -136, 40, 48)
+polygon = PackedVector2Array(-920, 48, -920, 616, 968, 616, 968, -136, 40, -136, 40, 48)
 
 [connection signal="area_entered" from="placement" to="." method="_on_placement_area_entered"]
 [connection signal="area_exited" from="placement" to="." method="_on_placement_area_exited"]
 [connection signal="mouse_entered" from="placement" to="." method="_on_placement_mouse_entered"]
+[connection signal="mouse_exited" from="placement" to="." method="_on_placement_mouse_exited"]

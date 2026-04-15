@@ -29,21 +29,38 @@ public partial class WaveButton : Control
 	
 	private void wave_1()
 		{
-			map.AddChild(create_spawner1);
+			var create_spawner1a = spawner1.Instantiate<Node2D>();
+			
+			map.AddChild(create_spawner1a);
 			wave += 1;
 			GD.Print("wave 1 started");
 		}
 	private void wave_2()
 		{
-			map.AddChild(create_spawner2);
+			var create_spawner2a = spawner2.Instantiate<Node2D>();
+			
+			map.AddChild(create_spawner2a);
 			wave += 1;
 			GD.Print("wave 2 started");
 		}
 	private void wave_3()
 		{
+			var create_spawner1b = spawner1.Instantiate<Node2D>();
+			var create_spawner2b = spawner2.Instantiate<Node2D>();
+			
+			map.AddChild(create_spawner1b);
+			map.AddChild(create_spawner2b);
 			wave += 1;
+			GD.Print("wave 3 started");
 		}
-	
+	private void wave_4()
+	{
+		GD.Print("wave 4 started");
+	}
+	private void wave_5()
+	{
+		GD.Print("wave 5 started");
+	}
 	
 	
 	
@@ -51,18 +68,27 @@ public partial class WaveButton : Control
 		{
 			GD.Print("Button Pressed");
 			
-			if (wave == 1)
-				{
+			
+			switch (wave)
+			{
+				case 1:
 					wave_1();
-				}
-			else if (wave == 2)
-				{
+					break;
+				case 2:
 					wave_2();
-				}
-			else if (wave == 3)
-				{
+					break;
+				case 3:
 					wave_3();
-				}
+					break;
+				case 4:
+					wave_4();
+					break;
+				case 5:
+					wave_5();
+					break;
+			}
+			
+			
 			
 		}
 }

@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bhadsgbareww2"]
+[gd_scene load_steps=5 format=3 uid="uid://civlewpg5f7wn"]
 
 [ext_resource type="Script" uid="uid://dwq1ci8gi6q6g" path="res://Scripts/TestEnemy.cs" id="1_bs22l"]
 [ext_resource type="Texture2D" uid="uid://5tcfne1k8alt" path="res://Assets/icon.svg" id="2_kksxm"]
@@ -26,10 +26,5 @@ shape = SubResource("RectangleShape2D_bs22l")
 position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_r1vdb")
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.25
-autostart = true
-
 [connection signal="area_entered" from="hit_area" to="." method="hit_area"]
 [connection signal="area_exited" from="hit_area" to="." method="hit_area_leave"]
-[connection signal="timeout" from="Timer" to="." method="ApplyDamage"]
