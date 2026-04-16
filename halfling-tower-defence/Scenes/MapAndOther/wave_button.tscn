@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://dptfnral7nnl6"]
+[gd_scene load_steps=2 format=3 uid="uid://dburk8npqpbns"]
 
-[ext_resource type="Script" uid="uid://cuuq6xps53i1i" path="res://Scripts/Enemies/WaveButton.cs" id="1_msg12"]
+[ext_resource type="Script" path="res://Scripts/MapAndOther/WaveButton.cs" id="1_msg12"]
 
 [node name="wave_button" type="Control"]
 layout_mode = 3
