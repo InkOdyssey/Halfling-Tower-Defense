@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://0ssha84i35h8"]
 
-[ext_resource type="PackedScene" uid="uid://bnq86p2wnmp6p" path="res://Scenes/life.tscn" id="1_7yn8b"]
+[ext_resource type="PackedScene" uid="uid://b0x5d2g67bvf4" path="res://Scenes/life.tscn" id="1_7yn8b"]
 [ext_resource type="Texture2D" uid="uid://bjestqjcsf1ja" path="res://Assets/waterB_spritesheet.png" id="1_j2wod"]
 [ext_resource type="Script" uid="uid://bot4053xp488t" path="res://Scripts/Map.cs" id="1_np2xp"]
 [ext_resource type="Script" uid="uid://c0qfd8ss6wspp" path="res://Scripts/GameManager.cs" id="2_np2xp"]

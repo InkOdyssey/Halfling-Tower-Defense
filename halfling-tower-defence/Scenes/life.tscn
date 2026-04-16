@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bnq86p2wnmp6p"]
+[gd_scene load_steps=7 format=3 uid="uid://b0x5d2g67bvf4"]
 
 [ext_resource type="Texture2D" uid="uid://dtuln6dxuq2gq" path="res://Assets/Heart.png" id="1_wvhb1"]
 [ext_resource type="Texture2D" uid="uid://b03rq30dn00n1" path="res://Assets/Coin.png" id="2_64xyt"]
@@ -138,3 +138,4 @@ offset_left = 784.0
 offset_top = 592.0
 offset_right = 824.0
 offset_bottom = 632.0
+script = null
