@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 public partial class Map : Node2D
 {
-	private PackedScene towerScene1 = GD.Load<PackedScene>("res://Scenes/test_tower.tscn");
-	private PackedScene ghostScene1 = GD.Load<PackedScene>("res://Scenes/test_tower_ghost.tscn");
-	private PackedScene towerScene2 = GD.Load<PackedScene>("res://Scenes/test_tower_2.tscn");
-	private PackedScene ghostScene2 = GD.Load<PackedScene>("res://Scenes/test_tower_2_ghost.tscn");
-	private PackedScene placement = GD.Load<PackedScene>("res://Scenes/placement_area.tscn");
+	private PackedScene towerScene1 = GD.Load<PackedScene>("res://Scenes/Towers/test_tower.tscn");
+	private PackedScene ghostScene1 = GD.Load<PackedScene>("res://Scenes/Towers/test_tower_ghost.tscn");
+	private PackedScene towerScene2 = GD.Load<PackedScene>("res://Scenes/Towers/test_tower_2.tscn");
+	private PackedScene ghostScene2 = GD.Load<PackedScene>("res://Scenes/Towers/test_tower_2_ghost.tscn");
+	private PackedScene placement = GD.Load<PackedScene>("res://Scenes/Other/placement_area.tscn");
 	
 	private Node2D placementArea;
 	private CharacterBody2D towerPreview;
