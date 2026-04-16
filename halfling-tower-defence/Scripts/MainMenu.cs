@@ -11,6 +11,11 @@ public partial class MainMenu : Control{
 		GetTree().ChangeSceneToFile("res://Scenes/map.tscn");
 	}
 	
+	public override void _Process(double delta)
+	{
+		
+	}
+	
 	private void _Quit () {
 		GetTree().Quit();
 	}
