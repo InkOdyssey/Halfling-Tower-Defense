@@ -6,9 +6,15 @@ public partial class Map : Node2D
 	private PackedScene towerScene1 = GD.Load<PackedScene>("res://Scenes/Towers/scalleywag.tscn");
 	private PackedScene ghostScene1 = GD.Load<PackedScene>("res://Scenes/Towers/scalleywag_ghost.tscn");
 	private PackedScene towerScene2 = GD.Load<PackedScene>("res://Scenes/Towers/Blackbeard.tscn");
-	private PackedScene ghostScene2 = GD.Load<PackedScene>("res://Scenes/test_tower_2_ghost.tscn");
-	private PackedScene towerScene3 = GD.Load<PackedScene>("");
-	private PackedScene ghostScene3 = GD.Load<PackedScene>("");
+	private PackedScene ghostScene2 = GD.Load<PackedScene>("res://Scenes/Towers/Blackbeard_ghost.tscn");
+	private PackedScene towerScene3 = GD.Load<PackedScene>("res://Scenes/Towers/cannon.tscn");
+	private PackedScene ghostScene3 = GD.Load<PackedScene>("res://Scenes/Towers/cannon_ghost.tscn");
+	private PackedScene towerScene4 = GD.Load<PackedScene>("res://Scenes/Towers/bomber.tscn");
+	private PackedScene ghostScene4 = GD.Load<PackedScene>("res://Scenes/Towers/bomber_ghost.tscn");
+	private PackedScene towerScene5 = GD.Load<PackedScene>("res://Scenes/Towers/pirate_ship.tscn");
+	private PackedScene ghostScene5 = GD.Load<PackedScene>("res://Scenes/Towers/pirate_ship_ghost.tscn");
+	
+	
 	private PackedScene placement = GD.Load<PackedScene>("res://Scenes/placement_area.tscn");
 	
 	private Node2D placementArea;
@@ -85,6 +91,15 @@ public partial class Map : Node2D
 				case 2:
 					tower = towerScene2.Instantiate<Tower>();
 					break;
+				case 3:
+					tower = towerScene3.Instantiate<Tower>();
+					break;
+				case 4:
+					tower = towerScene4.Instantiate<Tower>();
+					break;
+				case 5:
+					tower = towerScene5.Instantiate<Tower>();
+					break;
 			}
 			tower.GlobalPosition = mousePos;
 			AddChild(tower);
@@ -103,7 +118,7 @@ public partial class Map : Node2D
 	}
 
 	// Call this when the player clicks a "Place Tower" button
-	public void StartPlacingTest_Tower()
+	public void StartPlacingScalleywag()
 	{
 		if (placingTower) return;
 
@@ -114,14 +129,45 @@ public partial class Map : Node2D
 	}
 	
 	
-	
-	public void StartPlacingTest_Tower_2()
+	public void StartPlacingBlackbeard()
 	{
 		if (placingTower) return;
 
 		placingTower = true;
 		towernum = 2;
 		towerPreview = ghostScene2.Instantiate<CharacterBody2D>();
+		AddChild(towerPreview);
+	}
+	
+	
+	public void StartPlacingCannon()
+	{
+		if (placingTower) return;
+
+		placingTower = true;
+		towernum = 3;
+		towerPreview = ghostScene3.Instantiate<CharacterBody2D>();
+		AddChild(towerPreview);
+	}
+	
+	
+	public void StartPlacingBomber()
+	{
+		if (placingTower) return;
+
+		placingTower = true;
+		towernum = 4;
+		towerPreview = ghostScene4.Instantiate<CharacterBody2D>();
+		AddChild(towerPreview);
+	}
+	
+	public void StartPlacingPirate_Ship()
+	{
+		if (placingTower) return;
+
+		placingTower = true;
+		towernum = 5;
+		towerPreview = ghostScene5.Instantiate<CharacterBody2D>();
 		AddChild(towerPreview);
 	}
 }

@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class Cannon : CharacterBody2D
+public partial class Cannon : Tower
 {
 	
 	public override void _Ready()

@@ -23,6 +23,6 @@ public partial class TestTower2Button : Control
 	
 	private void _on_button_pressed()
 		{
-			map.StartPlacingTest_Tower_2();
+			map.StartPlacingBlackbeard();
 		}
 }

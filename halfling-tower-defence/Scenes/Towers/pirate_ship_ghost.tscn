@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cdvaxg6cpbn4y"]
+[gd_scene load_steps=5 format=3 uid="uid://bo730pcsdloji"]
 
-[ext_resource type="Texture2D" uid="uid://b1vikpndql2ow" path="res://Assets/pirate_ship-removebg-preview.png" id="1_aasfu"]
-[ext_resource type="Script" uid="uid://cunhbvow2sm6k" path="res://Scripts/PirateShip.cs" id="1_q8ltl"]
+[ext_resource type="Script" uid="uid://cunhbvow2sm6k" path="res://Scripts/PirateShip.cs" id="1_fabd5"]
+[ext_resource type="Texture2D" uid="uid://b1vikpndql2ow" path="res://Assets/pirate_ship-removebg-preview.png" id="2_tfjhb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_q8ltl"]
 radius = 355.269
@@ -10,10 +10,17 @@ radius = 355.269
 size = Vector2(240, 216)
 
 [node name="Pirate Ship" type="CharacterBody2D"]
-script = ExtResource("1_q8ltl")
+script = ExtResource("1_fabd5")
+
+[node name="range" type="Line2D" parent="."]
+points = PackedVector2Array(0, 0, 0.5, 0)
+width = 710.0
+default_color = Color(0.317647, 0.317647, 0.317647, 0.47451)
+begin_cap_mode = 2
+end_cap_mode = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_aasfu")
+texture = ExtResource("2_tfjhb")
 
 [node name="Area2D" type="Area2D" parent="."]
 

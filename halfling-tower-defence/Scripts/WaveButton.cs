@@ -55,10 +55,14 @@ public partial class WaveButton : Control
 		}
 	private void wave_4()
 	{
+		
+		wave += 1;
 		GD.Print("wave 4 started");
 	}
 	private void wave_5()
 	{
+		
+		wave += 1;
 		GD.Print("wave 5 started");
 	}
 	
