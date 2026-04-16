@@ -30,7 +30,7 @@ public partial class GameManager : Node
 		GD.Print("GameManager set. ID: " + GetInstanceId());
 	}
 	
-		public override void _UnhandledInput(InputEvent @event)
+public override void _UnhandledInput(InputEvent @event)
 	{
 		if (@event.IsActionPressed("Pause"))
 		{
@@ -54,7 +54,8 @@ public partial class GameManager : Node
 
 		_numLife = GetNodeOrNull<Label>("MarginContainer/Life_num/Num_life");
 		_coinLabel = GetNodeOrNull<Label>("MarginContainer/Score/Num");
-
+		PauseMenu = GetNode<PauseMenu>("PauseMenu");
+		
 		UpdateUI();
 		GD.Print("GameManager ready with coins: " + _currentCoins);
 	}
