@@ -10,7 +10,7 @@ public partial class TowerS : Tower
 	
 		public void in_range(Node2D body)
 	{
-		GD.Print("in zone");
+
 	}
 	
 	
