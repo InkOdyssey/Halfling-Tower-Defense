@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://djjnc32pi3j35"]
+
+[ext_resource type="Script" uid="uid://driun3d6al8lb" path="res://Scripts/spawner3.cs" id="1_18r5w"]
+
+[node name="spawner3" type="Node2D"]
+script = ExtResource("1_18r5w")
+
+[node name="Timer1" type="Timer" parent="."]

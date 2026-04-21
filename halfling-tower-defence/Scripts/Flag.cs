@@ -9,10 +9,10 @@ public partial class Flag : CharacterBody2D
 	private bool damage = false;
 	private Area2D hitArea;
 	private bool _isDead = false;
-
-
 	
-
+	
+	
+	
 	//assigns pathprogress as a variable, but no value
 	private PathFollow2D pathprogress;
 

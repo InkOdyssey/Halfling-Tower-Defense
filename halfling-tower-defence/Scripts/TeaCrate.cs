@@ -7,18 +7,22 @@ public partial class TeaCrate : CharacterBody2D
 	private bool damage = false;
 	private Area2D hitArea;
 	private bool _isDead = false;
-
-
 	
-
+	private RandomNumberGenerator _rng = new RandomNumberGenerator();
+	
+	private PackedScene tea = GD.Load<PackedScene>("res://Scenes/enemies/tea.tscn");
+	
+	
 	//assigns pathprogress as a variable, but no value
 	private PathFollow2D pathprogress;
-
-
-
+	
+	
+	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		_rng.Randomize();
+		
 		
 		//gives pathprogress a value
 		pathprogress = GetParent<PathFollow2D>();
@@ -28,6 +32,8 @@ public partial class TeaCrate : CharacterBody2D
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
+		
+		
 		if (health < 1)
 		{
 			OnKill();
@@ -38,6 +44,7 @@ public partial class TeaCrate : CharacterBody2D
 		if (pathprogress.ProgressRatio < 1.0f)
 			{
 				pathprogress.ProgressRatio += .001f;
+				OnKill();
 			}
 		else if (pathprogress.ProgressRatio >= 1.0f)
 			{
@@ -96,13 +103,31 @@ public partial class TeaCrate : CharacterBody2D
 	
 	private void OnKill()
 {
+		int tea_number = 0;
+	
+		var enemypath = GetNode<Path2D>("/root/map/Path2D");
+		var tea_spawn = tea.Instantiate<CharacterBody2D>();
+		
+		var new_enemypath = new PathFollow2D();
+		new_enemypath.Loop = false;
+		new_enemypath.Rotates = false;
+		
 		if (_isDead) return;
 			_isDead = true;
 
 		GD.Print("Enemy killed");
 
 		if (GameManager.Instance != null)
+		{
 			GameManager.Instance.AddCoins(75);
+			for (int i = 0; i < 5; i++)
+			{
+				float fluctuateValue = _rng.RandfRange(-.005f, 1f);
+				enemypath.AddChild(new_enemypath);
+				new_enemypath.ProgressRatio += fluctuateValue;
+				new_enemypath.AddChild(tea_spawn);
+			}
+		}
 		else
 			GD.PrintErr("GameManager is NULL on kill!");
 

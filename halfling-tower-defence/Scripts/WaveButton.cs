@@ -65,6 +65,11 @@ public partial class WaveButton : Control
 		wave += 1;
 		GD.Print("wave 5 started");
 	}
+	private void wave_6()
+	{
+		wave += 1;
+		GD.Print("Wave 6 started");
+	}
 	
 	
 	
@@ -89,6 +94,9 @@ public partial class WaveButton : Control
 					break;
 				case 5:
 					wave_5();
+					break;
+				case 6:
+					wave_6();
 					break;
 			}
 			

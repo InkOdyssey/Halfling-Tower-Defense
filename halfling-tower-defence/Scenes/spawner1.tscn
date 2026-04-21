@@ -6,7 +6,7 @@
 script = ExtResource("1_mvk4o")
 
 [node name="Timer1" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 1.5
 
 [node name="Timer2" type="Timer" parent="."]
-wait_time = 1.5
+wait_time = 5.0

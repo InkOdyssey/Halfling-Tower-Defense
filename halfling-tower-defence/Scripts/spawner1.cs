@@ -10,7 +10,7 @@ public partial class spawner1 : Node2D
 	
 	
 	private PackedScene tea = GD.Load<PackedScene>("res://Scenes/enemies/tea.tscn");
-	private PackedScene tea_crate = GD.Load<PackedScene>("res://Scenes/enemies/test_enemy_2.tscn");
+	private PackedScene tea_crate = GD.Load<PackedScene>("res://Scenes/enemies/tea_crate.tscn");
 	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -62,7 +62,7 @@ public partial class spawner1 : Node2D
 		new_enemypath.Rotates = false;
 		
 		
-		if (enemy2_count <= 5)
+		if (enemy2_count <= 3)
 		{
 			enemypath.AddChild(new_enemypath);
 			new_enemypath.AddChild(tea_crate_spawn);
