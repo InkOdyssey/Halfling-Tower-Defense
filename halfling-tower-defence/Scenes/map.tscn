@@ -1,16 +1,13 @@
-[gd_scene load_steps=15 format=3 uid="uid://biyhgc0c5ccbf"]
+[gd_scene load_steps=12 format=3 uid="uid://dt1gku3o51pov"]
 
-[ext_resource type="PackedScene" path="res://Scenes/life.tscn" id="1_7yn8b"]
+[ext_resource type="PackedScene" uid="uid://b0x5d2g67bvf4" path="res://Scenes/life.tscn" id="1_7yn8b"]
 [ext_resource type="Texture2D" uid="uid://bjestqjcsf1ja" path="res://Assets/waterB_spritesheet.png" id="1_j2wod"]
 [ext_resource type="Script" uid="uid://bot4053xp488t" path="res://Scripts/Map.cs" id="1_np2xp"]
 [ext_resource type="Script" uid="uid://tlbx421n24c8" path="res://Scripts/PlacementArea.cs" id="1_olcgw"]
 [ext_resource type="Script" uid="uid://c0qfd8ss6wspp" path="res://Scripts/GameManager.cs" id="2_np2xp"]
-[ext_resource type="PackedScene" path="res://Scenes/spawner.tscn" id="4_myvm1"]
-[ext_resource type="PackedScene" uid="uid://cew5q1uqcdjgs" path="res://Scenes/Towers/Blackbeard.tscn" id="4_qumfl"]
-[ext_resource type="PackedScene" uid="uid://dgwxc32ayqykf" path="res://Scenes/Towers/scalleywag.tscn" id="6_np2xp"]
 [ext_resource type="PackedScene" uid="uid://bl2dkn3bmfjrv" path="res://PauseMenu.tscn" id="8_4c2oa"]
 [ext_resource type="PackedScene" uid="uid://csf8xl4jbxtly" path="res://Scenes/Shop_UI.tscn" id="8_6q3n4"]
-[ext_resource type="PackedScene" path="res://Scenes/placement_area.tscn" id="10_dlo4w"]
+[ext_resource type="PackedScene" uid="uid://bibu2x370mq0h" path="res://Scenes/placement_area.tscn" id="10_dlo4w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v1qfn"]
 texture = ExtResource("1_j2wod")
@@ -1030,14 +1027,6 @@ zoom = Vector2(0.609, 0.5)
 
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_26yhd")
-
-[node name="Blackbeard" parent="." instance=ExtResource("4_qumfl")]
-position = Vector2(138, -42)
-
-[node name="Spawner" parent="." instance=ExtResource("4_myvm1")]
-
-[node name="Scalleywag" parent="." instance=ExtResource("6_np2xp")]
-position = Vector2(-513, 105)
 
 [node name="CanvasLayer2" parent="." instance=ExtResource("8_6q3n4")]
 
