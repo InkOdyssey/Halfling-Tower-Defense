@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cgnawdfujnpp6"]
+[gd_scene load_steps=7 format=3 uid="uid://csf8xl4jbxtly"]
 
 [ext_resource type="Script" uid="uid://bv4iaobwvwrod" path="res://Scripts/Shop.cs" id="1_fyqef"]
 [ext_resource type="Texture2D" uid="uid://cubhg6a8f5res" path="res://pirate_guy_dos-removebg-preview.png" id="2_n5ude"]
