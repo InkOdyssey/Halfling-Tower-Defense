@@ -8,7 +8,7 @@ public partial class MainMenu : Control{
 	}
 
 	private void _Play() {
-		GetTree().ChangeSceneToFile("res://Scenes/map.tscn");
+		GetTree().ChangeSceneToFile("res://Scenes/Map/map.tscn");
 	}
 	
 	public override void _Process(double delta)
