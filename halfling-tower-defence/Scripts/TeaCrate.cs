@@ -44,7 +44,6 @@ public partial class TeaCrate : CharacterBody2D
 		if (pathprogress.ProgressRatio < 1.0f)
 			{
 				pathprogress.ProgressRatio += .001f;
-				OnKill();
 			}
 		else if (pathprogress.ProgressRatio >= 1.0f)
 			{
@@ -122,7 +121,7 @@ public partial class TeaCrate : CharacterBody2D
 			GameManager.Instance.AddCoins(75);
 			for (int i = 0; i < 5; i++)
 			{
-				float fluctuateValue = _rng.RandfRange(-.005f, 1f);
+				float fluctuateValue = _rng.RandfRange(-.005f, .5f);
 				enemypath.AddChild(new_enemypath);
 				new_enemypath.ProgressRatio += fluctuateValue;
 				new_enemypath.AddChild(tea_spawn);
