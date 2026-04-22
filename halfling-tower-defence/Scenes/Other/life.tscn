@@ -2,9 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://dtuln6dxuq2gq" path="res://Assets/Heart.png" id="1_wvhb1"]
 [ext_resource type="Texture2D" uid="uid://b03rq30dn00n1" path="res://Assets/Coin.png" id="2_64xyt"]
-[ext_resource type="PackedScene" path="res://Scenes/wave_button.tscn" id="3_64xyt"]
-[ext_resource type="PackedScene" uid="uid://qavyg7gsr5gg" path="res://Scenes/Towers/test_tower_button.tscn" id="4_8es6c"]
-[ext_resource type="PackedScene" uid="uid://dke47oyfi3wat" path="res://Scenes/Towers/test_tower_2_button.tscn" id="5_ohwyk"]
+[ext_resource type="PackedScene" uid="uid://dptfnral7nnl6" path="res://Scenes/wave_button.tscn" id="3_64xyt"]
+[ext_resource type="PackedScene" uid="uid://cu06xyqh0cj7g" path="res://Scenes/test_tower_button.tscn" id="4_8es6c"]
+[ext_resource type="PackedScene" uid="uid://dke47oyfi3wat" path="res://Scenes/test_tower_2_button.tscn" id="5_ohwyk"]
 
 [sub_resource type="FontFile" id="FontFile_8es6c"]
 subpixel_positioning = 0
