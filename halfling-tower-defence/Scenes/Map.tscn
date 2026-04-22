@@ -2,9 +2,9 @@
 
 [ext_resource type="PackedScene" path="res://Scenes/life.tscn" id="1_7yn8b"]
 [ext_resource type="Texture2D" uid="uid://bjestqjcsf1ja" path="res://Assets/waterB_spritesheet.png" id="1_j2wod"]
-[ext_resource type="Script" path="res://Scripts/Map.cs" id="1_np2xp"]
-[ext_resource type="Script" path="res://Scripts/PlacementArea.cs" id="1_olcgw"]
-[ext_resource type="Script" path="res://Scripts/GameManager.cs" id="2_np2xp"]
+[ext_resource type="Script" uid="uid://bot4053xp488t" path="res://Scripts/Map.cs" id="1_np2xp"]
+[ext_resource type="Script" uid="uid://tlbx421n24c8" path="res://Scripts/PlacementArea.cs" id="1_olcgw"]
+[ext_resource type="Script" uid="uid://c0qfd8ss6wspp" path="res://Scripts/GameManager.cs" id="2_np2xp"]
 [ext_resource type="PackedScene" path="res://PauseMenu.tscn" id="8_4c2oa"]
 [ext_resource type="PackedScene" path="res://Scenes/Shop_UI.tscn" id="8_6q3n4"]
 [ext_resource type="PackedScene" path="res://Scenes/placement_area.tscn" id="10_dlo4w"]
