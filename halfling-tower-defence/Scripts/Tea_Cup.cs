@@ -44,7 +44,7 @@ public partial class Tea_Cup : CharacterBody2D
 				GD.Print("freed");
 				QueueFree();
 				if (GameManager.Instance != null)
-					GameManager.Instance.LoseHearts(100);
+					GameManager.Instance.LoseHearts(10);
 				else
 					GD.PrintErr("GameManager.Instance is NULL!");
 			}
