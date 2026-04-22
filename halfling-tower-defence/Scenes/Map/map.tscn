@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://tlbx421n24c8" path="res://Scripts/Other/PlacementArea.cs" id="1_olcgw"]
 [ext_resource type="Script" uid="uid://c0qfd8ss6wspp" path="res://Scripts/Other/GameManager.cs" id="2_np2xp"]
 [ext_resource type="PackedScene" uid="uid://bl2dkn3bmfjrv" path="res://Scenes/Other/PauseMenu.tscn" id="8_4c2oa"]
-[ext_resource type="PackedScene" uid="uid://cgnawdfujnpp6" path="res://Scenes/Other/Shop_UI.tscn" id="8_6q3n4"]
+[ext_resource type="PackedScene" uid="uid://csf8xl4jbxtly" path="res://Scenes/Other/Shop_UI.tscn" id="8_6q3n4"]
 [ext_resource type="PackedScene" uid="uid://bibu2x370mq0h" path="res://Scenes/Other/placement_area.tscn" id="10_dlo4w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v1qfn"]
