@@ -4,7 +4,7 @@ using System;
 public partial class TestEnemy : CharacterBody2D
 {
 	
-	protected int health = 300;
+	protected int health = 15;
 	protected bool damage = false;
 	protected Area2D hitArea;
 
