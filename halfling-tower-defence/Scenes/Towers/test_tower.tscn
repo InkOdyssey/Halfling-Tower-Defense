@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bf3d3osl1emrg"]
+
+[ext_resource type="Texture2D" uid="uid://g867khvcbgut" path="res://Assets/pirate_ship.jpg" id="1_rdlkp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gl1n5"]
+size = Vector2(144, 128)
+
+[node name="test_tower" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-3.8147e-06, -3.8147e-06)
+scale = Vector2(0.563745, 0.619403)
+texture = ExtResource("1_rdlkp")
+
+[node name="hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+shape = SubResource("RectangleShape2D_gl1n5")
