@@ -1015,6 +1015,7 @@ script = ExtResource("1_np2xp")
 script = ExtResource("2_np2xp")
 
 [node name="PauseMenu" parent="Life" instance=ExtResource("8_4c2oa")]
+script = null
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_hh5uf")
