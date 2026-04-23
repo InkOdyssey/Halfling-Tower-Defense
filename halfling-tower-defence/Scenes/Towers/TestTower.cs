@@ -1,6 +1,7 @@
 using Godot;
 using System;
-public partial class test_tower : Tower
+
+public partial class TestTower : Tower
 {
 	public virtual void ApplyDamage()
 	{

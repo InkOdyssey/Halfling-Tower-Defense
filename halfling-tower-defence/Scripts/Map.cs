@@ -71,14 +71,14 @@ public partial class Map : Node2D
 		// Places tower on click if valid
 		if (Input.IsActionJustPressed("place_tower") && valid == true)
 		{
-			var tower = towerScene1.Instantiate<CharacterBody2D>();
+			var tower = towerScene1.Instantiate<Tower>();
 			switch (towernum)
 			{
 				case 1:
-					tower = towerScene1.Instantiate<CharacterBody2D>();
+					tower = towerScene1.Instantiate<Tower>();
 					break;
 				case 2:
-					tower = towerScene2.Instantiate<CharacterBody2D>();
+					tower = towerScene2.Instantiate<Tower>();
 					break;
 			}
 			tower.GlobalPosition = mousePos;
