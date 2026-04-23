@@ -44,14 +44,13 @@ public partial class TeaCrate : CharacterBody2D
 		if (pathprogress.ProgressRatio < 1.0f)
 			{
 				pathprogress.ProgressRatio += .001f;
-				OnKill();
 			}
 		else if (pathprogress.ProgressRatio >= 1.0f)
 			{
 				GD.Print("freed");
 				QueueFree();
 				if (GameManager.Instance != null)
-					GameManager.Instance.LoseHearts(100);
+					GameManager.Instance.LoseHearts(10);
 				else
 					GD.PrintErr("GameManager.Instance is NULL!");
 			}
@@ -120,7 +119,7 @@ public partial class TeaCrate : CharacterBody2D
 		if (GameManager.Instance != null)
 		{
 			GameManager.Instance.AddCoins(75);
-			float baseRatio = pathprogress.ProgressRatio;
+			float baseRatio = pathprogress.Progress;
 			for (int i = 0; i < 5; i++)
 			{
 				var teaSpawn = tea.Instantiate<CharacterBody2D>();
@@ -129,8 +128,8 @@ public partial class TeaCrate : CharacterBody2D
 					Loop = false,
 					Rotates = false,
 				};
-			float offset = _rng.RandfRange(-.05f, 0.5f);
-			pathFollow.ProgressRatio = Mathf.Clamp( baseRatio + offset, 0f, 1f);
+			float offset = _rng.RandfRange(-200f, 100f);
+			pathFollow.Progress = Math.Max(0f, baseRatio + offset);
 			enemypath.AddChild(pathFollow);
 			pathFollow.AddChild(teaSpawn);
 			}

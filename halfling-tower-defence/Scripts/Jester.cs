@@ -46,7 +46,7 @@ public partial class Jester : CharacterBody2D
 				GD.Print("freed");
 				QueueFree();
 				if (GameManager.Instance != null)
-					GameManager.Instance.LoseHearts(100);
+					GameManager.Instance.LoseHearts(15);
 				else
 					GD.PrintErr("GameManager.Instance is NULL!");
 			}
