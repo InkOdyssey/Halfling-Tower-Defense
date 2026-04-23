@@ -3,17 +3,20 @@
 [ext_resource type="Texture2D" uid="uid://bjmhixlxh21rq" path="res://Assets/12292021_George-III_181632-removebg-preview.png" id="1_xkhqd"]
 [ext_resource type="Script" uid="uid://3o2i2ermf8j0" path="res://Scripts/KingGeorgeIii.cs" id="2_wswyx"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wswyx"]
-radius = 120.889
-height = 508.675
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wswyx"]
+size = Vector2(104.444, 127.584)
 
-[node name="King George III" type="Sprite2D"]
+[node name="King George III" type="CharacterBody2D"]
 scale = Vector2(0.132353, 0.125817)
-texture = ExtResource("1_xkhqd")
 script = ExtResource("2_wswyx")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.187503, -4.4375)
+scale = Vector2(0.234375, 0.220792)
+texture = ExtResource("1_xkhqd")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 63.5844)
-shape = SubResource("CapsuleShape2D_wswyx")
+[node name="hit_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hit_area"]
+position = Vector2(8.22221, 0.207794)
+shape = SubResource("RectangleShape2D_wswyx")

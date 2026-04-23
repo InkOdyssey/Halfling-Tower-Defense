@@ -57,7 +57,14 @@ public partial class WaveButton : Control
 			GD.Print("wave 3 started");
 			GameManager.Instance.CurrentWaves = wave;
 		}
-	
+	private void wave_4()
+	{
+		GD.Print("wave 4 started");
+	}
+	private void wave_5()
+	{
+		GD.Print("wave 5 started");
+	}
 	
 	
 	
@@ -65,18 +72,27 @@ public partial class WaveButton : Control
 		{
 			GD.Print("Button Pressed");
 			
-			if (wave == 0)
-				{
+			
+			switch (wave)
+			{
+				case 1:
 					wave_1();
-				}
-			else if (wave == 1)
-				{
+					break;
+				case 2:
 					wave_2();
-				}
-			else if (wave == 2)
-				{
+					break;
+				case 3:
 					wave_3();
-				}
+					break;
+				case 4:
+					wave_4();
+					break;
+				case 5:
+					wave_5();
+					break;
+			}
+			
+			
 			
 		}
 }
