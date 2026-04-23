@@ -1,13 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://0ssha84i35h8"]
+[gd_scene load_steps=11 format=3 uid="uid://ctfa8ud2lnoh4"]
 
-[ext_resource type="PackedScene" uid="uid://b0x5d2g67bvf4" path="res://Scenes/life.tscn" id="1_7yn8b"]
 [ext_resource type="Texture2D" uid="uid://bjestqjcsf1ja" path="res://Assets/waterB_spritesheet.png" id="1_j2wod"]
 [ext_resource type="Script" uid="uid://bot4053xp488t" path="res://Scripts/Map.cs" id="1_np2xp"]
-[ext_resource type="Script" uid="uid://c0qfd8ss6wspp" path="res://Scripts/GameManager.cs" id="2_np2xp"]
 [ext_resource type="PackedScene" uid="uid://c5m1j0kfm7f54" path="res://Scenes/placement_area.tscn" id="3_myvm1"]
 [ext_resource type="PackedScene" uid="uid://cew5q1uqcdjgs" path="res://Scenes/Towers/Blackbeard.tscn" id="4_qumfl"]
 [ext_resource type="PackedScene" uid="uid://dgwxc32ayqykf" path="res://Scenes/Towers/scalleywag.tscn" id="6_np2xp"]
-[ext_resource type="PackedScene" uid="uid://xiskmnofhp1i" path="res://ui.tscn" id="8_6q3n4"]
+[ext_resource type="PackedScene" uid="uid://bd6wopk7qxmo" path="res://Scenes/UI.tscn" id="7_w7jjh"]
+[ext_resource type="PackedScene" uid="uid://chfpxesbd71t2" path="res://Scenes/Shop_UI.tscn" id="8_6q3n4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v1qfn"]
 texture = ExtResource("1_j2wod")
@@ -1014,8 +1013,7 @@ script = ExtResource("1_np2xp")
 [node name="placement_area" parent="." instance=ExtResource("3_myvm1")]
 z_index = 4000
 
-[node name="Life" parent="." instance=ExtResource("1_7yn8b")]
-script = ExtResource("2_np2xp")
+[node name="Life" parent="." instance=ExtResource("7_w7jjh")]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_hh5uf")

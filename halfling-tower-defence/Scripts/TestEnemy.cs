@@ -44,7 +44,6 @@ public partial class TestEnemy : CharacterBody2D
 			}
 		else if (pathprogress.ProgressRatio >= 1.0f)
 			{
-				GD.Print("freed");
 				QueueFree();
 				if (GameManager.Instance != null)
 					GameManager.Instance.LoseHearts(10);
