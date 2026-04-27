@@ -1,16 +1,15 @@
-[gd_scene load_steps=13 format=3 uid="uid://cx43mndlkqlvp"]
+[gd_scene load_steps=11 format=3 uid="uid://c1w6lal4btkbc"]
 
-[ext_resource type="Texture2D" uid="uid://bjestqjcsf1ja" path="res://Assets/waterB_spritesheet.png" id="1_j2wod"]
-[ext_resource type="Script" uid="uid://cs58hkurl0hc0" path="res://Scripts/Map.cs" id="1_np2xp"]
-[ext_resource type="Script" uid="uid://tlbx421n24c8" path="res://Scripts/Other/PlacementArea.cs" id="1_olcgw"]
-[ext_resource type="Script" uid="uid://c0qfd8ss6wspp" path="res://Scripts/Other/GameManager.cs" id="2_np2xp"]
-[ext_resource type="PackedScene" uid="uid://bl2dkn3bmfjrv" path="res://Scenes/Other/PauseMenu.tscn" id="8_4c2oa"]
-[ext_resource type="PackedScene" uid="uid://csf8xl4jbxtly" path="res://Scenes/Other/Shop_UI.tscn" id="8_6q3n4"]
-[ext_resource type="PackedScene" uid="uid://cew5q1uqcdjgs" path="res://Scenes/Towers/Blackbeard.tscn" id="9_t6lfb"]
-[ext_resource type="PackedScene" uid="uid://bibu2x370mq0h" path="res://Scenes/Other/placement_area.tscn" id="10_dlo4w"]
+[ext_resource type="Script" uid="uid://cs58hkurl0hc0" path="res://Scripts/Map.cs" id="1_oydqy"]
+[ext_resource type="PackedScene" uid="uid://bd6wopk7qxmo" path="res://Scenes/Other/UI.tscn" id="2_oydqy"]
+[ext_resource type="PackedScene" uid="uid://b0ta5qjssnb7v" path="res://Scenes/Other/PauseMenu.tscn" id="3_xdmry"]
+[ext_resource type="Texture2D" uid="uid://bjestqjcsf1ja" path="res://Assets/waterB_spritesheet.png" id="4_l00y7"]
+[ext_resource type="PackedScene" uid="uid://chfpxesbd71t2" path="res://Scenes/Other/Shop_UI.tscn" id="5_qtk15"]
+[ext_resource type="PackedScene" uid="uid://bibu2x370mq0h" path="res://Scenes/Other/placement_area.tscn" id="6_ogfrb"]
+[ext_resource type="Script" uid="uid://tlbx421n24c8" path="res://Scripts/Other/PlacementArea.cs" id="7_4f523"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v1qfn"]
-texture = ExtResource("1_j2wod")
+texture = ExtResource("4_l00y7")
 22:0/0 = 0
 23:0/0 = 0
 24:0/0 = 0
@@ -1009,11 +1008,11 @@ _data = {
 point_count = 4
 
 [node name="map" type="Node2D"]
-script = ExtResource("1_np2xp")
+script = ExtResource("1_oydqy")
 
-[node name="Life" parent="." instance=ExtResource("2_6q3n4")]
+[node name="Life" parent="." instance=ExtResource("2_oydqy")]
 
-[node name="PauseMenu" parent="Life" instance=ExtResource("4_olcgw")]
+[node name="PauseMenu" parent="Life" instance=ExtResource("3_xdmry")]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_hh5uf")
@@ -1027,9 +1026,7 @@ zoom = Vector2(0.609, 0.5)
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_26yhd")
 
-[node name="CanvasLayer2" parent="." instance=ExtResource("8_6q3n4")]
+[node name="CanvasLayer2" parent="." instance=ExtResource("5_qtk15")]
 
-[node name="placement_area" parent="." instance=ExtResource("10_dlo4w")]
-script = ExtResource("1_olcgw")
-
-[node name="Blackbeard" parent="." instance=ExtResource("9_t6lfb")]
+[node name="placement_area" parent="." instance=ExtResource("6_ogfrb")]
+script = ExtResource("7_4f523")

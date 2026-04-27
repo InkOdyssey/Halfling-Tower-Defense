@@ -25,7 +25,7 @@ public partial class GameOver : Node
 			playerName = "Anonymous";
 
 		GameManager.Instance.SubmitScore(playerName, GameManager.Instance.GetCurrentWaves());
-		GetTree().ChangeSceneToFile("res://Scenes/Start_Menu.tscn");
+		GetTree().ChangeSceneToFile("res://Scenes/Other/Start_Menu.tscn");
 		
 	}
 }

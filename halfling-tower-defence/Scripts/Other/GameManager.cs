@@ -61,8 +61,8 @@ public override void _UnhandledInput(InputEvent @event)
 		_currentHearts = StartingHearts;
 		_currentCoins = StartingCoins;
 
-		_numLife = GetNodeOrNull<Label>("MarginContainer/Life_num/Num_life");
-		_coinLabel = GetNodeOrNull<Label>("MarginContainer/Score/Num");
+		_numLife = GetNodeOrNull<Label>("%Num_life");
+		_coinLabel = GetNodeOrNull<Label>("%Num_coins");
 		PauseMenu = GetNode<PauseMenu>("PauseMenu");
 		
 		UpdateUI();
