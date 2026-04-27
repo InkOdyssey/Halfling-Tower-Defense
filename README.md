@@ -7,3 +7,4 @@ Devin has worked on some of the smaller aspects like the shop design, pause menu
 
 To test the wave system, just press the Start Wave button and the enemies will spawn. To test the money, shop, and placement system, click on one of the shop buttons and drag it to different places on the map. You'll know the money system works if you lose money for selecting a tower. The placement will work if you can place a tower or hover over the enemy path/another tower and the background changes color and the ability to place the tower changes. To test health and leaderboard, you can let the enemies deal damage to you by reaching the end of the map.
 
+We decided our towers to be similar to pirate stories because it was an underexplored genre for games and fit our ocean theme. And we made the enemies the way we did for some historic relevance and just a humor factor.
