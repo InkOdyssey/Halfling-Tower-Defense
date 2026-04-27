@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://dgwxc32ayqykf"]
 
-[ext_resource type="Script" uid="uid://ctrdjxqlrkq8p" path="res://Scripts/TowerS.cs" id="1_fwk60"]
-[ext_resource type="Texture2D" uid="uid://dp1tbe3vn8uhm" path="res://Assets/pirate_guy_dos-removebg-preview.png" id="1_kul4u"]
-[ext_resource type="Script" uid="uid://d076w357qgr6y" path="res://Scripts/DetectorS.cs" id="3_4vw4w"]
+[ext_resource type="Script" uid="uid://ctrdjxqlrkq8p" path="res://Scripts/Towers/TowerS.cs" id="1_fwk60"]
+[ext_resource type="Texture2D" uid="uid://cubhg6a8f5res" path="res://Assets/pirate_guy_dos-removebg-preview.png" id="1_kul4u"]
+[ext_resource type="Script" uid="uid://d076w357qgr6y" path="res://Scripts/Towers/DetectorS.cs" id="3_4vw4w"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fwk60"]
 radius = 208.022

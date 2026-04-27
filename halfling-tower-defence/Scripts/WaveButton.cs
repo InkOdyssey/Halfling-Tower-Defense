@@ -8,8 +8,8 @@ public partial class WaveButton : Control
 	private Node2D create_spawner2;
 	
 	
-	private PackedScene spawner1 = GD.Load<PackedScene>("res://Scenes/spawner1.tscn");
-	private PackedScene spawner2 = GD.Load<PackedScene>("res://Scenes/spawner2.tscn");
+	private PackedScene spawner1 = GD.Load<PackedScene>("res://Scenes/Enemies/spawner1.tscn");
+	private PackedScene spawner2 = GD.Load<PackedScene>("res://Scenes/Enemies/spawner2.tscn");
 	
 	[Export] public int wave = 1;
 	
