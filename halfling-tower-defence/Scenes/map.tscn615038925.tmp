@@ -1,12 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://dt1gku3o51pov"]
+[gd_scene load_steps=12 format=3 uid="uid://dt1gku3o51pov"]
 
 [ext_resource type="Texture2D" uid="uid://bjestqjcsf1ja" path="res://Assets/waterB_spritesheet.png" id="1_j2wod"]
 [ext_resource type="Script" uid="uid://bot4053xp488t" path="res://Scripts/Map.cs" id="1_np2xp"]
-[ext_resource type="PackedScene" uid="uid://bksycx2625pyb" path="res://Scenes/life.tscn" id="2_6q3n4"]
-[ext_resource type="PackedScene" uid="uid://c5m1j0kfm7f54" path="res://Scenes/placement_area.tscn" id="3_myvm1"]
-[ext_resource type="PackedScene" uid="uid://b0ta5qjssnb7v" path="res://PauseMenu.tscn" id="4_olcgw"]
-[ext_resource type="PackedScene" uid="uid://chfpxesbd71t2" path="res://Scenes/Shop_UI.tscn" id="8_6q3n4"]
-[ext_resource type="Script" uid="uid://tlbx421n24c8" path="res://Scripts/PlacementArea.cs" id="8_dlo4w"]
+[ext_resource type="Script" uid="uid://tlbx421n24c8" path="res://Scripts/PlacementArea.cs" id="1_olcgw"]
+[ext_resource type="Script" uid="uid://c0qfd8ss6wspp" path="res://Scripts/GameManager.cs" id="2_np2xp"]
+[ext_resource type="PackedScene" uid="uid://bl2dkn3bmfjrv" path="res://PauseMenu.tscn" id="8_4c2oa"]
+[ext_resource type="PackedScene" uid="uid://csf8xl4jbxtly" path="res://Scenes/Shop_UI.tscn" id="8_6q3n4"]
+[ext_resource type="PackedScene" uid="uid://bibu2x370mq0h" path="res://Scenes/placement_area.tscn" id="10_dlo4w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v1qfn"]
 texture = ExtResource("1_j2wod")
@@ -1010,9 +1010,10 @@ point_count = 4
 [node name="map" type="Node2D"]
 script = ExtResource("1_np2xp")
 
-[node name="Life" parent="." instance=ExtResource("2_6q3n4")]
+[node name="Life" parent="." instance=ExtResource("1_7yn8b")]
+script = ExtResource("2_np2xp")
 
-[node name="PauseMenu" parent="Life" instance=ExtResource("4_olcgw")]
+[node name="PauseMenu" parent="Life" instance=ExtResource("8_4c2oa")]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_hh5uf")
@@ -1028,5 +1029,5 @@ curve = SubResource("Curve2D_26yhd")
 
 [node name="CanvasLayer2" parent="." instance=ExtResource("8_6q3n4")]
 
-[node name="placement_area" parent="." instance=ExtResource("3_myvm1")]
-script = ExtResource("8_dlo4w")
+[node name="placement_area" parent="." instance=ExtResource("10_dlo4w")]
+script = ExtResource("1_olcgw")

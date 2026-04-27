@@ -12,6 +12,13 @@
 [node name="Panel" type="Panel" parent="."]
 script = ExtResource("1_fyqef")
 
+[node name="ColorRect" type="ColorRect" parent="Panel"]
+layout_mode = 2
+offset_top = 45.0
+offset_right = 196.0
+offset_bottom = 246.0
+color = Color(0, 0, 0, 0.211765)
+
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
 layout_mode = 0
 offset_top = 45.0
@@ -56,7 +63,3 @@ text = "Pirate Ship - 90 Coins"
 icon = ExtResource("6_irxef")
 flat = true
 expand_icon = true
-
-[node name="ToggleButton" type="Button" parent="Panel/VBoxContainer"]
-layout_mode = 2
-text = "Close Shop"

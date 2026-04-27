@@ -11,7 +11,7 @@ public partial class WaveButton : Control
 	private PackedScene spawner1 = GD.Load<PackedScene>("res://Scenes/spawner1.tscn");
 	private PackedScene spawner2 = GD.Load<PackedScene>("res://Scenes/spawner2.tscn");
 	
-	[Export] public int wave = 0;
+	[Export] public int wave = 1;
 	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
