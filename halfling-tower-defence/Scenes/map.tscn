@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bjestqjcsf1ja" path="res://Assets/waterB_spritesheet.png" id="1_j2wod"]
 [ext_resource type="Script" uid="uid://bot4053xp488t" path="res://Scripts/Map.cs" id="1_np2xp"]
 [ext_resource type="Script" uid="uid://c0qfd8ss6wspp" path="res://Scripts/GameManager.cs" id="2_np2xp"]
-[ext_resource type="PackedScene" uid="uid://bibu2x370mq0h" path="res://Scenes/placement_area.tscn" id="3_myvm1"]
+[ext_resource type="PackedScene" uid="uid://c4yahhmgejjuf" path="res://Scenes/placement_area.tscn" id="3_myvm1"]
 [ext_resource type="PackedScene" uid="uid://xiskmnofhp1i" path="res://ui.tscn" id="8_6q3n4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v1qfn"]

@@ -10,7 +10,7 @@ public partial class TeaCrate : CharacterBody2D
 	
 	private RandomNumberGenerator _rng = new RandomNumberGenerator();
 	
-	private PackedScene tea = GD.Load<PackedScene>("res://Scenes/enemies/tea.tscn");
+	private PackedScene tea = GD.Load<PackedScene>("res://Scenes/Enemies/tea.tscn");
 	
 	
 	//assigns pathprogress as a variable, but no value
@@ -120,7 +120,7 @@ public partial class TeaCrate : CharacterBody2D
 		{
 			GameManager.Instance.AddCoins(75);
 			float baseRatio = pathprogress.Progress;
-			for (int i = 0; i < 5; i++)
+			for (int i = 0; i < 3; i++)
 			{
 				var teaSpawn = tea.Instantiate<CharacterBody2D>();
  				var pathFollow = new PathFollow2D

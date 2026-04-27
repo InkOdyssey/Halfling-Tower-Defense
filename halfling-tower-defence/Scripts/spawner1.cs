@@ -9,16 +9,14 @@ public partial class spawner1 : Node2D
 	private int enemy2_count = 0;
 	
 	
-	private PackedScene tea = GD.Load<PackedScene>("res://Scenes/enemies/tea.tscn");
-	private PackedScene tea_crate = GD.Load<PackedScene>("res://Scenes/enemies/tea_crate.tscn");
+	private PackedScene tea = GD.Load<PackedScene>("res://Scenes/Enemies/tea.tscn");
+	private PackedScene tea_crate = GD.Load<PackedScene>("res://Scenes/Enemies/tea_crate.tscn");
 	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
 		timer1 = GetNode<Timer>("Timer1");
 		timer2 = GetNode<Timer>("Timer2");
-		timer1.Start();
-		timer2.Start();
 		timer1.Timeout += _on_timer1_timeout;
 		timer2.Timeout += _on_timer2_timeout;
 		

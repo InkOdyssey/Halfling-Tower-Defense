@@ -10,6 +10,7 @@ public partial class WaveButton : Control
 	
 	private PackedScene spawner1 = GD.Load<PackedScene>("res://Scenes/spawner1.tscn");
 	private PackedScene spawner2 = GD.Load<PackedScene>("res://Scenes/spawner2.tscn");
+	private PackedScene spawner3 = GD.Load<PackedScene>("res://Scenes/spawner3.tscn");
 	
 	private int wave = 1;
 	
@@ -47,9 +48,9 @@ public partial class WaveButton : Control
 		{
 			var create_spawner1b = spawner1.Instantiate<Node2D>();
 			var create_spawner2b = spawner2.Instantiate<Node2D>();
+			var create_spawner3a = spawner3.Instantiate<Node2D>();
 			
-			map.AddChild(create_spawner1b);
-			map.AddChild(create_spawner2b);
+			map.AddChild(create_spawner3a);
 			wave += 1;
 			GD.Print("wave 3 started");
 		}
