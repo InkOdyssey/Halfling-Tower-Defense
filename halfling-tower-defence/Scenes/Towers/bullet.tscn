@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://iah52cq3c2rs"]
+
+[ext_resource type="Texture2D" uid="uid://bas6vrtcu0m5n" path="res://Assets/musket_ball-removebg-preview.png" id="1_so0ph"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_so0ph"]
+radius = 12.0
+
+[node name="Bullet" type="AnimatableBody2D"]
+
+[node name="MusketBall" type="Sprite2D" parent="."]
+position = Vector2(-0.633338, 0.787328)
+rotation = -3.14159
+scale = Vector2(0.3, -0.278)
+texture = ExtResource("1_so0ph")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_so0ph")

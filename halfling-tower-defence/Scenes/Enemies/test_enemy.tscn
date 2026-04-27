@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dwugkhwa7fhp2"]
+[gd_scene load_steps=5 format=3 uid="uid://civlewpg5f7wn"]
 
 [ext_resource type="Script" uid="uid://dwq1ci8gi6q6g" path="res://Scripts/Enemies/TestEnemy.cs" id="1_bs22l"]
 [ext_resource type="Texture2D" uid="uid://5tcfne1k8alt" path="res://Assets/icon.svg" id="2_kksxm"]
@@ -13,7 +13,6 @@ size = Vector2(130, 128)
 script = ExtResource("1_bs22l")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(2, 0)
 texture = ExtResource("2_kksxm")
 
 [node name="hit_area" type="Area2D" parent="."]

@@ -3,8 +3,9 @@ using System;
 
 public partial class Tower : Node2D
 {
-protected Area2D hitArea;
-
+	protected Area2D hitArea;
+	[Export]
+	public PackedScene bullet;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -31,6 +32,9 @@ protected Area2D hitArea;
 		{
 			if (body is TestEnemy Enemy)
 			{
+				//replace the apply damage function with bullet.Instantiate()
+				//then have the bullet chase the enemy and apply damage once they hit each other
+				//enemy-tower and nornalize
 				Enemy.ApplyDamage(5);
 				return;
 			}

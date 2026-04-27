@@ -1,14 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://cew5q1uqcdjgs"]
+[gd_scene load_steps=6 format=3 uid="uid://cew5q1uqcdjgs"]
 
 [ext_resource type="Script" uid="uid://dhe4feg7q8fyn" path="res://Scripts/Towers/Tower.cs" id="1_4bfos"]
 [ext_resource type="Texture2D" uid="uid://iq6ync05a2u4" path="res://Assets/blackbeard-removebg-preview.png" id="1_xguve"]
 [ext_resource type="Script" uid="uid://d2gq28mf0nqj8" path="res://Scripts/Towers/Detector.cs" id="2_1lsvg"]
+[ext_resource type="PackedScene" uid="uid://iah52cq3c2rs" path="res://Scenes/Towers/bullet.tscn" id="2_1qrma"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4bfos"]
 radius = 355.269
 
 [node name="Blackbeard" type="Node2D"]
 script = ExtResource("1_4bfos")
+bullet = ExtResource("2_1qrma")
 
 [node name="Blackbeard-removebg-preview" type="Sprite2D" parent="."]
 texture = ExtResource("1_xguve")
