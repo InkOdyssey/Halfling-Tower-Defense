@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://csf8xl4jbxtly"]
+[gd_scene load_steps=7 format=3 uid="uid://chfpxesbd71t2"]
 
 [ext_resource type="Script" uid="uid://bv4iaobwvwrod" path="res://Scripts/Other/Shop.cs" id="1_fyqef"]
 [ext_resource type="Texture2D" uid="uid://cubhg6a8f5res" path="res://Assets/pirate_guy_dos-removebg-preview.png" id="2_n5ude"]
@@ -11,6 +11,13 @@
 
 [node name="Panel" type="Panel" parent="."]
 script = ExtResource("1_fyqef")
+
+[node name="ColorRect" type="ColorRect" parent="Panel"]
+layout_mode = 2
+offset_top = 45.0
+offset_right = 196.0
+offset_bottom = 246.0
+color = Color(0, 0, 0, 0.211765)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
 layout_mode = 0
@@ -56,7 +63,3 @@ text = "Pirate Ship - 90 Coins"
 icon = ExtResource("6_irxef")
 flat = true
 expand_icon = true
-
-[node name="ToggleButton" type="Button" parent="Panel/VBoxContainer"]
-layout_mode = 2
-text = "Close Shop"

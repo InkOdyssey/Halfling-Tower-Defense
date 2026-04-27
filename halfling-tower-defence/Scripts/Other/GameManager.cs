@@ -1,5 +1,7 @@
 using Godot;
 using System;
+using System.Collections.Generic;
+using System.Text.Json;
 
 public partial class GameManager : Node
 {
@@ -7,6 +9,18 @@ public partial class GameManager : Node
 
 	[Export] public int StartingHearts = 200;
 	[Export] public int StartingCoins = 100;
+
+	private int wave = 0;
+	public int GetCurrentWaves() => wave;
+	public int CurrentWaves
+	{
+		get => wave;
+		set
+		{
+			wave = value;
+		}
+	}
+
 	[Export] public PauseMenu PauseMenu;
 	
 	private Label _numLife;
@@ -17,15 +31,10 @@ public partial class GameManager : Node
 
 	public event Action CoinsChanged;
 
+	private const string LeaderboardPath = "user://leaderboard.json";
+
 	public override void _EnterTree()
 	{
-		if (Instance != null && Instance != this)
-		{
-			GD.PrintErr("Duplicate GameManager detected!");
-			QueueFree();
-			return;
-		}
-
 		Instance = this;
 		GD.Print("GameManager set. ID: " + GetInstanceId());
 	}
@@ -52,32 +61,26 @@ public override void _UnhandledInput(InputEvent @event)
 		_currentHearts = StartingHearts;
 		_currentCoins = StartingCoins;
 
-		_numLife = GetNodeOrNull<Label>("MarginContainer/Life_num/Num_life");
-		_coinLabel = GetNodeOrNull<Label>("MarginContainer/Score/Num");
+		_numLife = GetNodeOrNull<Label>("%Num_life");
+		_coinLabel = GetNodeOrNull<Label>("%Num_coins");
 		PauseMenu = GetNode<PauseMenu>("PauseMenu");
 		
 		UpdateUI();
-		GD.Print("GameManager ready with coins: " + _currentCoins);
 	}
 
 	public void AddCoins(int amount)
 	{
 		_currentCoins += amount;
-		GD.Print("Coins added. Now: " + _currentCoins);
 		UpdateUI();
 		CoinsChanged?.Invoke();
 	}
 
 	public bool SpendCoins(int amount)
 	{
-		GD.Print("SpendCoins called. Before: " + _currentCoins + " Cost: " + amount);
-
 		if (_currentCoins < amount)
 		{
-			GD.Print("Not enough coins!");
 			return false;
 		}
-
 		_currentCoins -= amount;
 
 		GD.Print("Coins now: " + _currentCoins);
@@ -88,10 +91,7 @@ public override void _UnhandledInput(InputEvent @event)
 		return true;
 	}
 
-	public int GetCurrentCoins()
-	{
-		return _currentCoins;
-	}
+	public int GetCurrentCoins() => _currentCoins;
 
 	public void LoseHearts(int amount)
 	{
@@ -99,10 +99,13 @@ public override void _UnhandledInput(InputEvent @event)
 		UpdateUI();
 
 		if (_currentHearts <= 0)
-		{
-			GD.Print("GAME OVER");
-			GetTree().Paused = true;
-		}
+			GetTree().ChangeSceneToFile("res://Scenes/GameOver.tscn");
+	}
+
+	public void SubmitScore(string playerName, int waves)
+	{
+		GameData.AddScore(playerName, waves);
+		GD.Print($"Score submitted: {playerName} - {waves} waves");
 	}
 
 	private void UpdateUI()

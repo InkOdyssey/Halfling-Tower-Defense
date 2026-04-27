@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://bl2dkn3bmfjrv"]
+[gd_scene load_steps=2 format=3 uid="uid://b0ta5qjssnb7v"]
 
 [ext_resource type="Script" uid="uid://1lj10b02xyj1" path="res://Scripts/PauseMenu.cs" id="1_nov15"]
 
@@ -13,10 +13,10 @@ script = ExtResource("1_nov15")
 [node name="Panel" type="Panel" parent="."]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 364.0
-offset_top = 137.0
-offset_right = 574.0
-offset_bottom = 279.0
+offset_left = 447.0
+offset_top = 229.0
+offset_right = 657.0
+offset_bottom = 371.0
 
 [node name="Label" type="Label" parent="Panel"]
 layout_mode = 0

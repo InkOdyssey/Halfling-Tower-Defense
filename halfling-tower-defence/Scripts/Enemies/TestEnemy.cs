@@ -7,6 +7,7 @@ public partial class TestEnemy : CharacterBody2D
 	protected int health = 15;
 	protected bool damage = false;
 	protected Area2D hitArea;
+	private bool _isDead = false;
 
 	//assigns pathprogress as a variable, but no value
 	public PathFollow2D pathprogress;
@@ -33,8 +34,12 @@ public partial class TestEnemy : CharacterBody2D
 			}
 		else if (pathprogress.ProgressRatio == 1.0f)
 			{
-				GD.Print("freed");
 				QueueFree();
+				if (GameManager.Instance != null)
+					GameManager.Instance.LoseHearts(10);
+				else
+					GD.PrintErr("GameManager.Instance is NULL!");
+				
 			}
 			
 	}
@@ -55,8 +60,18 @@ public partial class TestEnemy : CharacterBody2D
 	{
 	}
 	
-	public virtual void OnKill()
-	{
+	private void OnKill()
+{
+		if (_isDead) return;
+			_isDead = true;
+
+		GD.Print("Enemy killed");
+
+		if (GameManager.Instance != null)
+			GameManager.Instance.AddCoins(10);
+		else
+			GD.PrintErr("GameManager is NULL on kill!");
+
 		QueueFree();
 	}
 }
