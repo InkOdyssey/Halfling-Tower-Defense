@@ -34,6 +34,11 @@ protected Area2D hitArea;
 				Enemy.ApplyDamage(5);
 				return;
 			}
+			else if (body is Tea_Cup tea)
+			{
+				tea.ApplyDamage(5);
+				return;
+			}
 			
 		}
 	}

@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://dd7ypqty1u2rj"]
+
+[ext_resource type="Script" uid="uid://driun3d6al8lb" path="res://Scripts/Enemies/spawner3.cs" id="1_o7lqh"]
+
+[node name="spawner3" type="Node2D"]
+script = ExtResource("1_o7lqh")
+
+[node name="Timer1" type="Timer" parent="."]
+autostart = true
+
+[node name="Timer2" type="Timer" parent="."]
+autostart = true
+
+[node name="Timer3" type="Timer" parent="."]
+autostart = true
