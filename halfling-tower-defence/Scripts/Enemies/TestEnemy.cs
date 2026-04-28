@@ -49,7 +49,7 @@ public partial class TestEnemy : CharacterBody2D
 	{
 		health -= damage;
 		GD.Print(health);
-		sprite.SelfModulate = new Color(1f, 0.5f, 0.5f, 1f);
+		sprite.SelfModulate = new Color(1.5f, .5f, .5f, 1f);
 		if (health <= 0)
 			OnKill();
 			
