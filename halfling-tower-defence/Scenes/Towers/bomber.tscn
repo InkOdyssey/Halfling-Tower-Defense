@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dkjfe2hj7powu"]
 
-[ext_resource type="Script" uid="uid://dq7cttpyxcsmo" path="res://Scripts/Bomber.cs" id="1_2dtqa"]
+[ext_resource type="Script" uid="uid://dq7cttpyxcsmo" path="res://Scripts/Towers/Bomber.cs" id="1_2dtqa"]
 [ext_resource type="Texture2D" uid="uid://dmljcso73gmnl" path="res://Assets/pirate_guy_bomb-removebg-preview.png" id="1_hl0nu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2dtqa"]

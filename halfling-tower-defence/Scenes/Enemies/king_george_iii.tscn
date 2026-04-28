@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://mc2c56yytf1k"]
 
 [ext_resource type="Texture2D" uid="uid://bjmhixlxh21rq" path="res://Assets/12292021_George-III_181632-removebg-preview.png" id="1_xkhqd"]
-[ext_resource type="Script" path="res://Scripts/KingGeorgeIii.cs" id="2_wswyx"]
+[ext_resource type="Script" uid="uid://3o2i2ermf8j0" path="res://Scripts/Towers/KingGeorgeIii.cs" id="2_wswyx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wswyx"]
 size = Vector2(104.444, 127.584)

@@ -6,11 +6,11 @@ public partial class WaveButton : Control
 	private Node2D map;
 	private Node2D create_spawner1;
 	private Node2D create_spawner2;
+	private Node2D create_spawner3;
 	
-	
-	private PackedScene spawner1 = GD.Load<PackedScene>("res://Scenes/spawner1.tscn");
-	private PackedScene spawner2 = GD.Load<PackedScene>("res://Scenes/spawner2.tscn");
-	private PackedScene spawner3 = GD.Load<PackedScene>("res://Scenes/spawner3.tscn");
+	private PackedScene spawner1 = GD.Load<PackedScene>("res://Scenes/Enemies/spawner1.tscn");
+	private PackedScene spawner2 = GD.Load<PackedScene>("res://Scenes/Enemies/spawner2.tscn");
+	private PackedScene spawner3 = GD.Load<PackedScene>("res://Scenes/Enemies/spawner3.tscn");
 	
 	private int wave = 1;
 	
@@ -20,6 +20,7 @@ public partial class WaveButton : Control
 		map = GetNode<Node2D>("/root/map/");
 		create_spawner1 = spawner1.Instantiate<Node2D>();
 		create_spawner2 = spawner2.Instantiate<Node2D>();
+		create_spawner3 = spawner3.Instantiate<Node2D>();
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
