@@ -27,9 +27,12 @@ protected Area2D hitArea;
 	public virtual void ApplyDamage()
 	{
 		var bodies = hitArea.GetOverlappingBodies();
+		
+		GD.Print("Bodies found: " + bodies.Count);
+		
 		foreach (var body in bodies)
 		{
-			if (body is TestEnemy Enemy)
+			if (body is Tea_Cup Enemy)
 			{
 				Enemy.ApplyDamage(5);
 				return;

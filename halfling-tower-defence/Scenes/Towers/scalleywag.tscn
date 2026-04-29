@@ -28,4 +28,8 @@ shape = SubResource("CircleShape2D_fwk60")
 position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_4vw4w")
 
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
 [connection signal="body_entered" from="hit_area" to="." method="in_range"]
+[connection signal="timeout" from="Timer" to="." method="ApplyDamage"]
