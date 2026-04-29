@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://drr836hsxkpso"]
+[gd_scene load_steps=2 format=3 uid="uid://ce56k4dtnx8hx"]
 
 [ext_resource type="Script" uid="uid://c7ainabwmg6cu" path="res://Scripts/Enemies/spawner2.cs" id="1_wsloq"]
 
@@ -6,3 +6,8 @@
 script = ExtResource("1_wsloq")
 
 [node name="Timer1" type="Timer" parent="."]
+autostart = true
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true

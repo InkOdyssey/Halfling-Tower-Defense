@@ -82,20 +82,20 @@ public partial class Shop : Panel
 		switch (towernum)
 		{
 			case 1:
-				map.StartPlacingTest_Tower();
+				map.StartPlacingScalleywag();
 				GD.Print("placing test tower");
 				break;
 			case 2:
-				map.StartPlacingTest_Tower_2();
+				map.StartPlacingBlackbeard();
 				break;
 			case 3:
-				
+				map.StartPlacingCannon();
 				break;
 			case 4: 
-				
+				map.StartPlacingBomber();
 				break;
 			case 5:
-				
+				map.StartPlacingPirate_Ship();
 				break;
 		}
 	}
