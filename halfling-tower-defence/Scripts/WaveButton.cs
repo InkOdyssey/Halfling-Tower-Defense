@@ -6,10 +6,11 @@ public partial class WaveButton : Control
 	private Node2D map;
 	private Node2D create_spawner1;
 	private Node2D create_spawner2;
-	
+	private Node2D create_spawner3;
 	
 	private PackedScene spawner1 = GD.Load<PackedScene>("res://Scenes/Enemies/spawner1.tscn");
 	private PackedScene spawner2 = GD.Load<PackedScene>("res://Scenes/Enemies/spawner2.tscn");
+	private PackedScene spawner3 = GD.Load<PackedScene>("res://Scenes/Enemies/spawner3.tscn");
 	
 	[Export] public int wave = 1;
 	
@@ -19,6 +20,7 @@ public partial class WaveButton : Control
 		map = GetNode<Node2D>("/root/map/");
 		create_spawner1 = spawner1.Instantiate<Node2D>();
 		create_spawner2 = spawner2.Instantiate<Node2D>();
+		create_spawner3 = spawner3.Instantiate<Node2D>();
 	}
 	[Signal] public delegate void WaveStartedEventHandler(int waveNumber);
 
@@ -50,20 +52,29 @@ public partial class WaveButton : Control
 		{
 			var create_spawner1b = spawner1.Instantiate<Node2D>();
 			var create_spawner2b = spawner2.Instantiate<Node2D>();
+			var create_spawner3a = spawner3.Instantiate<Node2D>();
 			
-			map.AddChild(create_spawner1b);
-			map.AddChild(create_spawner2b);
+			map.AddChild(create_spawner3a);
 			wave += 1;
 			GD.Print("wave 3 started");
 			GameManager.Instance.CurrentWaves = wave;
 		}
 	private void wave_4()
 	{
+		
+		wave += 1;
 		GD.Print("wave 4 started");
 	}
 	private void wave_5()
 	{
+		
+		wave += 1;
 		GD.Print("wave 5 started");
+	}
+	private void wave_6()
+	{
+		wave += 1;
+		GD.Print("Wave 6 started");
 	}
 	
 	
@@ -89,6 +100,9 @@ public partial class WaveButton : Control
 					break;
 				case 5:
 					wave_5();
+					break;
+				case 6:
+					wave_6();
 					break;
 			}
 			

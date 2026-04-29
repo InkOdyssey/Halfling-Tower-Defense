@@ -45,7 +45,7 @@ public partial class KingGeorgeIii : CharacterBody2D
 				GD.Print("freed");
 				QueueFree();
 				if (GameManager.Instance != null)
-					GameManager.Instance.LoseHearts(100);
+					GameManager.Instance.LoseHearts(50);
 				else
 					GD.PrintErr("GameManager.Instance is NULL!");
 			}
