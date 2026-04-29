@@ -21,8 +21,6 @@ script = ExtResource("2_1lsvg")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hit_area"]
 shape = SubResource("CircleShape2D_4bfos")
 
-[node name="Timer" type="Timer" parent="."]
-autostart = true
+[node name="Marker2D" type="Marker2D" parent="."]
 
 [connection signal="area_entered" from="hit_area" to="." method="in_range"]
-[connection signal="timeout" from="Timer" to="." method="ApplyDamage"]

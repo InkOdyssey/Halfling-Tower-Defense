@@ -4,6 +4,7 @@ using System;
 public partial class Tower : Node2D
 {
 	protected Area2D hitArea;
+	protected Marker2D StartPoint
 	[Export]
 	public PackedScene bullet;
 	// Called when the node enters the scene tree for the first time.
@@ -30,13 +31,9 @@ public partial class Tower : Node2D
 		var bodies = hitArea.GetOverlappingBodies();
 		foreach (var body in bodies)
 		{
-			if (body is TestEnemy Enemy)
-			{
-				//replace the apply damage function with bullet.Instantiate()
-				//then have the bullet chase the enemy and apply damage once they hit each other
-				Enemy.ApplyDamage(5);
-				return;
-			}
+			bullet.Instantiate();
+			bullet.position = StartPoint.position;
+			bullet.target = enemy.global_position
 			
 		}
 	}
