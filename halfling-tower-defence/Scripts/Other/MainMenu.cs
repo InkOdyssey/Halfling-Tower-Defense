@@ -52,7 +52,6 @@ public partial class MainMenu : Control
 		if (GameData.LeaderboardEntries == null || GameData.LeaderboardEntries.Count == 0)
 		{
 			AddLeaderboardRow("", "No scores yet!", "Beat the game to submit.");
-			GD.Print($"Children after rebuild: {EntriesContainer.GetChildCount()}");
 			return;
 		}
 
@@ -61,8 +60,6 @@ public partial class MainMenu : Control
 			var entry = GameData.LeaderboardEntries[i];
 			AddLeaderboardRow($"#{i + 1}", entry.Name, $"{entry.Waves} waves");
 		}
-
-		GD.Print($"Children after rebuild: {EntriesContainer.GetChildCount()}");
 	}
 
 	private void AddLeaderboardRow(string rank, string name, string waves)

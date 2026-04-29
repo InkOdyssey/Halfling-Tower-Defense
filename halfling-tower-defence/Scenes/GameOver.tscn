@@ -39,6 +39,7 @@ offset_right = 615.0
 offset_bottom = 414.0
 placeholder_text = "Enter Name"
 alignment = 1
+max_length = 12
 
 [node name="WavesLabel" type="Label" parent="."]
 offset_left = 379.0

@@ -83,8 +83,6 @@ public override void _UnhandledInput(InputEvent @event)
 		}
 		_currentCoins -= amount;
 
-		GD.Print("Coins now: " + _currentCoins);
-
 		PauseMenu = GetNode<PauseMenu>("PauseMenu");
 		UpdateUI();
 		CoinsChanged?.Invoke();
