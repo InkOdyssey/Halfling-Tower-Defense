@@ -5,11 +5,11 @@ using System;
 public partial class Bullet : Tower
 {
 public float Speed = 200f;
-private TestEnemy Target;
+private Vector2 target;
 	
 	public override void _Ready()
 	{
-		Target = GetNode<TestEnemy>("root/Scenes/Enemies/test_enemy");
+	Vector2 direction = (target - GlobalPosition).Normalized();
 	}
 public virtual void ApplyDamage()
 	{
@@ -28,7 +28,7 @@ public virtual void ApplyDamage()
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-	 Vector2 direction = (Target.GlobalPosition - GlobalPosition).Normalized();
+	 Vector2 direction = (target - GlobalPosition).Normalized();
 	 Vector2 movement = direction * Speed * (float)delta;
 	 GlobalPosition += movement;
 	}
