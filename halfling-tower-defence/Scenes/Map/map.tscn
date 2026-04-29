@@ -1014,8 +1014,11 @@ script = ExtResource("1_oydqy")
 [node name="Life" parent="." instance=ExtResource("2_oydqy")]
 
 [node name="PauseMenu" parent="Life" instance=ExtResource("3_xdmry")]
+offset_bottom = 6.0
 
 [node name="Upgrades" parent="Life" instance=ExtResource("8_oydqy")]
+
+[node name="Shop_UI" parent="Life" instance=ExtResource("5_qtk15")]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_hh5uf")
@@ -1028,8 +1031,6 @@ zoom = Vector2(0.609, 0.5)
 
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_26yhd")
-
-[node name="CanvasLayer2" parent="." instance=ExtResource("5_qtk15")]
 
 [node name="placement_area" parent="." instance=ExtResource("6_ogfrb")]
 script = ExtResource("7_4f523")
