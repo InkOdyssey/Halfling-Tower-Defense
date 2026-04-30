@@ -58,7 +58,13 @@ public partial class TeaCrate : CharacterBody2D
 	}
 	
 
-
+	public void ApplyDamage(int damage)
+	{
+		health -= damage;
+		GD.Print(health);
+		if (health <= 0)
+			OnKill();
+	}
 	
 
 

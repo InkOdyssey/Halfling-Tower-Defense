@@ -3,7 +3,10 @@ using System;
 
 public partial class Tower : CharacterBody2D
 {
+	//protected means that the variable/method can be used in this class (tower) and those that inherit from it
+	//like the scallelywag and other towers
 protected Area2D hitArea;
+protected int damageAmount = 10;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -21,6 +24,7 @@ protected Area2D hitArea;
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
+		
 	}
 
 
@@ -32,9 +36,19 @@ protected Area2D hitArea;
 		
 		foreach (var body in bodies)
 		{
-			if (body is Tea_Cup Enemy)
+			if (body is Tea_Cup tea)
 			{
-				Enemy.ApplyDamage(5);
+				tea.ApplyDamage(damageAmount);
+				return;
+			}
+			else if (body is TeaCrate crate)
+			{
+				crate.ApplyDamage(damageAmount);
+				return;
+			}
+			else if (body is Flag flag)
+			{
+				flag.ApplyDamage(damageAmount);
 				return;
 			}
 			

@@ -6,12 +6,13 @@ public partial class Cannon : Tower
 	
 	public override void _Ready()
 	{
-		GD.Print("test");
+		damageAmount = 50;
+		base._Ready();
 	}
 
-	public void in_range(Node2D body)
+		public void in_range(Node2D body)
 	{
-		GD.Print("in zone");
+		
 	}
 	
 	
