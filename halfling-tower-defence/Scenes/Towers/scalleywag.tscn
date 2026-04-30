@@ -30,5 +30,4 @@ shape = SubResource("RectangleShape2D_4vw4w")
 wait_time = 0.5
 autostart = true
 
-[connection signal="body_entered" from="hit_area" to="." method="in_range"]
 [connection signal="timeout" from="Timer" to="." method="ApplyDamage"]

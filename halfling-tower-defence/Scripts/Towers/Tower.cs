@@ -12,7 +12,6 @@ protected int damageAmount = 10;
 	public override void _Ready()
 	{
 		
-		GD.Print("test");
 		hitArea = GetNode<Area2D>("hit_area");
 	}
 
@@ -34,25 +33,60 @@ protected int damageAmount = 10;
 		
 		GD.Print("Bodies found: " + bodies.Count);
 		
+		CharacterBody2D target = null;
+		float highestProgress = -1f;
+		
 		foreach (var body in bodies)
 		{
 			if (body is Tea_Cup tea)
 			{
-				tea.ApplyDamage(damageAmount);
-				return;
+				PathFollow2D pathFollow = tea.GetParent<PathFollow2D>();
+				
+				if (pathFollow.ProgressRatio > highestProgress)
+				{
+					highestProgress = pathFollow.ProgressRatio;
+					target = tea;
+				}
 			}
 			else if (body is TeaCrate crate)
 			{
-				crate.ApplyDamage(damageAmount);
-				return;
+				PathFollow2D pathFollow = crate.GetParent<PathFollow2D>();
+				
+				if (pathFollow.ProgressRatio > highestProgress)
+				{
+					highestProgress = pathFollow.ProgressRatio;
+					target = crate;
+				}
 			}
 			else if (body is Flag flag)
 			{
-				flag.ApplyDamage(damageAmount);
-				return;
+				PathFollow2D pathFollow = flag.GetParent<PathFollow2D>();
+				
+				if (pathFollow.ProgressRatio > highestProgress)
+				{
+					highestProgress = pathFollow.ProgressRatio;
+					target = flag;
+				}
 			}
 			
+			
+			
 		}
+		if (target is Tea_Cup targetTea)
+			{
+				targetTea.ApplyDamage(damageAmount);
+				return;
+			}
+			else if (target is TeaCrate targetCrate)
+			{
+				targetCrate.ApplyDamage(damageAmount);
+				return;
+			}
+			else if (target is Flag targetFlag)
+			{
+				targetFlag.ApplyDamage(damageAmount);
+				return;
+			}
 	}
 
 	}

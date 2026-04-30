@@ -10,10 +10,6 @@ public partial class TowerS : Tower
 		base._Ready();
 	}
 	
-		public void in_range(Node2D body)
-	{
-		
-	}
 	
 	
 

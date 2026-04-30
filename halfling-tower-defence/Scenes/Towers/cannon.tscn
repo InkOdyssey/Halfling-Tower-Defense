@@ -27,5 +27,7 @@ shape = SubResource("RectangleShape2D_a27tf")
 shape = SubResource("CircleShape2D_uplnw")
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="ApplyDamage"]
