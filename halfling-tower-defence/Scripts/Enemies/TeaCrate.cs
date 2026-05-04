@@ -58,42 +58,16 @@ public partial class TeaCrate : CharacterBody2D
 	}
 	
 
-
+	public void ApplyDamage(int damage)
+	{
+		health -= damage;
+		GD.Print(health);
+		if (health <= 0)
+			OnKill();
+	}
 	
 
-	public void ApplyDamage() 
-	{
-		var bodies = hitArea.GetOverlappingAreas();
-		foreach (var body in bodies)
-		{
-			if (body is DetectorS)
-			{
-				health -= 1;
-				GD.Print(health);
-				if (health < 1)
-				{
-					damage = false;
-					OnKill();
-				}
-			}
 
-			else if (body is Detector)
-			{
-				health -= 10000;
-				GD.Print(health);
-				GD.Print("blackbeard damage");
-				if (health < 1)
-				{
-					damage = false;
-					OnKill();
-				}
-
-			}	
-
-
-			
-		}
-	}
 
 	public void hit_area_leave(Area2D area)
 	{

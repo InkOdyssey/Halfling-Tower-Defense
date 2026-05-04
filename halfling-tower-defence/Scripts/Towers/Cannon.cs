@@ -6,18 +6,17 @@ public partial class Cannon : Tower
 	
 	public override void _Ready()
 	{
-		GD.Print("test");
-	}
-
-	public void in_range(Node2D body)
-	{
-		GD.Print("in zone");
+		damageAmount = 50;
+		base._Ready();
 	}
 	
 	
-
+	
+	
+	
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
+		base._Process(delta);
 	}
 }

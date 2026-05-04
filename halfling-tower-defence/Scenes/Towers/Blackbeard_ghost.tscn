@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bgbmjgdj4q6nq"]
 
-[ext_resource type="Texture2D" uid="uid://dp3txbgrkl8x8" path="res://Assets/blackbeard-removebg-preview.png" id="2_enq83"]
+[ext_resource type="Texture2D" uid="uid://iq6ync05a2u4" path="res://Assets/blackbeard-removebg-preview.png" id="2_enq83"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7aebe"]
 size = Vector2(144, 216)

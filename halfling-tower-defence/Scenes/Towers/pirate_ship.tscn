@@ -26,4 +26,9 @@ shape = SubResource("CircleShape2D_q8ltl")
 position = Vector2(-16, 4)
 shape = SubResource("RectangleShape2D_q8ltl")
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.25
+autostart = true
+
 [connection signal="body_entered" from="hit_area" to="." method="in_range"]
+[connection signal="timeout" from="Timer" to="." method="ApplyDamage"]
