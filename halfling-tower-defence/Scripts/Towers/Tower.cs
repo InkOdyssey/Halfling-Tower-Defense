@@ -68,6 +68,26 @@ protected int damageAmount = 10;
 					target = flag;
 				}
 			}
+			else if (body is Jester jester)
+			{
+				PathFollow2D pathFollow = jester.GetParent<PathFollow2D>();
+				
+				if (pathFollow.ProgressRatio > highestProgress)
+				{
+					highestProgress = pathFollow.ProgressRatio;
+					target = jester;
+				}
+			}
+			else if (body is KingGeorgeIii king)
+			{
+				PathFollow2D pathFollow = king.GetParent<PathFollow2D>();
+				
+				if (pathFollow.ProgressRatio > highestProgress)
+				{
+					highestProgress = pathFollow.ProgressRatio;
+					target = king;
+				}
+			}
 			
 			
 			
@@ -85,6 +105,16 @@ protected int damageAmount = 10;
 			else if (target is Flag targetFlag)
 			{
 				targetFlag.ApplyDamage(damageAmount);
+				return;
+			}
+			else if (target is Jester targetJester)
+			{
+				targetJester.ApplyDamage(damageAmount);
+				return;
+			}
+			else if (target is KingGeorgeIii targetKing)
+			{
+				targetKing.ApplyDamage(damageAmount);
 				return;
 			}
 	}
