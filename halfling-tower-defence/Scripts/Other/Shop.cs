@@ -32,15 +32,12 @@ public partial class Shop : Panel
 		cannonButton = GetNode<Button>("VBoxContainer/Cannon_Button");
 		bombButton = GetNode<Button>("VBoxContainer/Bomb_Button");
 		pirateShipButton = GetNode<Button>("VBoxContainer/PirateShip_Button");
-		toggleButton = GetNode<Button>("VBoxContainer/ToggleButton");
 
 		pirateButton.Pressed += () => TryBuy(GetPirateTower(), PirateCost, 1);
 		blackbeardButton.Pressed += () => TryBuy(GetBlackbeardTower(), BlackbeardCost, 2);
 		cannonButton.Pressed += () => TryBuy(GetCannonTower(), CannonCost, 3);
 		bombButton.Pressed += () => TryBuy(GetBombTower(), BombCost, 4);
 		pirateShipButton.Pressed += () => TryBuy(GetPirateShipTower(), PirateShipCost, 5);
-
-		toggleButton.Pressed += ToggleShop;
 
 		openPosition = Position;
 		closedPosition = openPosition + new Vector2(-200, 0);
@@ -99,12 +96,4 @@ public partial class Shop : Panel
 				break;
 		}
 	}
-
-	private void ToggleShop()
-	{
-		isOpen = !isOpen;
-		var tween = CreateTween();
-		tween.TweenProperty(this, "position", isOpen ? openPosition : closedPosition, 0.25f);
-	}
-
 }

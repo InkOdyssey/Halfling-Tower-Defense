@@ -1,0 +1,69 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5puhg7pyxp5v"]
+
+[ext_resource type="Texture2D" uid="uid://bafa0jbs815c1" path="res://Assets/download-removebg-preview.png" id="1_cog4x"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_pdlc7"]
+particle_flag_disable_z = true
+gravity = Vector3(0, -98, 0)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="CanvasLayer"]
+position = Vector2(110, 748)
+amount = 2
+texture = ExtResource("1_cog4x")
+lifetime = 8.0
+randomness = 1.0
+trail_lifetime = 10.0
+process_material = SubResource("ParticleProcessMaterial_pdlc7")
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="CanvasLayer"]
+position = Vector2(298, 745)
+amount = 2
+texture = ExtResource("1_cog4x")
+lifetime = 8.0
+speed_scale = 1.15
+randomness = 1.0
+trail_lifetime = 10.0
+process_material = SubResource("ParticleProcessMaterial_pdlc7")
+
+[node name="GPUParticles2D3" type="GPUParticles2D" parent="CanvasLayer"]
+position = Vector2(853, 750)
+amount = 2
+texture = ExtResource("1_cog4x")
+lifetime = 8.0
+speed_scale = 0.5
+randomness = 1.0
+trail_lifetime = 10.0
+process_material = SubResource("ParticleProcessMaterial_pdlc7")
+
+[node name="GPUParticles2D4" type="GPUParticles2D" parent="CanvasLayer"]
+position = Vector2(641, 755)
+amount = 2
+texture = ExtResource("1_cog4x")
+lifetime = 8.0
+speed_scale = 1.25
+randomness = 1.0
+trail_lifetime = 10.0
+process_material = SubResource("ParticleProcessMaterial_pdlc7")
+
+[node name="GPUParticles2D5" type="GPUParticles2D" parent="CanvasLayer"]
+position = Vector2(466, 734)
+amount = 2
+texture = ExtResource("1_cog4x")
+lifetime = 8.0
+speed_scale = 0.8
+randomness = 1.0
+trail_lifetime = 10.0
+process_material = SubResource("ParticleProcessMaterial_pdlc7")
+
+[node name="GPUParticles2D6" type="GPUParticles2D" parent="CanvasLayer"]
+position = Vector2(1028, 743)
+amount = 2
+texture = ExtResource("1_cog4x")
+lifetime = 8.0
+randomness = 1.0
+trail_lifetime = 10.0
+process_material = SubResource("ParticleProcessMaterial_pdlc7")
