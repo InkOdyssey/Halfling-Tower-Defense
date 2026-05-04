@@ -1,8 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://bloljlg60s2u6"]
+[gd_scene load_steps=10 format=3 uid="uid://bloljlg60s2u6"]
 
-[ext_resource type="Texture2D" uid="uid://ngud43p3by4t" path="res://Assets/Menu png.jpg" id="1_cr40v"]
 [ext_resource type="Script" uid="uid://6kdgfwvupswv" path="res://Scripts/Other/MainMenu.cs" id="1_rl8pc"]
-[ext_resource type="PackedScene" uid="uid://b5puhg7pyxp5v" path="res://Particle.tscn" id="3_hvp1q"]
+[ext_resource type="Texture2D" uid="uid://dlojk08tvxpx3" path="res://Assets/1.webp" id="2_hvp1q"]
+[ext_resource type="PackedScene" path="res://Particle.tscn" id="3_hvp1q"]
 
 [sub_resource type="FontFile" id="FontFile_52ajb"]
 cache/0/16/0/ascent = 0.0
@@ -69,9 +69,9 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="BG_Menu" type="Sprite2D" parent="Collapse"]
-position = Vector2(576, 327.5)
-scale = Vector2(3.84, 3.8869)
-texture = ExtResource("1_cr40v")
+position = Vector2(578, 324)
+scale = Vector2(2.4, 2.4)
+texture = ExtResource("2_hvp1q")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Collapse"]
 z_index = 2
@@ -80,18 +80,6 @@ offset_left = 859.0
 offset_top = 136.0
 offset_right = 1127.0
 offset_bottom = 502.0
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_right = 5
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Collapse/MarginContainer"]
-layout_mode = 2
-
-[node name="LeaderBoard" type="Label" parent="Collapse/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Leader Board: "
-
-[node name="ScrollContainer" type="ScrollContainer" parent="Collapse/MarginContainer/VBoxContainer"]
-layout_mode = 2
 
 [node name="Title" type="RichTextLabel" parent="Collapse"]
 z_index = 2
@@ -138,6 +126,16 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="WavesLabel" type="Label" parent="Collapse/Entries_Container/Leaderboard Row"]
+layout_mode = 2
+
+[node name="Collapse_MarginContainer#VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Collapse_MarginContainer_VBoxContainer#LeaderBoard" type="Label" parent="."]
+layout_mode = 2
+text = "Leader Board: "
+
+[node name="Collapse_MarginContainer_VBoxContainer#ScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 2
 
 [node name="Start_Button" type="Button" parent="."]
