@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bo730pcsdloji"]
 
-[ext_resource type="Script" uid="uid://cunhbvow2sm6k" path="res://Scripts/PirateShip.cs" id="1_fabd5"]
-[ext_resource type="Texture2D" uid="uid://b1vikpndql2ow" path="res://Assets/pirate_ship-removebg-preview.png" id="2_tfjhb"]
+[ext_resource type="Script" uid="uid://cunhbvow2sm6k" path="res://Scripts/Towers/PirateShip.cs" id="1_fabd5"]
+[ext_resource type="Texture2D" uid="uid://clf72wpdmd0a6" path="res://Assets/pirate_ship-removebg-preview.png" id="2_tfjhb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_q8ltl"]
 radius = 355.269
