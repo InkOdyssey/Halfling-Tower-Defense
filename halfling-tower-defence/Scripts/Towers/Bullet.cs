@@ -4,8 +4,8 @@ using System;
 
 public partial class Bullet : Tower
 {
-public float Speed = 200f;
-private Vector2 target;
+public float Speed = 1000f;
+public Vector2 target;
 	
 	public override void _Ready()
 	{
@@ -31,5 +31,9 @@ public virtual void ApplyDamage()
 	 Vector2 direction = (target - GlobalPosition).Normalized();
 	 Vector2 movement = direction * Speed * (float)delta;
 	 GlobalPosition += movement;
+	if (GlobalPosition <= target)
+	{
+		QueueFree();
 	}
+}
 }
