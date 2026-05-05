@@ -6,10 +6,12 @@ public partial class Bullet : Tower
 {
 public float Speed = 1000f;
 public Vector2 target;
+private Area2D hitArea;
 	
 	public override void _Ready()
 	{
 	Vector2 direction = (target - GlobalPosition).Normalized();
+	hitArea = GetNode<Area2D>("hit_area");
 	}
 public virtual void ApplyDamage()
 	{
