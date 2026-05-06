@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://cs40rnveg5ueo"]
+[gd_scene load_steps=2 format=3 uid="uid://cxg4waylskuvg"]
 
 [ext_resource type="Script" uid="uid://b4ftx84anycca" path="res://Scripts/Enemies/spawner1.cs" id="1_mvk4o"]
 
@@ -6,9 +6,7 @@
 script = ExtResource("1_mvk4o")
 
 [node name="Timer1" type="Timer" parent="."]
-wait_time = 2.0
-autostart = true
+wait_time = 0.5
 
 [node name="Timer2" type="Timer" parent="."]
-wait_time = 3.0
-autostart = true
+wait_time = 1.5

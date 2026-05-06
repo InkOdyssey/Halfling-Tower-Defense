@@ -1,13 +1,11 @@
 using Godot;
 using System;
 
-public partial class PirateShip : Tower
+public partial class PirateShip : Node2D
 {
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		damageAmount = 30;
-		base._Ready();
 	}
 	
 	

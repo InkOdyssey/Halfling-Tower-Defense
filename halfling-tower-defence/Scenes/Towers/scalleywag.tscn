@@ -2,32 +2,21 @@
 
 [ext_resource type="Script" uid="uid://ctrdjxqlrkq8p" path="res://Scripts/Towers/TowerS.cs" id="1_fwk60"]
 [ext_resource type="Texture2D" uid="uid://cubhg6a8f5res" path="res://Assets/pirate_guy_dos-removebg-preview.png" id="1_kul4u"]
+[ext_resource type="Script" uid="uid://d076w357qgr6y" path="res://Scripts/Towers/DetectorS.cs" id="3_4vw4w"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fwk60"]
 radius = 208.022
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4vw4w"]
-size = Vector2(144, 216)
-
-[node name="Scalleywag2" type="CharacterBody2D"]
+[node name="Scalleywag" type="Node2D"]
 script = ExtResource("1_fwk60")
 
 [node name="PirateGuyDos-removebg-preview" type="Sprite2D" parent="."]
 texture = ExtResource("1_kul4u")
 
-[node name="hit_area" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("3_4vw4w")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hit_area"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_fwk60")
 
-[node name="hitbox" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
-position = Vector2(0, 4)
-shape = SubResource("RectangleShape2D_4vw4w")
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.5
-autostart = true
-
-[connection signal="timeout" from="Timer" to="." method="ApplyDamage"]
+[connection signal="body_entered" from="Area2D" to="." method="in_range"]

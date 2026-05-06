@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://iah52cq3c2rs" path="res://Scenes/Towers/Bullet.tscn" id="10_xdmry"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v1qfn"]
-texture = ExtResource("4_l00y7")
+texture = ExtResource("1_j2wod")
 22:0/0 = 0
 23:0/0 = 0
 24:0/0 = 0
@@ -1011,16 +1011,12 @@ _data = {
 point_count = 4
 
 [node name="map" type="Node2D"]
-script = ExtResource("1_oydqy")
+script = ExtResource("1_np2xp")
 
-[node name="Life" parent="." instance=ExtResource("2_oydqy")]
+[node name="Life" parent="." instance=ExtResource("1_7yn8b")]
+script = ExtResource("2_np2xp")
 
-[node name="PauseMenu" parent="Life" instance=ExtResource("3_xdmry")]
-offset_bottom = 6.0
-
-[node name="Upgrades" parent="Life" instance=ExtResource("8_oydqy")]
-
-[node name="Shop_UI" parent="Life" instance=ExtResource("5_qtk15")]
+[node name="PauseMenu" parent="Life" instance=ExtResource("8_4c2oa")]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_hh5uf")

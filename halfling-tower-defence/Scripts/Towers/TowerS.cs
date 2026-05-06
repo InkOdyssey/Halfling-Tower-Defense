@@ -6,10 +6,12 @@ public partial class TowerS : Tower
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		damageAmount = 5;
-		base._Ready();
 	}
 	
+		public void in_range(Node2D body)
+	{
+
+	}
 	
 	
 

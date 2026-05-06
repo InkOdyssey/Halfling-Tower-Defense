@@ -22,6 +22,6 @@ public partial class TestTowerButton : Control
 	
 	private void _on_button_pressed()
 		{
-			map.StartPlacingScalleywag();
+			map.StartPlacingTest_Tower();
 		}
 }
