@@ -17,6 +17,10 @@ config/icon="res://icon.svg"
 <<<<<<<Updatedupstreamrun/main_scene="uid://dl7uj1tskwnmn"
 <<<<<<<HEADrun/main_scene="uid://0ssha84i35h8"
 
+[autoload]
+
+GameManager="*res://Scripts/Other/GameManager.cs"
+
 [dotnet]
 
 project/assembly_name="Halfling-Tower-Defence"

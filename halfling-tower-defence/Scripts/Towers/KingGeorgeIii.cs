@@ -45,7 +45,7 @@ public partial class KingGeorgeIii : CharacterBody2D
 				GD.Print("freed");
 				QueueFree();
 				if (GameManager.Instance != null)
-					GameManager.Instance.LoseHearts(100);
+					GameManager.Instance.LoseHearts(50);
 				else
 					GD.PrintErr("GameManager.Instance is NULL!");
 			}
@@ -56,38 +56,12 @@ public partial class KingGeorgeIii : CharacterBody2D
 
 	
 
-	public void ApplyDamage() 
+	public void ApplyDamage(int damage)
 	{
-		var bodies = hitArea.GetOverlappingAreas();
-		foreach (var body in bodies)
-		{
-			if (body is DetectorS)
-			{
-				health -= 1;
-				GD.Print(health);
-				if (health < 1)
-				{
-					damage = false;
-					OnKill();
-				}
-			}
-
-			else if (body is Detector)
-			{
-				health -= 10000;
-				GD.Print(health);
-				GD.Print("blackbeard damage");
-				if (health < 1)
-				{
-					damage = false;
-					OnKill();
-				}
-
-			}	
-
-
-			
-		}
+		health -= damage;
+		GD.Print(health);
+		if (health <= 0)
+			OnKill();
 	}
 
 	public void hit_area_leave(Area2D area)

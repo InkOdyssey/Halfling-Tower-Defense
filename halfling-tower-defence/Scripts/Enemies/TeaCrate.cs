@@ -3,13 +3,114 @@ using System;
 
 public partial class TeaCrate : CharacterBody2D
 {
+	private int health = 100;
+	private bool damage = false;
+	private Area2D hitArea;
+	private bool _isDead = false;
+	
+	private RandomNumberGenerator _rng = new RandomNumberGenerator();
+	
+	private PackedScene tea = GD.Load<PackedScene>("res://Scenes/Enemies/tea.tscn");
+	
+	
+	//assigns pathprogress as a variable, but no value
+	private PathFollow2D pathprogress;
+	
+	
+	
+	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		GD.Print("test");
+		_rng.Randomize();
+		
+		
+		//gives pathprogress a value
+		pathprogress = GetParent<PathFollow2D>();
+		hitArea = GetNode<Area2D>("hit_area");
 	}
-	
+
+	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
 		
-	}
+		
+		if (health < 1)
+		{
+			OnKill();
+			return;
 }
+		
+		
+		if (pathprogress.ProgressRatio < 1.0f)
+			{
+				pathprogress.ProgressRatio += .001f;
+			}
+		else if (pathprogress.ProgressRatio >= 1.0f)
+			{
+				GD.Print("freed");
+				QueueFree();
+				if (GameManager.Instance != null)
+					GameManager.Instance.LoseHearts(10);
+				else
+					GD.PrintErr("GameManager.Instance is NULL!");
+			}
+			
+	}
+	
+
+	public void ApplyDamage(int damage)
+	{
+		health -= damage;
+		GD.Print(health);
+		if (health <= 0)
+			OnKill();
+	}
+	
+
+
+
+	public void hit_area_leave(Area2D area)
+	{
+		GD.Print("enemy zone inactive");
+	}
+	
+	private void OnKill()
+{
+		int tea_number = 0;
+	
+		var enemypath = GetNode<Path2D>("/root/map/Path2D");
+		var tea_spawn = tea.Instantiate<CharacterBody2D>();
+		
+		var new_enemypath = new PathFollow2D();
+		new_enemypath.Loop = false;
+		new_enemypath.Rotates = false;
+		
+		if (_isDead) return;
+			_isDead = true;
+
+		GD.Print("Enemy killed");
+
+		if (GameManager.Instance != null)
+		{
+			GameManager.Instance.AddCoins(75);
+			float baseRatio = pathprogress.Progress;
+			for (int i = 0; i < 3; i++)
+			{
+				var teaSpawn = tea.Instantiate<CharacterBody2D>();
+ 				var pathFollow = new PathFollow2D
+				{
+					Loop = false,
+					Rotates = false,
+				};
+			float offset = _rng.RandfRange(-200f, 100f);
+			pathFollow.Progress = Math.Max(0f, baseRatio + offset);
+			enemypath.AddChild(pathFollow);
+			pathFollow.AddChild(teaSpawn);
+			}
+		}
+		else
+			GD.PrintErr("GameManager is NULL on kill!");
+
+		QueueFree();
+}
+	}
