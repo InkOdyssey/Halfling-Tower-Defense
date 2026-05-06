@@ -11,7 +11,7 @@ private Area2D hitArea;
 	public override void _Ready()
 	{
 	Vector2 direction = (target - GlobalPosition).Normalized();
-	hitArea = GetNode<Area2D>("hit_area");
+	hitArea = GetNode<Area2D>("Hit_Area");
 	}
 public virtual void ApplyDamage()
 	{
@@ -33,7 +33,7 @@ public virtual void ApplyDamage()
 	 Vector2 direction = (target - GlobalPosition).Normalized();
 	 Vector2 movement = direction * Speed * (float)delta;
 	 GlobalPosition += movement;
-	if (GlobalPosition <= target)
+	if (GlobalPosition >= target)
 	{
 		QueueFree();
 	}
