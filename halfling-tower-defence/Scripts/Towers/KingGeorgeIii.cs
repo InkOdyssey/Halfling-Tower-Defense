@@ -4,7 +4,7 @@ using System;
 public partial class KingGeorgeIii : CharacterBody2D
 {
 	
-	private int health = 1000;
+	private int health = 300;
 	private bool damage = false;
 	private Area2D hitArea;
 	private bool _isDead = false;
@@ -77,7 +77,7 @@ public partial class KingGeorgeIii : CharacterBody2D
 		GD.Print("Enemy killed");
 
 		if (GameManager.Instance != null)
-			GameManager.Instance.AddCoins(500);
+			GameManager.Instance.AddCoins(100);
 		else
 			GD.PrintErr("GameManager is NULL on kill!");
 

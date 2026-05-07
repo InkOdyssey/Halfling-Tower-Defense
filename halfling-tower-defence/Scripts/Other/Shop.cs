@@ -3,10 +3,10 @@ using System;
 
 public partial class Shop : Panel
 {
-	private const int PirateCost = 20;
-	private const int BlackbeardCost = 40;
-	private const int CannonCost = 50;
-	private const int BombCost = 60;
+	private const int PirateCost = 25;
+	private const int BlackbeardCost = 45;
+	private const int CannonCost = 60;
+	private const int BombCost = 75;
 	private const int PirateShipCost = 90;
 	
 	private Map map;

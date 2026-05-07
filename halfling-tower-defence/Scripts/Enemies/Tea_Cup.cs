@@ -76,7 +76,7 @@ public partial class Tea_Cup : CharacterBody2D
 		GD.Print("Enemy killed");
 
 		if (GameManager.Instance != null)
-			GameManager.Instance.AddCoins(10);
+			GameManager.Instance.AddCoins(3);
 		else
 			GD.PrintErr("GameManager is NULL on kill!");
 
