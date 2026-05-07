@@ -33,7 +33,7 @@ public virtual void ApplyDamage()
 	 Vector2 direction = (target - GlobalPosition).Normalized();
 	 Vector2 movement = direction * Speed * (float)delta;
 	 GlobalPosition += movement;
-	if (GlobalPosition >= target)
+	if (GlobalPosition <= target)
 	{
 		QueueFree();
 	}
