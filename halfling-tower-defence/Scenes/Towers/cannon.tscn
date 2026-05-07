@@ -7,7 +7,7 @@
 size = Vector2(280, 128)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uplnw"]
-radius = 355.269
+radius = 475.0
 
 [node name="Cannon" type="CharacterBody2D"]
 script = ExtResource("1_a27tf")
@@ -27,7 +27,7 @@ shape = SubResource("RectangleShape2D_a27tf")
 shape = SubResource("CircleShape2D_uplnw")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 2.5
 autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="ApplyDamage"]
