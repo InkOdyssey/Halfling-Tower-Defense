@@ -13,7 +13,7 @@ protected int damageAmount = 20;
 	{
 		
 		hitArea = GetNode<Area2D>("hit_area");
-	}
+	} 
 
 
 	public void in_range(Area2D area)
