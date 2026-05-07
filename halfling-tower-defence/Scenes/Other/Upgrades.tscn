@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cg6uny8vedfdn"]
 
-[ext_resource type="Script" uid="uid://dnibyl36pcc40" path="res://Upgrades.cs" id="1_02w7i"]
+[ext_resource type="Script" uid="uid://cqucp15dndxjp" path="res://Scripts/Other/Upgrades.cs" id="1_02w7i"]
 
 [node name="Upgrades" type="Control"]
 layout_mode = 3
@@ -15,7 +15,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_02w7i")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Upgrade_panel" type="Panel" parent="."]
 self_modulate = Color(0, 0, 0, 0.67451)
 layout_mode = 1
 anchors_preset = -1
@@ -28,33 +28,33 @@ offset_top = 0.17099
 offset_right = 256.0
 offset_bottom = 65.87
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Upgrade_panel"]
 layout_mode = 0
 offset_left = 1.0
 offset_right = 244.0
 offset_bottom = 143.0
 
-[node name="Name" type="Label" parent="Panel/VBoxContainer"]
+[node name="Name" type="Label" parent="Upgrade_panel/VBoxContainer"]
 layout_mode = 2
 text = "UPGRADES:"
 
-[node name="Fire_Speed" type="Button" parent="Panel/VBoxContainer"]
+[node name="Fire_Speed" type="Button" parent="Upgrade_panel/VBoxContainer"]
 layout_mode = 2
 text = "Fire Speed+"
 
-[node name="Damage" type="Button" parent="Panel/VBoxContainer"]
+[node name="Damage" type="Button" parent="Upgrade_panel/VBoxContainer"]
 layout_mode = 2
 text = "Damage+"
 
-[node name="Range" type="Button" parent="Panel/VBoxContainer"]
+[node name="Range" type="Button" parent="Upgrade_panel/VBoxContainer"]
 layout_mode = 2
 text = "Range+"
 
-[node name="Close" type="Button" parent="Panel/VBoxContainer"]
+[node name="Close" type="Button" parent="Upgrade_panel/VBoxContainer"]
 layout_mode = 2
 text = "Close"
 
-[connection signal="pressed" from="Panel/VBoxContainer/Fire_Speed" to="." method="_on_fire_speed_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/Damage" to="." method="_on_damage_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/Range" to="." method="_on_range_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/Close" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="Upgrade_panel/VBoxContainer/Fire_Speed" to="." method="_on_fire_speed_pressed"]
+[connection signal="pressed" from="Upgrade_panel/VBoxContainer/Damage" to="." method="_on_damage_pressed"]
+[connection signal="pressed" from="Upgrade_panel/VBoxContainer/Range" to="." method="_on_range_pressed"]
+[connection signal="pressed" from="Upgrade_panel/VBoxContainer/Close" to="." method="_on_close_pressed"]

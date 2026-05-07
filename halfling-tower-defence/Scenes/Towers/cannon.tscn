@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://gqen3snxjw6h"]
+[gd_scene load_steps=6 format=3 uid="uid://gqen3snxjw6h"]
 
 [ext_resource type="Script" uid="uid://cbg3krigoga3x" path="res://Scripts/Towers/Cannon.cs" id="1_a27tf"]
-[ext_resource type="Texture2D" uid="uid://kd5bmhkljjqn" path="res://Assets/cannon-removebg-preview.png" id="1_i10un"]
+[ext_resource type="Texture2D" uid="uid://cr2mfx6cbjoop" path="res://Assets/cannon-removebg-preview.png" id="1_i10un"]
+[ext_resource type="Script" uid="uid://cqucp15dndxjp" path="res://Scripts/Other/Upgrades.cs" id="3_uplnw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a27tf"]
 size = Vector2(280, 128)
@@ -21,9 +22,18 @@ texture = ExtResource("1_i10un")
 position = Vector2(-4, 0)
 shape = SubResource("RectangleShape2D_a27tf")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="hit_area" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="Cannon_hit" type="CollisionShape2D" parent="hit_area"]
 shape = SubResource("CircleShape2D_8g5iw")
 
-[connection signal="body_entered" from="Area2D" to="." method="in_range"]
+[node name="Cannon_upgrade" type="Button" parent="."]
+visible = false
+offset_left = -144.0
+offset_top = -65.0
+offset_right = 143.0
+offset_bottom = 65.0
+script = ExtResource("3_uplnw")
+
+[connection signal="body_entered" from="hit_area" to="." method="in_range"]
+[connection signal="pressed" from="Cannon_upgrade" to="Cannon_upgrade" method="_on_cannon_upgrade_pressed"]

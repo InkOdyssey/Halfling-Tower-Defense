@@ -1,13 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://cdvaxg6cpbn4y"]
+[gd_scene load_steps=6 format=3 uid="uid://cdvaxg6cpbn4y"]
 
 [ext_resource type="Texture2D" uid="uid://clf72wpdmd0a6" path="res://Assets/pirate_ship-removebg-preview.png" id="1_aasfu"]
 [ext_resource type="Script" uid="uid://cunhbvow2sm6k" path="res://Scripts/Towers/PirateShip.cs" id="1_q8ltl"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_q8ltl"]
-radius = 355.269
+[ext_resource type="Script" uid="uid://cqucp15dndxjp" path="res://Scripts/Other/Upgrades.cs" id="3_wh4c0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q8ltl"]
 size = Vector2(240, 216)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_q8ltl"]
+radius = 355.269
 
 [node name="Pirate Ship" type="CharacterBody2D"]
 script = ExtResource("1_q8ltl")
@@ -15,15 +16,24 @@ script = ExtResource("1_q8ltl")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_aasfu")
 
-[node name="hit_area" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hit_area"]
-shape = SubResource("CircleShape2D_q8ltl")
-
 [node name="hitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
 position = Vector2(-16, 4)
 shape = SubResource("RectangleShape2D_q8ltl")
 
+[node name="hit_area" type="Area2D" parent="."]
+
+[node name="Pirateship_hit" type="CollisionShape2D" parent="hit_area"]
+shape = SubResource("CircleShape2D_q8ltl")
+
+[node name="Pirateship_upgrade" type="Button" parent="."]
+visible = false
+offset_left = -137.0
+offset_top = -107.0
+offset_right = 104.0
+offset_bottom = 115.0
+script = ExtResource("3_wh4c0")
+
 [connection signal="body_entered" from="hit_area" to="." method="in_range"]
+[connection signal="pressed" from="Pirateship_upgrade" to="Pirateship_upgrade" method="_on_pirateship_upgrade_pressed"]

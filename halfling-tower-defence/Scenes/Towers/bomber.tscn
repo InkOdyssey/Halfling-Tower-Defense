@@ -1,13 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://dkjfe2hj7powu"]
+[gd_scene load_steps=6 format=3 uid="uid://dkjfe2hj7powu"]
 
 [ext_resource type="Script" uid="uid://dq7cttpyxcsmo" path="res://Scripts/Towers/Bomber.cs" id="1_2dtqa"]
 [ext_resource type="Texture2D" uid="uid://d3vrnwgi4oypg" path="res://Assets/pirate_guy_bomb-removebg-preview.png" id="1_hl0nu"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_2dtqa"]
-radius = 355.269
+[ext_resource type="Script" uid="uid://cqucp15dndxjp" path="res://Scripts/Other/Upgrades.cs" id="3_rc6fn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2dtqa"]
 size = Vector2(160, 176)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2dtqa"]
+radius = 355.269
 
 [node name="Bomber" type="CharacterBody2D"]
 script = ExtResource("1_2dtqa")
@@ -15,15 +16,24 @@ script = ExtResource("1_2dtqa")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_hl0nu")
 
-[node name="hit_area" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hit_area"]
-shape = SubResource("CircleShape2D_2dtqa")
-
 [node name="hitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
 position = Vector2(0, 8)
 shape = SubResource("RectangleShape2D_2dtqa")
 
+[node name="hit_area" type="Area2D" parent="."]
+
+[node name="Bomber_hit" type="CollisionShape2D" parent="hit_area"]
+shape = SubResource("CircleShape2D_2dtqa")
+
+[node name="Bomber_upgrade" type="Button" parent="."]
+visible = false
+offset_left = -80.0
+offset_top = -80.0
+offset_right = 80.0
+offset_bottom = 96.0
+script = ExtResource("3_rc6fn")
+
 [connection signal="body_entered" from="hit_area" to="." method="in_range"]
+[connection signal="pressed" from="Bomber_upgrade" to="Bomber_upgrade" method="_on_bomber_upgrade_pressed"]
