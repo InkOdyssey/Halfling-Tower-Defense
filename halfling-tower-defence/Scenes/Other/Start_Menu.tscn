@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bloljlg60s2u6"]
+[gd_scene load_steps=10 format=3 uid="uid://bloljlg60s2u6"]
 
 [ext_resource type="Texture2D" uid="uid://ngud43p3by4t" path="res://Assets/Menu png.jpg" id="1_cr40v"]
 [ext_resource type="Script" uid="uid://6kdgfwvupswv" path="res://Scripts/Other/MainMenu.cs" id="1_rl8pc"]
@@ -80,18 +80,6 @@ offset_left = 859.0
 offset_top = 136.0
 offset_right = 1127.0
 offset_bottom = 502.0
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_right = 5
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Collapse/MarginContainer"]
-layout_mode = 2
-
-[node name="LeaderBoard" type="Label" parent="Collapse/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Leader Board: "
-
-[node name="ScrollContainer" type="ScrollContainer" parent="Collapse/MarginContainer/VBoxContainer"]
-layout_mode = 2
 
 [node name="Title" type="RichTextLabel" parent="Collapse"]
 z_index = 2
@@ -138,6 +126,16 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="WavesLabel" type="Label" parent="Collapse/Entries_Container/Leaderboard Row"]
+layout_mode = 2
+
+[node name="Collapse_MarginContainer#VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Collapse_MarginContainer_VBoxContainer#LeaderBoard" type="Label" parent="."]
+layout_mode = 2
+text = "Leader Board: "
+
+[node name="Collapse_MarginContainer_VBoxContainer#ScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 2
 
 [node name="Start_Button" type="Button" parent="."]
