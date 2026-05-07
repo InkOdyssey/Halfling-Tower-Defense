@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cf4f50cfum5ct"]
 
-[ext_resource type="Script" uid="uid://dq7cttpyxcsmo" path="res://Scripts/Bomber.cs" id="1_o0m4s"]
-[ext_resource type="Texture2D" uid="uid://dmljcso73gmnl" path="res://Assets/pirate_guy_bomb-removebg-preview.png" id="2_1yxo2"]
+[ext_resource type="Script" uid="uid://dq7cttpyxcsmo" path="res://Scripts/Towers/Bomber.cs" id="1_o0m4s"]
+[ext_resource type="Texture2D" uid="uid://d3vrnwgi4oypg" path="res://Assets/pirate_guy_bomb-removebg-preview.png" id="2_1yxo2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2dtqa"]
 radius = 355.269
@@ -22,9 +22,9 @@ end_cap_mode = 2
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_1yxo2")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="hit_area" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hit_area"]
 shape = SubResource("CircleShape2D_2dtqa")
 
 [node name="hitbox" type="Area2D" parent="."]
@@ -33,4 +33,4 @@ shape = SubResource("CircleShape2D_2dtqa")
 position = Vector2(0, 8)
 shape = SubResource("RectangleShape2D_2dtqa")
 
-[connection signal="body_entered" from="Area2D" to="." method="in_range"]
+[connection signal="body_entered" from="hit_area" to="." method="in_range"]

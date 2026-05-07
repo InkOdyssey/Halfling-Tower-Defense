@@ -4,6 +4,9 @@
 [ext_resource type="Script" uid="uid://cunhbvow2sm6k" path="res://Scripts/Towers/PirateShip.cs" id="1_q8ltl"]
 [ext_resource type="Script" uid="uid://cqucp15dndxjp" path="res://Scripts/Other/Upgrades.cs" id="3_wh4c0"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_q8ltl"]
+radius = 400.0
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q8ltl"]
 size = Vector2(240, 216)
 
@@ -37,3 +40,9 @@ script = ExtResource("3_wh4c0")
 
 [connection signal="body_entered" from="hit_area" to="." method="in_range"]
 [connection signal="pressed" from="Pirateship_upgrade" to="Pirateship_upgrade" method="_on_pirateship_upgrade_pressed"]
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.25
+autostart = true
+
+[connection signal="body_entered" from="hit_area" to="." method="in_range"]
+[connection signal="timeout" from="Timer" to="." method="ApplyDamage"]

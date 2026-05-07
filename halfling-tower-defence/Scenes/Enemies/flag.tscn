@@ -20,3 +20,7 @@ texture = ExtResource("1_l4f6g")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hit_area"]
 position = Vector2(0, 1.90735e-06)
 shape = SubResource("RectangleShape2D_oxoaj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1.90735e-06)
+shape = SubResource("RectangleShape2D_oxoaj")

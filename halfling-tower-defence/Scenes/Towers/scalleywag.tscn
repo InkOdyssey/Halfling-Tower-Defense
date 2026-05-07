@@ -17,6 +17,11 @@ script = ExtResource("1_fwk60")
 [node name="PirateGuyDos-removebg-preview" type="Sprite2D" parent="."]
 texture = ExtResource("1_kul4u")
 
+[node name="hit_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hit_area"]
+shape = SubResource("CircleShape2D_fwk60")
+
 [node name="hitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
@@ -39,3 +44,8 @@ script = ExtResource("4_ppsfl")
 
 [connection signal="body_entered" from="hit_area" to="." method="in_range"]
 [connection signal="pressed" from="Scalleywag_upgrade" to="Scalleywag_upgrade" method="_on_scalleywag_upgrade_pressed"]
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="ApplyDamage"]

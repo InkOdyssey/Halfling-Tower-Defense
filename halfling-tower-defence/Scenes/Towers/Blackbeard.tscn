@@ -72,14 +72,12 @@ position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_1lsvg")
 
 [node name="hit_area" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-script = ExtResource("2_1lsvg")
 
 [node name="Blackbeard_hit" type="CollisionShape2D" parent="hit_area"]
 shape = SubResource("CircleShape2D_4bfos")
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 0.8
 autostart = true
 
 [connection signal="pressed" from="Sprite2D/CanvasLayer/Blackbeard_upgrade" to="Sprite2D/CanvasLayer/Blackbeard_upgrade" method="_on_blackbeard_upgrade_pressed"]

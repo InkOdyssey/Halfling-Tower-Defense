@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://bloljlg60s2u6"]
+[gd_scene load_steps=10 format=3 uid="uid://bloljlg60s2u6"]
 
 [ext_resource type="Texture2D" uid="uid://ngud43p3by4t" path="res://Assets/Menu png.jpg" id="1_cr40v"]
 [ext_resource type="Script" uid="uid://6kdgfwvupswv" path="res://Scripts/Other/MainMenu.cs" id="1_rl8pc"]
+[ext_resource type="PackedScene" path="res://Particle.tscn" id="3_hvp1q"]
 
 [sub_resource type="FontFile" id="FontFile_52ajb"]
 cache/0/16/0/ascent = 0.0
@@ -72,34 +73,16 @@ position = Vector2(576, 327.5)
 scale = Vector2(3.84, 3.8869)
 texture = ExtResource("1_cr40v")
 
-[node name="ColorRect" type="ColorRect" parent="Collapse"]
-layout_mode = 2
-offset_left = 859.0
-offset_top = 136.0
-offset_right = 1134.0
-offset_bottom = 439.0
-color = Color(0, 0, 0, 0.819608)
-
-[node name="MarginContainer" type="MarginContainer" parent="Collapse"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Collapse"]
+z_index = 2
 layout_mode = 0
 offset_left = 859.0
 offset_top = 136.0
 offset_right = 1127.0
 offset_bottom = 502.0
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_right = 5
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Collapse/MarginContainer"]
-layout_mode = 2
-
-[node name="LeaderBoard" type="Label" parent="Collapse/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Leader Board: "
-
-[node name="ScrollContainer" type="ScrollContainer" parent="Collapse/MarginContainer/VBoxContainer"]
-layout_mode = 2
 
 [node name="Title" type="RichTextLabel" parent="Collapse"]
+z_index = 2
 layout_mode = 0
 offset_left = 341.0
 offset_top = 151.0
@@ -112,6 +95,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Description" type="RichTextLabel" parent="Collapse"]
+z_index = 2
 layout_mode = 0
 offset_left = 285.0
 offset_top = 512.0
@@ -144,7 +128,18 @@ layout_mode = 2
 [node name="WavesLabel" type="Label" parent="Collapse/Entries_Container/Leaderboard Row"]
 layout_mode = 2
 
+[node name="Collapse_MarginContainer#VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Collapse_MarginContainer_VBoxContainer#LeaderBoard" type="Label" parent="."]
+layout_mode = 2
+text = "Leader Board: "
+
+[node name="Collapse_MarginContainer_VBoxContainer#ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 2
+
 [node name="Start_Button" type="Button" parent="."]
+z_index = 2
 layout_mode = 0
 offset_left = 419.0
 offset_top = 275.0
@@ -155,6 +150,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_bjmgk")
 text = "Start"
 
 [node name="End_Button" type="Button" parent="."]
+z_index = 2
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.029
@@ -166,6 +162,8 @@ offset_bottom = 373.712
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_nl1j7")
 text = "End"
+
+[node name="Node2D" parent="." instance=ExtResource("3_hvp1q")]
 
 [connection signal="pressed" from="Start_Button" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="End_Button" to="." method="_on_end_button_pressed"]
