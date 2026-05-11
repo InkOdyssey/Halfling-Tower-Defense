@@ -4,7 +4,7 @@ using System;
 public partial class TestTower2Button : Control
 {
 	private Map map;
-	private PackedScene test_tower_2 = GD.Load<PackedScene>("res://Scenes/test_tower_2.tscn");
+	private PackedScene test_tower_2 = GD.Load<PackedScene>("res://Scenes/Towers/test_tower_2.tscn");
 	
 	
 	
@@ -23,6 +23,6 @@ public partial class TestTower2Button : Control
 	
 	private void _on_button_pressed()
 		{
-			map.StartPlacingBlackbeard();
+			map.StartPlacingTest_Tower_2();
 		}
 }

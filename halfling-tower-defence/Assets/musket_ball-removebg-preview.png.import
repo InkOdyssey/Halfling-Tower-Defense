@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bafa0jbs815c1"
-path="res://.godot/imported/download-removebg-preview.png-1ec44a0b276ea45544024d23b60c16cb.ctex"
+uid="uid://bas6vrtcu0m5n"
+path="res://.godot/imported/musket_ball-removebg-preview.png-0593e4330f08c525bcc80980a86f3d12.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/download-removebg-preview.png"
-dest_files=["res://.godot/imported/download-removebg-preview.png-1ec44a0b276ea45544024d23b60c16cb.ctex"]
+source_file="res://Assets/musket_ball-removebg-preview.png"
+dest_files=["res://.godot/imported/musket_ball-removebg-preview.png-0593e4330f08c525bcc80980a86f3d12.ctex"]
 
 [params]
 

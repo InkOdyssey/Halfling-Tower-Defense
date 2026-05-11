@@ -1,16 +1,17 @@
-[gd_scene load_steps=12 format=3 uid="uid://cx43mndlkqlvp"]
+[gd_scene load_steps=13 format=3 uid="uid://cx43mndlkqlvp"]
 
-[ext_resource type="Script" uid="uid://cs58hkurl0hc0" path="res://Scripts/Map.cs" id="1_oydqy"]
-[ext_resource type="PackedScene" uid="uid://d0u5w2rwurjw0" path="res://Scenes/Other/UI.tscn" id="2_oydqy"]
-[ext_resource type="PackedScene" uid="uid://bl2dkn3bmfjrv" path="res://Scenes/Other/PauseMenu.tscn" id="3_xdmry"]
-[ext_resource type="Texture2D" uid="uid://bjestqjcsf1ja" path="res://Assets/waterB_spritesheet.png" id="4_l00y7"]
-[ext_resource type="PackedScene" uid="uid://csf8xl4jbxtly" path="res://Scenes/Other/Shop_UI.tscn" id="5_qtk15"]
-[ext_resource type="PackedScene" uid="uid://bibu2x370mq0h" path="res://Scenes/Other/placement_area.tscn" id="6_ogfrb"]
-[ext_resource type="Script" uid="uid://tlbx421n24c8" path="res://Scripts/Other/PlacementArea.cs" id="7_4f523"]
-[ext_resource type="PackedScene" path="res://Scenes/Other/Upgrades.tscn" id="8_oydqy"]
+[ext_resource type="PackedScene" uid="uid://b0x5d2g67bvf4" path="res://Scenes/life.tscn" id="1_7yn8b"]
+[ext_resource type="Texture2D" uid="uid://bjestqjcsf1ja" path="res://Assets/waterB_spritesheet.png" id="1_j2wod"]
+[ext_resource type="Script" uid="uid://cs58hkurl0hc0" path="res://Scripts/Map.cs" id="1_np2xp"]
+[ext_resource type="Script" uid="uid://tlbx421n24c8" path="res://Scripts/Other/PlacementArea.cs" id="1_olcgw"]
+[ext_resource type="Script" uid="uid://c0qfd8ss6wspp" path="res://Scripts/Other/GameManager.cs" id="2_np2xp"]
+[ext_resource type="PackedScene" uid="uid://bl2dkn3bmfjrv" path="res://Scenes/Other/PauseMenu.tscn" id="8_4c2oa"]
+[ext_resource type="PackedScene" uid="uid://csf8xl4jbxtly" path="res://Scenes/Other/Shop_UI.tscn" id="8_6q3n4"]
+[ext_resource type="PackedScene" uid="uid://cew5q1uqcdjgs" path="res://Scenes/Towers/Blackbeard.tscn" id="9_t6lfb"]
+[ext_resource type="PackedScene" uid="uid://bibu2x370mq0h" path="res://Scenes/Other/placement_area.tscn" id="10_dlo4w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v1qfn"]
-texture = ExtResource("4_l00y7")
+texture = ExtResource("1_j2wod")
 22:0/0 = 0
 23:0/0 = 0
 24:0/0 = 0
@@ -1009,16 +1010,12 @@ _data = {
 point_count = 4
 
 [node name="map" type="Node2D"]
-script = ExtResource("1_oydqy")
+script = ExtResource("1_np2xp")
 
-[node name="Life" parent="." instance=ExtResource("2_oydqy")]
+[node name="Life" parent="." instance=ExtResource("1_7yn8b")]
+script = ExtResource("2_np2xp")
 
-[node name="PauseMenu" parent="Life" instance=ExtResource("3_xdmry")]
-offset_bottom = 6.0
-
-[node name="Upgrades" parent="Life" instance=ExtResource("8_oydqy")]
-
-[node name="Shop_UI" parent="Life" instance=ExtResource("5_qtk15")]
+[node name="PauseMenu" parent="Life" instance=ExtResource("8_4c2oa")]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_hh5uf")
@@ -1032,5 +1029,11 @@ zoom = Vector2(0.609, 0.5)
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_26yhd")
 
-[node name="placement_area" parent="." instance=ExtResource("6_ogfrb")]
-script = ExtResource("7_4f523")
+[node name="CanvasLayer2" parent="." instance=ExtResource("8_6q3n4")]
+
+[node name="placement_area" parent="." instance=ExtResource("10_dlo4w")]
+position = Vector2(-3, 3)
+script = ExtResource("1_olcgw")
+
+[node name="Blackbeard" parent="." instance=ExtResource("9_t6lfb")]
+position = Vector2(115, -41)

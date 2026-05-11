@@ -18,6 +18,3 @@ texture = ExtResource("1_nudgl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hit_area"]
 shape = SubResource("CapsuleShape2D_508rj")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_508rj")

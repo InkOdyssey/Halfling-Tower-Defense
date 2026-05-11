@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://gqen3snxjw6h"]
+[gd_scene load_steps=4 format=3 uid="uid://gqen3snxjw6h"]
 
 [ext_resource type="Script" uid="uid://cbg3krigoga3x" path="res://Scripts/Towers/Cannon.cs" id="1_a27tf"]
-[ext_resource type="Texture2D" uid="uid://cr2mfx6cbjoop" path="res://Assets/cannon-removebg-preview.png" id="1_i10un"]
+[ext_resource type="Texture2D" uid="uid://kd5bmhkljjqn" path="res://Assets/cannon-removebg-preview.png" id="1_i10un"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a27tf"]
 size = Vector2(280, 128)
@@ -9,17 +9,16 @@ size = Vector2(280, 128)
 [sub_resource type="CircleShape2D" id="CircleShape2D_uplnw"]
 radius = 475.0
 
-[node name="Cannon" type="CharacterBody2D"]
+[node name="Cannon" type="Node2D"]
 script = ExtResource("1_a27tf")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Cannon-removebg-preview" type="Sprite2D" parent="."]
 texture = ExtResource("1_i10un")
 
-[node name="hitbox" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
-position = Vector2(-4, 0)
-shape = SubResource("RectangleShape2D_a27tf")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_8g5iw")
 
 [node name="hit_area" type="Area2D" parent="."]
 
@@ -31,3 +30,4 @@ wait_time = 2.5
 autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="ApplyDamage"]
+[connection signal="body_entered" from="Area2D" to="." method="in_range"]

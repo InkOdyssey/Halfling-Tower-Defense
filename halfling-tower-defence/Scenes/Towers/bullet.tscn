@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dcwrha85d3q35"]
+[gd_scene load_steps=4 format=3 uid="uid://iah52cq3c2rs"]
 
-[ext_resource type="Script" path="res://Scripts/Towers/Bullet.cs" id="1_h0bpb"]
-[ext_resource type="Texture2D" path="res://Assets/musket_ball-removebg-preview.png" id="2_mg7mp"]
+[ext_resource type="Script" uid="uid://cymw2mmetm31y" path="res://Scripts/Towers/Bullet.cs" id="1_h0bpb"]
+[ext_resource type="Texture2D" uid="uid://bas6vrtcu0m5n" path="res://Assets/musket_ball-removebg-preview.png" id="2_mg7mp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_so0ph"]
 radius = 12.0
