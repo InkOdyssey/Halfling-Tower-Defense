@@ -9,6 +9,7 @@ corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
+[ext_resource type="PackedScene" path="res://Particle.tscn" id="3_hvp1q"]
 
 [sub_resource type="FontFile" id="FontFile_52ajb"]
 cache/0/16/0/ascent = 0.0
@@ -81,27 +82,10 @@ texture = ExtResource("1_cr40v")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Collapse"]
 layout_mode = 0
-offset_left = 860.0
-offset_top = 70.0
-offset_right = 1118.0
-offset_bottom = 441.0
-theme_override_styles/normal = SubResource("StyleBoxFlat_rl8pc")
-text = "Leader Board:
-1.
-2.
-3.
-4.
-5.
-6.
-7.
-8.
-9.
-10.
-11.
-12.
-13.
-14.
-15."
+offset_left = 859.0
+offset_top = 136.0
+offset_right = 1127.0
+offset_bottom = 502.0
 
 [node name="Title" type="RichTextLabel" parent="Collapse"]
 layout_mode = 0
@@ -126,6 +110,37 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_hda41")
 text = "The game where the british attacked the pirates so Captain Kidd Rallies the pirates to fight them brits."
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Entries_Container" type="VBoxContainer" parent="Collapse"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 860.0
+offset_top = 160.0
+offset_right = 872.0
+offset_bottom = 183.0
+
+[node name="Leaderboard Row" type="HBoxContainer" parent="Collapse/Entries_Container"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="RankLabel" type="Label" parent="Collapse/Entries_Container/Leaderboard Row"]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="Collapse/Entries_Container/Leaderboard Row"]
+layout_mode = 2
+
+[node name="WavesLabel" type="Label" parent="Collapse/Entries_Container/Leaderboard Row"]
+layout_mode = 2
+
+[node name="Collapse_MarginContainer#VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Collapse_MarginContainer_VBoxContainer#LeaderBoard" type="Label" parent="."]
+layout_mode = 2
+text = "Leader Board: "
+
+[node name="Collapse_MarginContainer_VBoxContainer#ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 2
 
 [node name="Start_Button" type="Button" parent="."]
 layout_mode = 0

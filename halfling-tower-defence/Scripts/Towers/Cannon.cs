@@ -6,12 +6,8 @@ public partial class Cannon : Node2D
 	
 	public override void _Ready()
 	{
-		GD.Print("test");
-	}
-
-	public void in_range(Node2D body)
-	{
-		GD.Print("in zone");
+		damageAmount = 75;
+		base._Ready();
 	}
 	
 	
