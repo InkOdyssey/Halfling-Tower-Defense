@@ -9,5 +9,5 @@ script = ExtResource("1_wsloq")
 autostart = true
 
 [node name="Timer2" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 1.75
 autostart = true

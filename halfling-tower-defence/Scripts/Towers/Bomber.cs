@@ -6,7 +6,7 @@ public partial class Bomber : Tower
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		damageAmount = 30;
+		damageAmount = 35;
 		base._Ready();
 	}
 	

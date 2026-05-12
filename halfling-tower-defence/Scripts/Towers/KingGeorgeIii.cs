@@ -4,7 +4,7 @@ using System;
 public partial class KingGeorgeIii : CharacterBody2D
 {
 	
-	private int health = 300;
+	private int health = 350;
 	private bool damage = false;
 	private Area2D hitArea;
 	private bool _isDead = false;

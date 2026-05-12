@@ -4,23 +4,22 @@
 [ext_resource type="Script" uid="uid://3o2i2ermf8j0" path="res://Scripts/Towers/KingGeorgeIii.cs" id="2_wswyx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wswyx"]
-size = Vector2(104.444, 127.584)
+size = Vector2(725.333, 890.182)
 
 [node name="King George III" type="CharacterBody2D"]
 scale = Vector2(0.132353, 0.125817)
 script = ExtResource("2_wswyx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0.187503, -4.4375)
-scale = Vector2(0.234375, 0.220792)
+scale = Vector2(1.76207, 1.51337)
 texture = ExtResource("1_xkhqd")
 
 [node name="hit_area" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hit_area"]
-position = Vector2(8.22221, 0.207794)
+position = Vector2(0, -1.51597e-05)
 shape = SubResource("RectangleShape2D_wswyx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8.22221, 0.207794)
+position = Vector2(0, -1.51597e-05)
 shape = SubResource("RectangleShape2D_wswyx")

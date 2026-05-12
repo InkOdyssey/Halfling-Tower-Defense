@@ -3,7 +3,7 @@ using System;
 
 public partial class TeaCrate : CharacterBody2D
 {
-	private int health = 40;
+	private int health = 35;
 	private bool damage = false;
 	private Area2D hitArea;
 	private bool _isDead = false;

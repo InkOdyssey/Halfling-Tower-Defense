@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://buetxmt77dxle"]
+
+[ext_resource type="Script" uid="uid://cho3xikxr5y1g" path="res://Scripts/Enemies/spawner4.cs" id="1_gdfxy"]
+
+[node name="spawner3" type="Node2D"]
+script = ExtResource("1_gdfxy")
+
+[node name="Timer1" type="Timer" parent="."]
+wait_time = 0.2
+autostart = true
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 1.6
+autostart = true
+
+[node name="Timer3" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="Timer4" type="Timer" parent="."]
+wait_time = 7.0
+one_shot = true
+autostart = true
+
+[node name="Timer5" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+autostart = true

@@ -6,7 +6,7 @@ public partial class Tower : CharacterBody2D
 	//protected means that the variable/method can be used in this class (tower) and those that inherit from it
 	//like the scallelywag and other towers
 protected Area2D hitArea;
-protected int damageAmount = 15;
+protected int damageAmount = 20;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -38,37 +38,7 @@ protected int damageAmount = 15;
 		
 		foreach (var body in bodies)
 		{
-			if (body is Tea_Cup tea)
-			{
-				PathFollow2D pathFollow = tea.GetParent<PathFollow2D>();
-				
-				if (pathFollow.ProgressRatio > highestProgress)
-				{
-					highestProgress = pathFollow.ProgressRatio;
-					target = tea;
-				}
-			}
-			else if (body is TeaCrate crate)
-			{
-				PathFollow2D pathFollow = crate.GetParent<PathFollow2D>();
-				
-				if (pathFollow.ProgressRatio > highestProgress)
-				{
-					highestProgress = pathFollow.ProgressRatio;
-					target = crate;
-				}
-			}
-			else if (body is Flag flag)
-			{
-				PathFollow2D pathFollow = flag.GetParent<PathFollow2D>();
-				
-				if (pathFollow.ProgressRatio > highestProgress)
-				{
-					highestProgress = pathFollow.ProgressRatio;
-					target = flag;
-				}
-			}
-			else if (body is Jester jester)
+			if (body is Jester jester)
 			{
 				PathFollow2D pathFollow = jester.GetParent<PathFollow2D>();
 				
@@ -78,17 +48,53 @@ protected int damageAmount = 15;
 					target = jester;
 				}
 			}
-			else if (body is KingGeorgeIii king)
+		}
+		
+		if (target == null)
+		{
+			foreach (var body in bodies)
 			{
-				PathFollow2D pathFollow = king.GetParent<PathFollow2D>();
-				
-				if (pathFollow.ProgressRatio > highestProgress)
+				if (body is TeaCrate crate)
 				{
-					highestProgress = pathFollow.ProgressRatio;
-					target = king;
+					PathFollow2D pathFollow = crate.GetParent<PathFollow2D>();
+					
+					if (pathFollow.ProgressRatio > highestProgress)
+					{
+						highestProgress = pathFollow.ProgressRatio;
+						target = crate;
+					}
+				}
+				else if (body is Flag flag)
+				{
+					PathFollow2D pathFollow = flag.GetParent<PathFollow2D>();
+					
+					if (pathFollow.ProgressRatio > highestProgress)
+					{
+						highestProgress = pathFollow.ProgressRatio;
+						target = flag;
+					}
+				}
+				else if (body is Tea_Cup tea)
+				{
+					PathFollow2D pathFollow = tea.GetParent<PathFollow2D>();
+					
+					if (pathFollow.ProgressRatio > highestProgress)
+					{
+						highestProgress = pathFollow.ProgressRatio;
+						target = tea;
+					}
+				}
+				else if (body is KingGeorgeIii king)
+				{
+					PathFollow2D pathFollow = king.GetParent<PathFollow2D>();
+					
+					if (pathFollow.ProgressRatio > highestProgress)
+					{
+						highestProgress = pathFollow.ProgressRatio;
+						target = king;
+					}
 				}
 			}
-			
 			
 			
 		}
