@@ -10,6 +10,7 @@ corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
+[ext_resource type="PackedScene" path="res://Particle.tscn" id="3_hvp1q"]
 
 [sub_resource type="FontFile" id="FontFile_52ajb"]
 cache/0/16/0/ascent = 0.0
@@ -82,27 +83,10 @@ texture = ExtResource("1_cr40v")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Collapse"]
 layout_mode = 0
-offset_left = 860.0
-offset_top = 70.0
-offset_right = 1118.0
-offset_bottom = 441.0
-theme_override_styles/normal = SubResource("StyleBoxFlat_rl8pc")
-text = "Leader Board:
-1.
-2.
-3.
-4.
-5.
-6.
-7.
-8.
-9.
-10.
-11.
-12.
-13.
-14.
-15."
+offset_left = 859.0
+offset_top = 136.0
+offset_right = 1127.0
+offset_bottom = 502.0
 
 [node name="Title" type="RichTextLabel" parent="Collapse"]
 layout_mode = 0

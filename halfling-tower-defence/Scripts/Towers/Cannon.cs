@@ -1,13 +1,16 @@
 using Godot;
 using System;
 
-public partial class Cannon : Node2D
+public partial class Cannon : Tower
 {
-
-    public override void _Ready()
-    {
-        GD.Print("test");
-    }
+	
+	public override void _Ready()
+	{
+		damageAmount = 75;
+		base._Ready();
+	}
+	
+	
 
     public void in_range(Node2D body)
     {

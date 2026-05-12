@@ -5,6 +5,10 @@ public partial class Tower : Node2D
 {
 	protected Area2D hitArea;
 	protected Marker2D StartPoint;
+	//protected means that the variable/method can be used in this class (tower) and those that inherit from it
+	//like the scallelywag and other towers
+
+protected int damageAmount = 20;
 
 
 	[Export] public PackedScene TowerBullet;
@@ -16,9 +20,7 @@ public partial class Tower : Node2D
 		GD.Print("test");
 		hitArea = GetNode<Area2D>("hit_area");
 		StartPoint = GetNode<Marker2D>("Marker2D");
-	} 
-		
-	
+	}
 
 
 	public void timeout()

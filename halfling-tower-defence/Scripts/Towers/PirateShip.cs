@@ -1,12 +1,21 @@
 using Godot;
 using System;
 
-public partial class PirateShip : Node2D
+public partial class PirateShip : Tower
 {
-    // Called when the node enters the scene tree for the first time.
-    public override void _Ready()
-    {
-    }
+	// Called when the node enters the scene tree for the first time.
+	public override void _Ready()
+	{
+		damageAmount = 45;
+		base._Ready();
+	}
+	
+	
+		public void in_range(Node2D body)
+	{
+		GD.Print("in zone");
+	}
+	
 
 
     public void in_range(Node2D body)
