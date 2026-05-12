@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://csf8xl4jbxtly" path="res://Scenes/Other/Shop_UI.tscn" id="8_6q3n4"]
 [ext_resource type="PackedScene" uid="uid://cew5q1uqcdjgs" path="res://Scenes/Towers/Blackbeard.tscn" id="9_t6lfb"]
 [ext_resource type="PackedScene" uid="uid://bibu2x370mq0h" path="res://Scenes/Other/placement_area.tscn" id="10_dlo4w"]
-[ext_resource type="PackedScene" path="res://Scenes/Towers/bullet.tscn" id="10_xdmry"]
+[ext_resource type="PackedScene" uid="uid://iah52cq3c2rs" path="res://Scenes/Towers/bullet.tscn" id="10_xdmry"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v1qfn"]
 texture = ExtResource("1_j2wod")
@@ -1017,6 +1017,7 @@ script = ExtResource("1_np2xp")
 script = ExtResource("2_np2xp")
 
 [node name="PauseMenu" parent="Life" instance=ExtResource("8_4c2oa")]
+unique_name_in_owner = true
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_hh5uf")

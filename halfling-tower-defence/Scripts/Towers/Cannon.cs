@@ -12,15 +12,15 @@ public partial class Cannon : Tower
 	
 	
 
-    public void in_range(Node2D body)
-    {
-        GD.Print("in zone");
-    }
+	public void in_range(Node2D body)
+	{
+		GD.Print("in zone");
+	}
 
 
 
-    // Called every frame. 'delta' is the elapsed time since the previous frame.
-    public override void _Process(double delta)
-    {
-    }
+	// Called every frame. 'delta' is the elapsed time since the previous frame.
+	public override void _Process(double delta)
+	{
+	}
 }
