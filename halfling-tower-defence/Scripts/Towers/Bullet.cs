@@ -23,6 +23,7 @@ public virtual void ApplyDamage()
 				//replace the apply damage function with bullet.Instantiate()
 				//then have the bullet chase the enemy and apply damage once they hit each other
 				Enemy.ApplyDamage(5);
+				QueueFree();
 				return;
 			}
 		}
