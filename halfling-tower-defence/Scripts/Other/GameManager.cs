@@ -54,7 +54,7 @@ public override void _UnhandledInput(InputEvent @event)
 
 		_numLife = GetNodeOrNull<Label>("MarginContainer/Life_num/Num_life");
 		_coinLabel = GetNodeOrNull<Label>("MarginContainer/Score/Num");
-		PauseMenu = GetNode<PauseMenu>("%PauseMenu");
+		PauseMenu = GetNode<PauseMenu>("PauseMenu");
 		
 		UpdateUI();
 		GD.Print("GameManager ready with coins: " + _currentCoins);

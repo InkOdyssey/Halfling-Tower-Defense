@@ -16,8 +16,6 @@ protected int damageAmount = 20;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-
-		GD.Print("test");
 		hitArea = GetNode<Area2D>("hit_area");
 		StartPoint = GetNode<Marker2D>("Marker2D");
 	}

@@ -1,16 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://bloljlg60s2u6"]
+[gd_scene load_steps=9 format=3 uid="uid://bloljlg60s2u6"]
 
 [ext_resource type="Texture2D" uid="uid://ngud43p3by4t" path="res://Assets/Menu png.jpg" id="1_cr40v"]
 [ext_resource type="Script" uid="uid://6kdgfwvupswv" path="res://Scripts/Other/MainMenu.cs" id="1_rl8pc"]
-[ext_resource type="PackedScene" path="res://Particle.tscn" id="3_hvp1q"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rl8pc"]
-bg_color = Color(0, 0, 0, 0.741176)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-[ext_resource type="PackedScene" path="res://Particle.tscn" id="3_hvp1q"]
 
 [sub_resource type="FontFile" id="FontFile_52ajb"]
 cache/0/16/0/ascent = 0.0
