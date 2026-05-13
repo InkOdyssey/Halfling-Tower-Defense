@@ -8,6 +8,7 @@ public partial class TestEnemy : CharacterBody2D
 	protected bool damage = false;
 	protected Area2D hitArea;
 	private bool _isDead = false;
+	protected Sprite2D sprite;
 
 	//assigns pathprogress as a variable, but no value
 	public PathFollow2D pathprogress;
@@ -52,6 +53,7 @@ public partial class TestEnemy : CharacterBody2D
 	{
 		health -= damage;
 		GD.Print(health);
+		
 		if (health <= 0)
 			OnKill();
 	}
