@@ -22,6 +22,7 @@ public partial class TestEnemy : CharacterBody2D
 		if (pathprogress is null)
 			pathprogress = GetParent<PathFollow2D>();
 		hitArea = GetNode<Area2D>("hit_area");
+		sprite = GetNode<Sprite2D>("Sprite2D");
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
