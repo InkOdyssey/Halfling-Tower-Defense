@@ -9,6 +9,7 @@ public partial class Flag : CharacterBody2D
 	private bool damage = false;
 	private Area2D hitArea;
 	private bool _isDead = false;
+	protected Sprite2D sprite;
 	
 	
 	
@@ -25,6 +26,7 @@ public partial class Flag : CharacterBody2D
 		//gives pathprogress a value
 		pathprogress = GetParent<PathFollow2D>();
 		hitArea = GetNode<Area2D>("hit_area");
+		sprite = GetNode<Sprite2D>("Sprite2D");
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -61,6 +63,7 @@ public partial class Flag : CharacterBody2D
 	{
 		health -= damage;
 		GD.Print(health);
+		sprite.SelfModulate = new Color(1.5f, .5f, .5f, 1f);
 		if (health <= 0)
 			OnKill();
 	}
