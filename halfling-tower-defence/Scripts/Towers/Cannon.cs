@@ -6,7 +6,7 @@ public partial class Cannon : Tower
 	
 	public override void _Ready()
 	{
-		damageAmount = 75;
+		damageAmount = 65;
 		base._Ready();
 	}
 	

@@ -1,6 +1,5 @@
-[gd_scene load_steps=5 format=3 uid="uid://f5ewyx5326o4"]
+[gd_scene load_steps=4 format=3 uid="uid://f5ewyx5326o4"]
 
-[ext_resource type="Script" uid="uid://cbg3krigoga3x" path="res://Scripts/Towers/Cannon.cs" id="1_375f5"]
 [ext_resource type="Texture2D" uid="uid://cr2mfx6cbjoop" path="res://Assets/cannon-removebg-preview.png" id="2_xwyf5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a27tf"]
@@ -10,7 +9,6 @@ size = Vector2(280, 128)
 radius = 475.0
 
 [node name="Cannon" type="CharacterBody2D"]
-script = ExtResource("1_375f5")
 
 [node name="range" type="Line2D" parent="."]
 points = PackedVector2Array(0, 0, 0.5, 0)
