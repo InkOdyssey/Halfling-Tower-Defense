@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bd6wopk7qxmo" path="res://Scenes/Other/UI.tscn" id="2_ma6tg"]
 [ext_resource type="PackedScene" uid="uid://bl2dkn3bmfjrv" path="res://Scenes/Other/PauseMenu.tscn" id="3_bs3ef"]
 [ext_resource type="PackedScene" uid="uid://cg6uny8vedfdn" path="res://Scenes/Other/Upgrades.tscn" id="4_gxvd7"]
-[ext_resource type="PackedScene" uid="uid://chfpxesbd71t2" path="res://Scenes/Other/Shop_UI.tscn" id="5_inpdo"]
+[ext_resource type="PackedScene" uid="uid://csf8xl4jbxtly" path="res://Scenes/Other/Shop_UI.tscn" id="5_inpdo"]
 [ext_resource type="PackedScene" uid="uid://ijfvdicxl8ee" path="res://Scenes/Other/placement_area_lvl1.tscn" id="6_3h3v8"]
 [ext_resource type="Texture2D" uid="uid://d21hg5lssh5lm" path="res://Assets/RMMV/tf_beach_tileA1.png" id="6_ohee5"]
 [ext_resource type="Texture2D" uid="uid://cbku26tmpxqp4" path="res://Assets/RMMV/tf_beach_tileB.png" id="7_ma6tg"]
