@@ -24,3 +24,6 @@ shape = SubResource("CapsuleShape2D_4llvx")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_4llvx")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true

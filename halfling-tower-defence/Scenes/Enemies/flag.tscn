@@ -26,5 +26,4 @@ position = Vector2(0, 1.90735e-06)
 shape = SubResource("RectangleShape2D_oxoaj")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.2
 one_shot = true
