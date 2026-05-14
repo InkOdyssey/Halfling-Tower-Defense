@@ -8,7 +8,7 @@ public partial class TestTower : Tower
 		var bodies = hitArea.GetOverlappingBodies();
 		foreach (var body in bodies)
 		{
-			if (body is TestEnemy Enemy)
+			if (body is Enemy Enemy)
 			{
 				Enemy.ApplyDamage(5);
 				return;

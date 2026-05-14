@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class Tea_Cup : CharacterBody2D
+public partial class TeaCup : CharacterBody2D
 {
 	private int health = 30;
 	private bool damage = false;
