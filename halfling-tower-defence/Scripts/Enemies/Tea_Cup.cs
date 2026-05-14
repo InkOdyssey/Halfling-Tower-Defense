@@ -3,7 +3,7 @@ using System;
 
 public partial class Tea_Cup : CharacterBody2D
 {
-	private int health = 300;
+	private int health = 25;
 	private bool damage = false;
 	private Area2D hitArea;
 	private bool _isDead = false;
@@ -80,7 +80,7 @@ public partial class Tea_Cup : CharacterBody2D
 		GD.Print("Enemy killed");
 
 		if (GameManager.Instance != null)
-			GameManager.Instance.AddCoins(10);
+			GameManager.Instance.AddCoins(3);
 		else
 			GD.PrintErr("GameManager is NULL on kill!");
 

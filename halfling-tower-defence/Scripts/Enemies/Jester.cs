@@ -5,7 +5,7 @@ public partial class Jester : CharacterBody2D
 {
 	
 	
-	private int health = 150;
+	private int health = 400;
 	private bool damage = false;
 	private Area2D hitArea;
 	private bool _isDead = false;

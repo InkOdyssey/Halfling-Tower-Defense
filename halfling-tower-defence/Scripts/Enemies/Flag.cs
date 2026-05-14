@@ -84,7 +84,7 @@ public partial class Flag : CharacterBody2D
 		GD.Print("Enemy killed");
 
 		if (GameManager.Instance != null)
-			GameManager.Instance.AddCoins(20);
+			GameManager.Instance.AddCoins(10);
 		else
 			GD.PrintErr("GameManager is NULL on kill!");
 

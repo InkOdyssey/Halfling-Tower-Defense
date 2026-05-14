@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cs58hkurl0hc0" path="res://Scripts/Map.cs" id="1_oydqy"]
 [ext_resource type="PackedScene" uid="uid://d0u5w2rwurjw0" path="res://Scenes/Other/UI.tscn" id="2_oydqy"]
-[ext_resource type="PackedScene" uid="uid://bl2dkn3bmfjrv" path="res://Scenes/Other/PauseMenu.tscn" id="3_xdmry"]
+[ext_resource type="PackedScene" uid="uid://b0ta5qjssnb7v" path="res://Scenes/Other/PauseMenu.tscn" id="3_xdmry"]
 [ext_resource type="Texture2D" uid="uid://bjestqjcsf1ja" path="res://Assets/waterB_spritesheet.png" id="4_l00y7"]
 [ext_resource type="PackedScene" uid="uid://csf8xl4jbxtly" path="res://Scenes/Other/Shop_UI.tscn" id="5_qtk15"]
 [ext_resource type="PackedScene" uid="uid://bibu2x370mq0h" path="res://Scenes/Other/placement_area.tscn" id="6_ogfrb"]

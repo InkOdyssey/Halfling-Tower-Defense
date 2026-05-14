@@ -3,7 +3,7 @@ using System;
 
 public partial class TeaCrate : CharacterBody2D
 {
-	private int health = 45;
+	private int health = 35;
 	private bool damage = false;
 	private Area2D hitArea;
 	private bool _isDead = false;
@@ -98,7 +98,7 @@ public partial class TeaCrate : CharacterBody2D
 
 		if (GameManager.Instance != null)
 		{
-			GameManager.Instance.AddCoins(75);
+			GameManager.Instance.AddCoins(7);
 			float baseRatio = pathprogress.Progress;
 			for (int i = 0; i < 3; i++)
 			{
