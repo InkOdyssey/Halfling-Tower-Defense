@@ -4,10 +4,11 @@ using System;
 public partial class MainMenu : Control
 {
 	[Export] public VBoxContainer EntriesContainer;
+	[Export] public string LevelSelectScenePath = "res://Level_Select_Menu.tscn";
 
 	public override void _Ready()
 	{
-		GetNode<Button>("Start_Button").Pressed += _Play;
+		GetNode<Button>("Start_Button").Pressed += OnStartPressed;
 		GetNode<Button>("End_Button").Pressed += _Quit;
 
 		EntriesContainer ??= GetNode<VBoxContainer>("%Entries_Container");
@@ -28,17 +29,13 @@ public partial class MainMenu : Control
 		GameData.LeaderboardChanged -= RefreshLeaderboardUI;
 	}
 
-	private void _Play()
+	private void OnStartPressed()
 	{
-		GetTree().ChangeSceneToFile("res://Scenes/Map/map.tscn");
+		GetTree().ChangeSceneToFile(LevelSelectScenePath);
 	}
-	
-	public override void _Process(double delta)
+
+	private void _Quit()
 	{
-		
-	}
-	
-	private void _Quit () {
 		GetTree().Quit();
 	}
 

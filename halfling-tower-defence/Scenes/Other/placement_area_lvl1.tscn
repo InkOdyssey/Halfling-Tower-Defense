@@ -1,10 +1,11 @@
-[gd_scene format=3 uid="uid://bibu2x370mq0h"]
+[gd_scene format=3 uid="uid://ijfvdicxl8ee"]
 
 [node name="placement_area" type="Node2D"]
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+position = Vector2(793, -9)
 color = Color(0.85098, 0.435294, 0.462745, 0.572549)
-polygon = PackedVector2Array(-920, -48, -56, -48, -56, -224, 968, -224, 968, -136, 40, -136, 40, 48, -920, 48)
+polygon = PackedVector2Array(-1717, -608, -1717, -553, -71, -545, -71, 458, -1717, 455, -1717, 520, -9, 520, -9, -605)
 
 [node name="placement" type="Area2D" parent="."]
 collision_layer = 255
@@ -12,11 +13,11 @@ collision_mask = 255
 
 [node name="top_area" type="CollisionPolygon2D" parent="placement"]
 build_mode = 1
-polygon = PackedVector2Array(-920, -48, -56, -48, -56, -224, 968, -224, 968, -690, -920, -690)
+polygon = PackedVector2Array(-925, -618, -926, -690, 963, -686, 970, 618, -921, 618, -925, 514, 799, 503, 781, -615)
 
 [node name="bottom_area" type="CollisionPolygon2D" parent="placement"]
 build_mode = 1
-polygon = PackedVector2Array(-920, 48, -920, 616, 968, 616, 968, -136, 40, -136, 40, 48)
+polygon = PackedVector2Array(-924, -561, -927, 447, 723, 444, 725, -556)
 
 [connection signal="area_entered" from="placement" to="." method="_on_placement_area_entered"]
 [connection signal="area_exited" from="placement" to="." method="_on_placement_area_exited"]
