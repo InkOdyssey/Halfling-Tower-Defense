@@ -4,17 +4,65 @@
 [ext_resource type="Script" uid="uid://cunhbvow2sm6k" path="res://Scripts/Towers/PirateShip.cs" id="1_q8ltl"]
 [ext_resource type="Script" uid="uid://cqucp15dndxjp" path="res://Scripts/Other/Upgrades.cs" id="3_wh4c0"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_q8ltl"]
-radius = 400.0
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q8ltl"]
 size = Vector2(240, 216)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_q8ltl"]
 radius = 355.269
 
-[node name="Pirate Ship" type="CharacterBody2D"]
+[node name="Pirate Ship" type="CharacterBody2D" node_paths=PackedStringArray("Pirateship_hit", "Pirateship_attack_speed")]
 script = ExtResource("1_q8ltl")
+Pirateship_hit = NodePath("hit_area/Pirateship_hit")
+Pirateship_attack_speed = NodePath("Pirateship_attack_speed")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Pirateship_upgrade" type="Button" parent="CanvasLayer"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -137.0
+offset_top = -107.0
+offset_right = 104.0
+offset_bottom = 115.0
+script = ExtResource("3_wh4c0")
+
+[node name="Upgrade_panel" type="Panel" parent="CanvasLayer/Pirateship_upgrade"]
+self_modulate = Color(0, 0, 0, 0.67451)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.788
+anchor_top = 0.509
+anchor_right = 1.0
+anchor_bottom = 0.73
+offset_left = 846.092
+offset_top = 391.002
+offset_right = 1047.0
+offset_bottom = 527.94
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Pirateship_upgrade/Upgrade_panel"]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 244.0
+offset_bottom = 143.0
+
+[node name="Name" type="Label" parent="CanvasLayer/Pirateship_upgrade/Upgrade_panel/VBoxContainer"]
+layout_mode = 2
+text = "Pirate Ship Upgrades:"
+
+[node name="Pirateship_Fire_Speed" type="Button" parent="CanvasLayer/Pirateship_upgrade/Upgrade_panel/VBoxContainer"]
+layout_mode = 2
+text = "Fire Speed+ - 80 Coins"
+
+[node name="Pirateship_Damage" type="Button" parent="CanvasLayer/Pirateship_upgrade/Upgrade_panel/VBoxContainer"]
+layout_mode = 2
+text = "Damage+ - 90 Coins"
+
+[node name="Pirateship_Range" type="Button" parent="CanvasLayer/Pirateship_upgrade/Upgrade_panel/VBoxContainer"]
+layout_mode = 2
+text = "Range+ - 60 Coins"
+
+[node name="Close" type="Button" parent="CanvasLayer/Pirateship_upgrade/Upgrade_panel/VBoxContainer"]
+layout_mode = 2
+text = "Close"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_aasfu")
@@ -30,19 +78,14 @@ shape = SubResource("RectangleShape2D_q8ltl")
 [node name="Pirateship_hit" type="CollisionShape2D" parent="hit_area"]
 shape = SubResource("CircleShape2D_q8ltl")
 
-[node name="Pirateship_upgrade" type="Button" parent="."]
-visible = false
-offset_left = -137.0
-offset_top = -107.0
-offset_right = 104.0
-offset_bottom = 115.0
-script = ExtResource("3_wh4c0")
-
-[connection signal="body_entered" from="hit_area" to="." method="in_range"]
-[connection signal="pressed" from="Pirateship_upgrade" to="Pirateship_upgrade" method="_on_pirateship_upgrade_pressed"]
-[node name="Timer" type="Timer" parent="."]
+[node name="Pirateship_attack_speed" type="Timer" parent="."]
 wait_time = 1.25
 autostart = true
 
+[connection signal="pressed" from="CanvasLayer/Pirateship_upgrade" to="CanvasLayer/Pirateship_upgrade" method="_on_pirateship_upgrade_pressed"]
+[connection signal="pressed" from="CanvasLayer/Pirateship_upgrade/Upgrade_panel/VBoxContainer/Pirateship_Fire_Speed" to="CanvasLayer/Pirateship_upgrade" method="_on_pirateship_fire_speed_pressed"]
+[connection signal="pressed" from="CanvasLayer/Pirateship_upgrade/Upgrade_panel/VBoxContainer/Pirateship_Damage" to="CanvasLayer/Pirateship_upgrade" method="_on_pirateship_damage_pressed"]
+[connection signal="pressed" from="CanvasLayer/Pirateship_upgrade/Upgrade_panel/VBoxContainer/Pirateship_Range" to="CanvasLayer/Pirateship_upgrade" method="_on_pirateship_range_pressed"]
+[connection signal="pressed" from="CanvasLayer/Pirateship_upgrade/Upgrade_panel/VBoxContainer/Close" to="CanvasLayer/Pirateship_upgrade" method="_on_close_pressed"]
 [connection signal="body_entered" from="hit_area" to="." method="in_range"]
-[connection signal="timeout" from="Timer" to="." method="ApplyDamage"]
+[connection signal="timeout" from="Pirateship_attack_speed" to="." method="ApplyDamage"]

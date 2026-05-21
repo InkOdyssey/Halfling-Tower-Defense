@@ -6,7 +6,9 @@ public partial class Tower : CharacterBody2D
 	//protected means that the variable/method can be used in this class (tower) and those that inherit from it
 	//like the scallelywag and other towers
 protected Area2D hitArea;
-protected int damageAmount = 20;
+[Export] public CollisionShape2D Blackbeard_hit { get; set; }
+[Export] public Timer Blackbeard_attack_speed { get; set; }
+[Export] public int damageAmount= 20;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()

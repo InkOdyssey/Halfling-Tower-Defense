@@ -3,10 +3,12 @@ using System;
 
 public partial class Cannon : Tower
 {
-	
+	[Export] public CollisionShape2D Cannon_hit { get; set; }
+	[Export] public Timer Cannon_attack_speed { get; set; }
+	[Export] public int damageAmount= 75;
 	public override void _Ready()
 	{
-		damageAmount = 75;
+
 		base._Ready();
 	}
 	
