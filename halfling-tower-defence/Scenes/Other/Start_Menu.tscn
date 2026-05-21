@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://ngud43p3by4t" path="res://Assets/Menu png.jpg" id="1_cr40v"]
 [ext_resource type="Script" uid="uid://6kdgfwvupswv" path="res://Scripts/Other/MainMenu.cs" id="1_rl8pc"]
-[ext_resource type="PackedScene" uid="uid://b5puhg7pyxp5v" path="res://Scenes/Other/Particle.tscn" id="3_hvp1q"]
+[ext_resource type="PackedScene" uid="uid://b5puhg7pyxp5v" path="res://Particle.tscn" id="3_hvp1q"]
 
 [sub_resource type="FontFile" id="FontFile_52ajb"]
 cache/0/16/0/ascent = 0.0

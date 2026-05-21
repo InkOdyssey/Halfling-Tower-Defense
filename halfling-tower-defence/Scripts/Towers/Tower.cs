@@ -40,37 +40,7 @@ protected Area2D hitArea;
 		
 		foreach (var body in bodies)
 		{
-			if (body is Tea_Cup tea)
-			{
-				PathFollow2D pathFollow = tea.GetParent<PathFollow2D>();
-				
-				if (pathFollow.ProgressRatio > highestProgress)
-				{
-					highestProgress = pathFollow.ProgressRatio;
-					target = tea;
-				}
-			}
-			else if (body is TeaCrate crate)
-			{
-				PathFollow2D pathFollow = crate.GetParent<PathFollow2D>();
-				
-				if (pathFollow.ProgressRatio > highestProgress)
-				{
-					highestProgress = pathFollow.ProgressRatio;
-					target = crate;
-				}
-			}
-			else if (body is Flag flag)
-			{
-				PathFollow2D pathFollow = flag.GetParent<PathFollow2D>();
-				
-				if (pathFollow.ProgressRatio > highestProgress)
-				{
-					highestProgress = pathFollow.ProgressRatio;
-					target = flag;
-				}
-			}
-			else if (body is Jester jester)
+			if (body is Jester jester)
 			{
 				PathFollow2D pathFollow = jester.GetParent<PathFollow2D>();
 				
@@ -80,17 +50,53 @@ protected Area2D hitArea;
 					target = jester;
 				}
 			}
-			else if (body is KingGeorgeIii king)
+		}
+		
+		if (target == null)
+		{
+			foreach (var body in bodies)
 			{
-				PathFollow2D pathFollow = king.GetParent<PathFollow2D>();
-				
-				if (pathFollow.ProgressRatio > highestProgress)
+				if (body is TeaCrate crate)
 				{
-					highestProgress = pathFollow.ProgressRatio;
-					target = king;
+					PathFollow2D pathFollow = crate.GetParent<PathFollow2D>();
+					
+					if (pathFollow.ProgressRatio > highestProgress)
+					{
+						highestProgress = pathFollow.ProgressRatio;
+						target = crate;
+					}
+				}
+				else if (body is Flag flag)
+				{
+					PathFollow2D pathFollow = flag.GetParent<PathFollow2D>();
+					
+					if (pathFollow.ProgressRatio > highestProgress)
+					{
+						highestProgress = pathFollow.ProgressRatio;
+						target = flag;
+					}
+				}
+				else if (body is Tea_Cup tea)
+				{
+					PathFollow2D pathFollow = tea.GetParent<PathFollow2D>();
+					
+					if (pathFollow.ProgressRatio > highestProgress)
+					{
+						highestProgress = pathFollow.ProgressRatio;
+						target = tea;
+					}
+				}
+				else if (body is KingGeorgeIii king)
+				{
+					PathFollow2D pathFollow = king.GetParent<PathFollow2D>();
+					
+					if (pathFollow.ProgressRatio > highestProgress)
+					{
+						highestProgress = pathFollow.ProgressRatio;
+						target = king;
+					}
 				}
 			}
-			
 			
 			
 		}

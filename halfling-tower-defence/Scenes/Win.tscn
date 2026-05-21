@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7r2acglshlvy"]
+
+[ext_resource type="Script" uid="uid://v0landsh7m1k" path="res://Scripts/Win.cs" id="1_3vusp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i2yjh"]
+bg_color = Color(0.326883, 3.39923e-07, 1.20327e-07, 1)
+
+[node name="Win" type="Node2D"]
+script = ExtResource("1_3vusp")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 647.0
+color = Color(0, 0, 0, 1)
+
+[node name="Title" type="Label" parent="ColorRect"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 472.0
+offset_top = 72.0
+offset_right = 544.0
+offset_bottom = 95.0
+scale = Vector2(3, 3)
+theme_override_styles/normal = SubResource("StyleBoxFlat_i2yjh")
+text = "You Win!"
+
+[node name="MainMenu" type="Button" parent="ColorRect"]
+layout_mode = 0
+offset_left = 454.0
+offset_top = 492.0
+offset_right = 655.0
+offset_bottom = 553.0
+text = "Main Menu"
+
+[node name="NameInput" type="LineEdit" parent="."]
+offset_left = 488.0
+offset_top = 367.0
+offset_right = 615.0
+offset_bottom = 414.0
+placeholder_text = "Enter Name"
+alignment = 1
+max_length = 12
+
+[node name="WavesLabel" type="Label" parent="."]
+offset_left = 379.0
+offset_top = 212.0
+offset_right = 454.0
+offset_bottom = 235.0
+scale = Vector2(2, 2)
+text = "Waves: "
+
+[connection signal="pressed" from="ColorRect/MainMenu" to="." method="_on_main_menu_pressed"]

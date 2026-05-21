@@ -6,6 +6,7 @@ public partial class spawner3 : Node2D
 	private Timer timer1;
 	private Timer timer2;
 	private Timer timer3;
+	private Timer timer4;
 	private int enemy1_count = 0;
 	private int enemy2_count = 0;
 	private int enemy3_count = 0;
@@ -13,6 +14,7 @@ public partial class spawner3 : Node2D
 	private PackedScene tea = GD.Load<PackedScene>("res://Scenes/Enemies/tea.tscn");
 	private PackedScene tea_crate = GD.Load<PackedScene>("res://Scenes/Enemies/tea_crate.tscn");
 	private PackedScene flag = GD.Load<PackedScene>("res://Scenes/Enemies/flag.tscn");
+	private PackedScene jester = GD.Load<PackedScene>("res://Scenes/Enemies/jester.tscn");
 	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -20,9 +22,11 @@ public partial class spawner3 : Node2D
 		timer1 = GetNode<Timer>("Timer1");
 		timer2 = GetNode<Timer>("Timer2");
 		timer3 = GetNode<Timer>("Timer3");
+		timer4 = GetNode<Timer>("Timer4");
 		timer1.Timeout += _on_timer1_timeout;
 		timer2.Timeout += _on_timer2_timeout;
 		timer3.Timeout += _on_timer3_timeout;
+		timer4.Timeout += _on_timer4_timeout;
 		
 	}
 
@@ -43,7 +47,7 @@ public partial class spawner3 : Node2D
 		new_enemypath.Loop = false;
 		new_enemypath.Rotates = false;
 		
-		if (enemy1_count <= 30)
+		if (enemy1_count < 15)
 		{
 			enemypath.AddChild(new_enemypath);
 			new_enemypath.AddChild(tea_spawn);
@@ -63,7 +67,7 @@ public partial class spawner3 : Node2D
 		new_enemypath.Rotates = false;
 		
 		
-		if (enemy2_count <= 8)
+		if (enemy2_count < 8)
 		{
 			enemypath.AddChild(new_enemypath);
 			new_enemypath.AddChild(tea_crate_spawn);
@@ -76,18 +80,29 @@ public partial class spawner3 : Node2D
 	{
 		var flag_spawn = flag.Instantiate<CharacterBody2D>();
 		var enemypath = GetNode<Path2D>("/root/map/Path2D");
-		var tea_spawn = tea.Instantiate<CharacterBody2D>();
 		
 		var new_enemypath = new PathFollow2D();
 		new_enemypath.Loop = false;
 		new_enemypath.Rotates = false;
 		
 		
-		if (enemy3_count <= 5)
+		if (enemy3_count < 5)
 		{
 			enemypath.AddChild(new_enemypath);
 			new_enemypath.AddChild(flag_spawn);
 			enemy3_count += 1;
 		}
+	}
+	private void _on_timer4_timeout()
+	{
+		var jester_spawn = jester.Instantiate<CharacterBody2D>();
+		var enemypath = GetNode<Path2D>("/root/map/Path2D");
+		
+		var new_enemypath = new PathFollow2D();
+		new_enemypath.Loop = false;
+		new_enemypath.Rotates = false;
+		
+		enemypath.AddChild(new_enemypath);
+		new_enemypath.AddChild(jester_spawn);
 	}
 }

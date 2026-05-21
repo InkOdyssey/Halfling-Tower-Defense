@@ -37,7 +37,7 @@ public partial class spawner2 : Node2D
 		new_enemypath.Loop = false;
 		new_enemypath.Rotates = false;
 		
-		if (enemy1_count <= 15)
+		if (enemy1_count < 15)
 		{
 			enemypath.AddChild(new_enemypath);
 			new_enemypath.AddChild(tea_spawn);
@@ -57,7 +57,7 @@ public partial class spawner2 : Node2D
 		new_enemypath.Rotates = false;
 		
 		
-		if (enemy2_count <= 5)
+		if (enemy2_count < 6)
 		{
 			enemypath.AddChild(new_enemypath);
 			new_enemypath.AddChild(tea_crate_spawn);

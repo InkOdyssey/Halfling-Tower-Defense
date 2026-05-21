@@ -9,6 +9,8 @@ public partial class Flag : CharacterBody2D
 	private bool damage = false;
 	private Area2D hitArea;
 	private bool _isDead = false;
+	protected Sprite2D sprite;
+	private Timer timer;
 	
 	
 	
@@ -21,10 +23,12 @@ public partial class Flag : CharacterBody2D
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		
+		timer = GetNode<Timer>("Timer");
+		timer.Timeout += _on_timer_timeout;
 		//gives pathprogress a value
 		pathprogress = GetParent<PathFollow2D>();
 		hitArea = GetNode<Area2D>("hit_area");
+		sprite = GetNode<Sprite2D>("Sprite2D");
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -61,6 +65,8 @@ public partial class Flag : CharacterBody2D
 	{
 		health -= damage;
 		GD.Print(health);
+		sprite.SelfModulate = new Color(1.5f, .5f, .5f, 1f);
+		timer.Start();
 		if (health <= 0)
 			OnKill();
 	}
@@ -78,10 +84,14 @@ public partial class Flag : CharacterBody2D
 		GD.Print("Enemy killed");
 
 		if (GameManager.Instance != null)
-			GameManager.Instance.AddCoins(20);
+			GameManager.Instance.AddCoins(10);
 		else
 			GD.PrintErr("GameManager is NULL on kill!");
 
 		QueueFree();
 }
+	private void _on_timer_timeout()
+	{
+		sprite.SelfModulate = new Color(1f, 1f, 1f, 1f);
+	}
 	}

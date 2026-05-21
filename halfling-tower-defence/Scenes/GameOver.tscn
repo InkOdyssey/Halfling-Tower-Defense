@@ -1,11 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://b7nyatnvilysy"]
+[gd_scene load_steps=3 format=3 uid="uid://du77u70wlag0n"]
 
 [ext_resource type="Script" uid="uid://bo4elbo7glp1y" path="res://Scripts/GameOver.cs" id="1_m5628"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i2yjh"]
 bg_color = Color(0.326883, 3.39923e-07, 1.20327e-07, 1)
 
-[node name="GameOver" type="Node2D"]
+[node name="Win" type="Node2D"]
 script = ExtResource("1_m5628")
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -16,13 +16,13 @@ color = Color(0, 0, 0, 1)
 [node name="Title" type="Label" parent="ColorRect"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 431.0
-offset_top = 62.0
-offset_right = 528.0
-offset_bottom = 85.0
+offset_left = 328.0
+offset_top = 64.0
+offset_right = 509.0
+offset_bottom = 87.0
 scale = Vector2(3, 3)
 theme_override_styles/normal = SubResource("StyleBoxFlat_i2yjh")
-text = "𝒢𝒜ℳℰ 𝒪𝒱ℰℛ"
+text = "Game Over (YOU SUCK)"
 
 [node name="MainMenu" type="Button" parent="ColorRect"]
 layout_mode = 0

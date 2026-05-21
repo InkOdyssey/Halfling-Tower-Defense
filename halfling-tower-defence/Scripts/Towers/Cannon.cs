@@ -8,7 +8,6 @@ public partial class Cannon : Tower
 	[Export] public int damageAmount= 75;
 	public override void _Ready()
 	{
-
 		base._Ready();
 	}
 	
