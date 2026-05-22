@@ -23,3 +23,6 @@ shape = SubResource("RectangleShape2D_wswyx")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -1.51597e-05)
 shape = SubResource("RectangleShape2D_wswyx")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true

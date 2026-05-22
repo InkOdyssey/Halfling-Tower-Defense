@@ -21,10 +21,11 @@ public partial class Tea_Cup : CharacterBody2D
 	{
 		timer = GetNode<Timer>("Timer");
 		timer.Timeout += _on_timer_timeout;
+		sprite = GetNode<Sprite2D>("Sprite2D");
 		//gives pathprogress a value
 		pathprogress = GetParent<PathFollow2D>();
 		hitArea = GetNode<Area2D>("hit_area");
-		sprite = GetNode<Sprite2D>("Sprite2D");
+		
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
