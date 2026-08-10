@@ -3,10 +3,12 @@ using System;
 
 public partial class Bomber : Tower
 {
+	[Export] public CollisionShape2D Bomber_hit { get; set; }
+	[Export] public Timer Bomber_attack_speed { get; set; }
+	[Export] public int damageAmount= 30;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		damageAmount = 35;
 		base._Ready();
 	}
 	

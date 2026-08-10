@@ -82,8 +82,6 @@ public override void _UnhandledInput(InputEvent @event)
 			return false;
 		}
 		_currentCoins -= amount;
-
-		PauseMenu = GetNode<PauseMenu>("PauseMenu");
 		UpdateUI();
 		CoinsChanged?.Invoke();
 		return true;

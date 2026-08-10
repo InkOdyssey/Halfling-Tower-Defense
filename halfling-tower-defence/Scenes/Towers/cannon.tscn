@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://gqen3snxjw6h"]
+[gd_scene load_steps=6 format=3 uid="uid://gqen3snxjw6h"]
 
 [ext_resource type="Script" uid="uid://cbg3krigoga3x" path="res://Scripts/Towers/Cannon.cs" id="1_a27tf"]
 [ext_resource type="Texture2D" uid="uid://cr2mfx6cbjoop" path="res://Assets/cannon-removebg-preview.png" id="1_i10un"]
+[ext_resource type="Script" uid="uid://cqucp15dndxjp" path="res://Scripts/Other/Upgrades.cs" id="3_uplnw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a27tf"]
 size = Vector2(280, 128)
@@ -9,8 +10,58 @@ size = Vector2(280, 128)
 [sub_resource type="CircleShape2D" id="CircleShape2D_uplnw"]
 radius = 475.0
 
-[node name="Cannon" type="CharacterBody2D"]
+[node name="Cannon" type="CharacterBody2D" node_paths=PackedStringArray("Cannon_hit", "Cannon_attack_speed")]
 script = ExtResource("1_a27tf")
+Cannon_hit = NodePath("hit_area/Cannon_hit")
+Cannon_attack_speed = NodePath("Cannon_attack_speed")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Cannon_upgrade" type="Button" parent="CanvasLayer"]
+offset_left = -145.0
+offset_top = -64.0
+offset_right = 136.0
+offset_bottom = 63.0
+script = ExtResource("3_uplnw")
+
+[node name="Upgrade_panel" type="Panel" parent="CanvasLayer/Cannon_upgrade"]
+self_modulate = Color(0, 0, 0, 0.67451)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.788
+anchor_top = 0.509
+anchor_right = 1.0
+anchor_bottom = 0.73
+offset_left = 824.572
+offset_top = 414.357
+offset_right = 1016.0
+offset_bottom = 570.29
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Cannon_upgrade/Upgrade_panel"]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 244.0
+offset_bottom = 143.0
+
+[node name="Name" type="Label" parent="CanvasLayer/Cannon_upgrade/Upgrade_panel/VBoxContainer"]
+layout_mode = 2
+text = "Cannon Upgrades (Works Once):"
+
+[node name="Cannon_Fire_Speed" type="Button" parent="CanvasLayer/Cannon_upgrade/Upgrade_panel/VBoxContainer"]
+layout_mode = 2
+text = "Fire Speed+ - 80 Coins"
+
+[node name="Cannon_Damage" type="Button" parent="CanvasLayer/Cannon_upgrade/Upgrade_panel/VBoxContainer"]
+layout_mode = 2
+text = "Damage+ - 90 Coins"
+
+[node name="Cannon_Range" type="Button" parent="CanvasLayer/Cannon_upgrade/Upgrade_panel/VBoxContainer"]
+layout_mode = 2
+text = "Range+ - 60 Coins"
+
+[node name="Close" type="Button" parent="CanvasLayer/Cannon_upgrade/Upgrade_panel/VBoxContainer"]
+layout_mode = 2
+text = "Close"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_i10un")
@@ -23,11 +74,16 @@ shape = SubResource("RectangleShape2D_a27tf")
 
 [node name="hit_area" type="Area2D" parent="."]
 
-[node name="hit_area#CollisionShape2D" type="CollisionShape2D" parent="hit_area"]
+[node name="Cannon_hit" type="CollisionShape2D" parent="hit_area"]
 shape = SubResource("CircleShape2D_uplnw")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Cannon_attack_speed" type="Timer" parent="."]
 wait_time = 2.5
 autostart = true
 
-[connection signal="timeout" from="Timer" to="." method="ApplyDamage"]
+[connection signal="pressed" from="CanvasLayer/Cannon_upgrade" to="CanvasLayer/Cannon_upgrade" method="_on_cannon_upgrade_pressed"]
+[connection signal="pressed" from="CanvasLayer/Cannon_upgrade/Upgrade_panel/VBoxContainer/Cannon_Fire_Speed" to="CanvasLayer/Cannon_upgrade" method="_on_cannon_fire_speed_pressed"]
+[connection signal="pressed" from="CanvasLayer/Cannon_upgrade/Upgrade_panel/VBoxContainer/Cannon_Damage" to="CanvasLayer/Cannon_upgrade" method="_on_cannon_damage_pressed"]
+[connection signal="pressed" from="CanvasLayer/Cannon_upgrade/Upgrade_panel/VBoxContainer/Cannon_Range" to="CanvasLayer/Cannon_upgrade" method="_on_cannon_range_pressed"]
+[connection signal="pressed" from="CanvasLayer/Cannon_upgrade/Upgrade_panel/VBoxContainer/Close" to="CanvasLayer/Cannon_upgrade" method="_on_close_pressed"]
+[connection signal="timeout" from="Cannon_attack_speed" to="." method="ApplyDamage"]

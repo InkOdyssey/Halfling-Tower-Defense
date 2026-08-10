@@ -2504,6 +2504,7 @@ script = ExtResource("1_oydqy")
 offset_bottom = 6.0
 
 [node name="Upgrades" parent="Life" instance=ExtResource("8_oydqy")]
+visible = false
 
 [node name="Shop_UI" parent="Life" instance=ExtResource("5_qtk15")]
 

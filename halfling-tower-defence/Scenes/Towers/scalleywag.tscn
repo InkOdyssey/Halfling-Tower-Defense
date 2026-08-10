@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dgwxc32ayqykf"]
+[gd_scene load_steps=6 format=3 uid="uid://dgwxc32ayqykf"]
 
 [ext_resource type="Script" uid="uid://ctrdjxqlrkq8p" path="res://Scripts/Towers/TowerS.cs" id="1_fwk60"]
 [ext_resource type="Texture2D" uid="uid://cubhg6a8f5res" path="res://Assets/pirate_guy_dos-removebg-preview.png" id="1_kul4u"]
+[ext_resource type="Script" uid="uid://cqucp15dndxjp" path="res://Scripts/Other/Upgrades.cs" id="4_ppsfl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fwk60"]
 radius = 208.022
@@ -9,15 +10,66 @@ radius = 208.022
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4vw4w"]
 size = Vector2(144, 216)
 
-[node name="Scalleywag2" type="CharacterBody2D"]
+[node name="Scalleywag" type="CharacterBody2D" node_paths=PackedStringArray("Scalleywag_hit", "Scalleywag_attack_speed")]
 script = ExtResource("1_fwk60")
+Scalleywag_hit = NodePath("hit_area/Scalleywag_hit")
+Scalleywag_attack_speed = NodePath("Scalleywag_attack_speed")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Scalleywag_upgrade" type="Button" parent="CanvasLayer"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -73.0
+offset_top = -104.0
+offset_right = 71.0
+offset_bottom = 113.0
+script = ExtResource("4_ppsfl")
+
+[node name="Upgrade_panel" type="Panel" parent="CanvasLayer/Scalleywag_upgrade"]
+self_modulate = Color(0, 0, 0, 0.67451)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.788
+anchor_top = 0.509
+anchor_right = 1.0
+anchor_bottom = 0.73
+offset_left = 857.92
+offset_top = 401.416
+offset_right = 1073.0
+offset_bottom = 538.52
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Scalleywag_upgrade/Upgrade_panel"]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 244.0
+offset_bottom = 143.0
+
+[node name="Name" type="Label" parent="CanvasLayer/Scalleywag_upgrade/Upgrade_panel/VBoxContainer"]
+layout_mode = 2
+text = "Scalleywag Upgrades:"
+
+[node name="ScalleyWag_Fire_Speed" type="Button" parent="CanvasLayer/Scalleywag_upgrade/Upgrade_panel/VBoxContainer"]
+layout_mode = 2
+text = "Fire Speed+ - 80 Coins"
+
+[node name="Scalleywag_Damage" type="Button" parent="CanvasLayer/Scalleywag_upgrade/Upgrade_panel/VBoxContainer"]
+layout_mode = 2
+text = "Damage+ - 90 Coins"
+
+[node name="Scalleywag_Range" type="Button" parent="CanvasLayer/Scalleywag_upgrade/Upgrade_panel/VBoxContainer"]
+layout_mode = 2
+text = "Range+ - 60 Coins"
+
+[node name="Close" type="Button" parent="CanvasLayer/Scalleywag_upgrade/Upgrade_panel/VBoxContainer"]
+layout_mode = 2
+text = "Close"
 
 [node name="PirateGuyDos-removebg-preview" type="Sprite2D" parent="."]
 texture = ExtResource("1_kul4u")
 
 [node name="hit_area" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hit_area"]
+[node name="Scalleywag_hit" type="CollisionShape2D" parent="hit_area"]
 shape = SubResource("CircleShape2D_fwk60")
 
 [node name="hitbox" type="Area2D" parent="."]
@@ -26,8 +78,14 @@ shape = SubResource("CircleShape2D_fwk60")
 position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_4vw4w")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Scalleywag_attack_speed" type="Timer" parent="."]
 wait_time = 0.5
 autostart = true
 
-[connection signal="timeout" from="Timer" to="." method="ApplyDamage"]
+[connection signal="pressed" from="CanvasLayer/Scalleywag_upgrade" to="CanvasLayer/Scalleywag_upgrade" method="_on_scalleywag_upgrade_pressed"]
+[connection signal="pressed" from="CanvasLayer/Scalleywag_upgrade/Upgrade_panel/VBoxContainer/ScalleyWag_Fire_Speed" to="CanvasLayer/Scalleywag_upgrade" method="_on_scalley_wag_fire_speed_pressed"]
+[connection signal="pressed" from="CanvasLayer/Scalleywag_upgrade/Upgrade_panel/VBoxContainer/Scalleywag_Damage" to="CanvasLayer/Scalleywag_upgrade" method="_on_scalleywag_damage_pressed"]
+[connection signal="pressed" from="CanvasLayer/Scalleywag_upgrade/Upgrade_panel/VBoxContainer/Scalleywag_Range" to="CanvasLayer/Scalleywag_upgrade" method="_on_scalleywag_range_pressed"]
+[connection signal="pressed" from="CanvasLayer/Scalleywag_upgrade/Upgrade_panel/VBoxContainer/Close" to="CanvasLayer/Scalleywag_upgrade" method="_on_close_pressed"]
+[connection signal="body_entered" from="hit_area" to="." method="in_range"]
+[connection signal="timeout" from="Scalleywag_attack_speed" to="." method="ApplyDamage"]

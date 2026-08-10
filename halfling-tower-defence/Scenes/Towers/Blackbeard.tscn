@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cew5q1uqcdjgs"]
+[gd_scene load_steps=6 format=3 uid="uid://cew5q1uqcdjgs"]
 
 [ext_resource type="Script" uid="uid://dhe4feg7q8fyn" path="res://Scripts/Towers/Tower.cs" id="1_4bfos"]
 [ext_resource type="Texture2D" uid="uid://iq6ync05a2u4" path="res://Assets/blackbeard-removebg-preview.png" id="1_xguve"]
+[ext_resource type="Script" uid="uid://cqucp15dndxjp" path="res://Scripts/Other/Upgrades.cs" id="4_1qrma"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1lsvg"]
 size = Vector2(144, 216)
@@ -9,24 +10,84 @@ size = Vector2(144, 216)
 [sub_resource type="CircleShape2D" id="CircleShape2D_4bfos"]
 radius = 355.269
 
-[node name="Blackbeard" type="CharacterBody2D"]
+[node name="Blackbeard" type="CharacterBody2D" node_paths=PackedStringArray("Blackbeard_hit", "Blackbeard_attack_speed")]
 script = ExtResource("1_4bfos")
+Blackbeard_hit = NodePath("hit_area/Blackbeard_hit")
+Blackbeard_attack_speed = NodePath("Blackbeard_attack_speed")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Blackbeard_Upgrade" type="Button" parent="CanvasLayer"]
+z_index = 30
+offset_left = -72.0
+offset_top = -105.0
+offset_right = 72.0
+offset_bottom = 112.0
+script = ExtResource("4_1qrma")
+
+[node name="Upgrade_panel" type="Panel" parent="CanvasLayer/Blackbeard_Upgrade"]
+self_modulate = Color(0, 0, 0, 0.67451)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.788
+anchor_top = 0.509
+anchor_right = 1.0
+anchor_bottom = 0.73
+offset_left = 858.528
+offset_top = 396.547
+offset_right = 1078.0
+offset_bottom = 533.485
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Blackbeard_Upgrade/Upgrade_panel"]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 244.0
+offset_bottom = 143.0
+
+[node name="Name" type="Label" parent="CanvasLayer/Blackbeard_Upgrade/Upgrade_panel/VBoxContainer"]
+layout_mode = 2
+text = "Black Beard Upgrades:"
+
+[node name="Blackbeard_Fire_Speed" type="Button" parent="CanvasLayer/Blackbeard_Upgrade/Upgrade_panel/VBoxContainer"]
+layout_mode = 2
+text = "Fire Speed+ - 80 Coins"
+
+[node name="Blackbeard_Damage" type="Button" parent="CanvasLayer/Blackbeard_Upgrade/Upgrade_panel/VBoxContainer"]
+layout_mode = 2
+text = "Damage+ - 90 Coins"
+
+[node name="Blackbeard_Range" type="Button" parent="CanvasLayer/Blackbeard_Upgrade/Upgrade_panel/VBoxContainer"]
+layout_mode = 2
+text = "Range+ -60 Coins"
+
+[node name="Close" type="Button" parent="CanvasLayer/Blackbeard_Upgrade/Upgrade_panel/VBoxContainer"]
+layout_mode = 2
+text = "Close"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_xguve")
 
 [node name="hitbox" type="Area2D" parent="."]
+input_pickable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
 position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_1lsvg")
 
 [node name="hit_area" type="Area2D" parent="."]
+input_pickable = false
 
-[node name="hit_area#CollisionShape2D" type="CollisionShape2D" parent="hit_area"]
+[node name="Blackbeard_hit" type="CollisionShape2D" parent="hit_area"]
+unique_name_in_owner = true
 shape = SubResource("CircleShape2D_4bfos")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Blackbeard_attack_speed" type="Timer" parent="."]
+wait_time = 0.8
 autostart = true
 
-[connection signal="timeout" from="Timer" to="." method="ApplyDamage"]
+[connection signal="pressed" from="CanvasLayer/Blackbeard_Upgrade" to="CanvasLayer/Blackbeard_Upgrade" method="_on_blackbeard_upgrade_pressed"]
+[connection signal="pressed" from="CanvasLayer/Blackbeard_Upgrade/Upgrade_panel/VBoxContainer/Blackbeard_Fire_Speed" to="CanvasLayer/Blackbeard_Upgrade" method="_on_blackbeard_fire_speed_pressed"]
+[connection signal="pressed" from="CanvasLayer/Blackbeard_Upgrade/Upgrade_panel/VBoxContainer/Blackbeard_Damage" to="CanvasLayer/Blackbeard_Upgrade" method="_on_blackbeard_damage_pressed"]
+[connection signal="pressed" from="CanvasLayer/Blackbeard_Upgrade/Upgrade_panel/VBoxContainer/Blackbeard_Range" to="CanvasLayer/Blackbeard_Upgrade" method="_on_blackbeard_range_pressed"]
+[connection signal="pressed" from="CanvasLayer/Blackbeard_Upgrade/Upgrade_panel/VBoxContainer/Close" to="CanvasLayer/Blackbeard_Upgrade" method="_on_close_pressed"]
+[connection signal="timeout" from="Blackbeard_attack_speed" to="." method="ApplyDamage"]

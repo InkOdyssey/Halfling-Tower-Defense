@@ -73,14 +73,6 @@ position = Vector2(576, 327.5)
 scale = Vector2(3.84, 3.8869)
 texture = ExtResource("1_cr40v")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Collapse"]
-z_index = 2
-layout_mode = 0
-offset_left = 859.0
-offset_top = 136.0
-offset_right = 1127.0
-offset_bottom = 502.0
-
 [node name="Title" type="RichTextLabel" parent="Collapse"]
 z_index = 2
 layout_mode = 0
@@ -107,6 +99,28 @@ text = "The game where the british attacked the pirates so Captain Kidd Rallies 
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="ColorRect" type="ColorRect" parent="Collapse"]
+layout_mode = 2
+offset_left = 850.0
+offset_top = 127.0
+offset_right = 1146.0
+offset_bottom = 437.0
+color = Color(0, 0, 0, 0.447059)
+
+[node name="Collapse_MarginContainer#VBoxContainer" type="VBoxContainer" parent="Collapse"]
+layout_mode = 2
+offset_left = 860.0
+offset_top = 131.0
+offset_right = 973.0
+offset_bottom = 158.0
+
+[node name="Collapse_MarginContainer_VBoxContainer#LeaderBoard" type="Label" parent="Collapse/Collapse_MarginContainer#VBoxContainer"]
+layout_mode = 2
+text = "Leader Board: "
+
+[node name="Collapse_MarginContainer_VBoxContainer#ScrollContainer" type="ScrollContainer" parent="Collapse/Collapse_MarginContainer#VBoxContainer"]
+layout_mode = 2
+
 [node name="Entries_Container" type="VBoxContainer" parent="Collapse"]
 unique_name_in_owner = true
 layout_mode = 2
@@ -126,16 +140,6 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="WavesLabel" type="Label" parent="Collapse/Entries_Container/Leaderboard Row"]
-layout_mode = 2
-
-[node name="Collapse_MarginContainer#VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 2
-
-[node name="Collapse_MarginContainer_VBoxContainer#LeaderBoard" type="Label" parent="."]
-layout_mode = 2
-text = "Leader Board: "
-
-[node name="Collapse_MarginContainer_VBoxContainer#ScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 2
 
 [node name="Start_Button" type="Button" parent="."]
